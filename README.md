@@ -11,8 +11,12 @@
 * Build the Software
 
 * Test the Software
+- Link to Travis CI : https://travis-ci.org/Rusty89/SeniorCenterManagmentStudio/
+
+- Currently using Travis CI to test builds of the project. Intentional fail set up looking for Javascript files.
 
 * Automated Testing 
+- Travis CI
 
 * Bugs
 
