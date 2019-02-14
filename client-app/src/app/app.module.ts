@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule }   from '@angular/forms';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -7,6 +9,7 @@ import { MembersComponent } from './members/members.component';
 import { ServicesComponent } from './services/services.component';
 import { ReportsComponent } from './reports/reports.component';
 import { DocumentationComponent } from './documentation/documentation.component';
+import { InfoFormComponent } from './info-form/Info-form.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +17,13 @@ import { DocumentationComponent } from './documentation/documentation.component'
     MembersComponent,
     ServicesComponent,
     ReportsComponent,
-    DocumentationComponent
+    DocumentationComponent,
+    InfoFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+	FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
