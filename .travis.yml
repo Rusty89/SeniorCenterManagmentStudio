@@ -1,2 +1,3 @@
-script: 
-  -run NavTest.side
+language: node_js
+node_js:
+ - "node"
