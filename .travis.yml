@@ -1,6 +1,2 @@
-language: node_js
-node:
- - 10.5.1
 
-
-script:
+script: xVfb-run NavTest.side
