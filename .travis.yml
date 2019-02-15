@@ -1,1 +1,2 @@
-script: run NavTest.side
+script: 
+  -run NavTest.side
