@@ -5,7 +5,9 @@ dist: trusty
 sudo: required
 
 before_script:
+  - cd client-app
   - npm install -g @angular/cli
+  
 script:
 - ng lint
 - ng build --prod --base-href https://github.com/Rusty89/SeniorCenterManagmentStudio
