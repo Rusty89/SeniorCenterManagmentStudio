@@ -8,8 +8,7 @@ before_script:
   - cd client-app
   - npm install -g @angular/cli
   - npm install -g @angular-devkit/build-angular
-  - npm install tslint typescript -g
+
   
 script:
-- ng lint
-- ng build --prod --base-href https://github.com/Rusty89/SeniorCenterManagmentStudio/client-app
+- ng build client-app
