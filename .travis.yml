@@ -1,14 +1,1 @@
-language: node_js
-node_js:
-  - "9"
-dist: trusty
-sudo: required
-branches:
-  only:
-  - master
-  - develop
-before_script:
-  - npm install -g @angular/cli
-script:
-- ng lint
-- ng build --prod --base-href https://github.com/Rusty89/SeniorCenterManagmentStudio/tree/master/client-app
+
