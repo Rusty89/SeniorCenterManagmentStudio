@@ -7,6 +7,7 @@ sudo: required
 before_script:
   - cd client-app
   - npm install -g @angular/cli
+  - npm install -g @angular-devkit/build-angular
   
 script:
 - ng lint
