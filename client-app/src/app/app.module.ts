@@ -10,6 +10,7 @@ import { ServicesComponent } from './services/services.component';
 import { ReportsComponent } from './reports/reports.component';
 import { DocumentationComponent } from './documentation/documentation.component';
 import { InfoFormComponent } from './info-form/Info-form.component';
+import { ActivityFormComponent } from './activity-form/Activity-form.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { InfoFormComponent } from './info-form/Info-form.component';
     ServicesComponent,
     ReportsComponent,
     DocumentationComponent,
-    InfoFormComponent
+    InfoFormComponent,
+    ActivityFormComponent
   ],
   imports: [
     BrowserModule,
