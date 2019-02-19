@@ -8,7 +8,8 @@ before_script:
   - cd client-app
   - npm install -g @angular/cli
   - npm install -g @angular-devkit/build-angular
-
+  - npm install -g @angular/compiler-cli
+  - npm install -g @angular/compiler
   
 script:
-- ng build client-app
+- ng serve
