@@ -13,4 +13,6 @@ before_script:
   - npm install -g typescript
   
 script:
+- npm install
+- npm link
 - ng build --prod --base-href https://github.com/Rusty89/SeniorCenterManagmentStudio/tree/develop/client-app
