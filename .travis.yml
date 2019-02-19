@@ -13,4 +13,5 @@ before_script:
   - npm install -g typescript
   
 script:
+- cd client-app
 - ng serve
