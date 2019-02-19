@@ -16,5 +16,7 @@ before_script:
 script:
 - npm install
 - npm link
+- npm install chromedriver
 - npm install selenium-side-runner
 - ng build --prod --base-href https://github.com/Rusty89/SeniorCenterManagmentStudio/tree/develop/client-app
+- selenium-side-runner NavTest.side
