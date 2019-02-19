@@ -3,7 +3,8 @@ node_js:
   - "9"
 dist: trusty
 sudo: required
-
+addons:
+  - chrome: stable
 before_script:
   - cd client-app
   - npm install -g @angular/cli
@@ -15,4 +16,5 @@ before_script:
 script:
 - npm install
 - npm link
+- npm install selenium-side-runner
 - ng build --prod --base-href https://github.com/Rusty89/SeniorCenterManagmentStudio/tree/develop/client-app
