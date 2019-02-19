@@ -12,4 +12,5 @@ before_script:
   - npm install -g @angular/compiler
   
 script:
+- cd client-app
 - ng serve
