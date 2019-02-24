@@ -50,5 +50,6 @@ Login and user privileges are handled through Amazon Cognito.
 ## Bugs
 * Refreshing while it is hosted on S3 currently does not work.(2/24/19)
 * Mobile buttons not responsive.(2/24/19)
+* Stores Date of Birth as the month only, not as day month and year.(2/24/19)
 
 Email Brandon.may1026@gmail.com for any additional support needed
