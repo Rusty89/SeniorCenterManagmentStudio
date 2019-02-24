@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { MemberFetchService } from '../api-services/member-fetch.service';
 
 @Component({
   selector: 'app-members',
@@ -7,9 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MembersComponent implements OnInit {
 
-  constructor() { }
+  constructor(private memberService: MemberFetchService, private router:Router) { }
+
+  public members;
 
   ngOnInit() {
+	  this.loadMembers();
+  }
+
+  private loadMembers() {
+    this.memberService.getMembers().subscribe(
+      data => { this.members = data },
+      err => console.error(err),
+      () => console.log("members loaded.")
+    );
+  }
+
+  deleteMember(memberEmail: string) {
+    this.memberService.deleteMember(memberEmail).subscribe(() => {
+      this.loadMembers();
+    });
   }
 
 }
