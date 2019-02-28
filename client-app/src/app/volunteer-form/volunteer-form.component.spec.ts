@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VolunteerFormComponent } from './Volunteer-form.component';
+import { VolunteerFormComponent } from './volunteer-form.component';
 
 describe('VolunteerFormComponent', () => {
   let component: VolunteerFormComponent;
