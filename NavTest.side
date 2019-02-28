@@ -2,442 +2,214 @@
   "id": "6ce74feb-6eed-42e4-8348-8efe5648a584",
   "version": "2.0",
   "name": "NavTest",
-  "url": "http://test-senior-app.s3-website.us-east-2.amazonaws.com",
+  "url": "http://elasticbeanstalk-us-east-1-998369988177.s3-website-us-east-1.amazonaws.com/",
   "tests": [{
     "id": "7d53e1ce-b032-4f3a-b70c-2a60f2e4909b",
     "name": "NavTest",
     "commands": [{
-      "id": "0f976085-085d-43b3-850c-39e2b59f7855",
+      "id": "bbd3f885-08e1-45ed-808f-4f033b4003cb",
       "comment": "",
       "command": "open",
-      "target": "/",
+      "target": "http://elasticbeanstalk-us-east-1-998369988177.s3-website-us-east-1.amazonaws.com/",
       "targets": [],
       "value": ""
     }, {
-      "id": "2e5765f1-1685-45dd-b22d-2e4b6183f875",
+      "id": "cc75c2ad-5044-4dbb-a722-043c37fe5466",
       "comment": "",
       "command": "setWindowSize",
       "target": "826x691",
       "targets": [],
       "value": ""
     }, {
-      "id": "2b27b560-54ac-4fa3-b8bc-34db07d6fb6e",
+      "id": "0f58a4ea-bb40-429e-b4be-08affc797c39",
       "comment": "",
       "command": "click",
-      "target": "css=a:nth-child(1) > .buttonSmall",
+      "target": "css=.btn:nth-child(1)",
       "targets": [
-        ["css=a:nth-child(1) > .buttonSmall", "css:finder"],
-        ["xpath=//a/div", "xpath:position"]
+        ["css=.btn:nth-child(1)", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Members')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "9889df0e-a7d3-4f5f-bd8e-91d68d2ec130",
+      "id": "ccb895cf-9904-4702-9dd8-b9fbcb7b6e0f",
       "comment": "",
       "command": "click",
-      "target": "css=.buttonBig:nth-child(1)",
+      "target": "css=app-members > .text-center .btn:nth-child(1)",
       "targets": [
-        ["css=.buttonBig:nth-child(1)", "css:finder"],
-        ["xpath=//div/div", "xpath:position"]
+        ["css=app-members > .text-center .btn:nth-child(1)", "css:finder"],
+        ["xpath=(//button[@type='button'])[5]", "xpath:attributes"],
+        ["xpath=//app-members/div/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Add')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "0f7a799c-ea86-4da4-ad7a-fa9cb12fccd1",
+      "id": "679e8092-a482-4a8d-b005-fbe010ceb677",
       "comment": "",
       "command": "click",
-      "target": "css=.buttonBig:nth-child(2)",
+      "target": "css=.btn:nth-child(2)",
       "targets": [
-        ["css=.buttonBig:nth-child(2)", "css:finder"],
-        ["xpath=//div/div[2]", "xpath:position"]
+        ["css=.btn:nth-child(2)", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Activities/Services')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "9f33c5c6-bf1b-448c-839a-1798ede8cb8f",
+      "id": "58ffe7ee-7785-4e06-95b2-5822e4f1d7ee",
       "comment": "",
       "command": "click",
-      "target": "css=a:nth-child(1) > .buttonSmall",
+      "target": "css=app-services .btn:nth-child(1)",
       "targets": [
-        ["css=a:nth-child(1) > .buttonSmall", "css:finder"],
-        ["xpath=//a/div", "xpath:position"]
+        ["css=app-services .btn:nth-child(1)", "css:finder"],
+        ["xpath=(//button[@type='button'])[5]", "xpath:attributes"],
+        ["xpath=//app-services/div/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Add an Activity')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "69f3ac74-033d-4bf7-a003-d0edd5d88b1e",
+      "id": "7f0e52d1-b382-4549-a6b7-de0c89c2c2a0",
       "comment": "",
       "command": "click",
-      "target": "css=a:nth-child(2) > .buttonSmall",
+      "target": "css=.btn:nth-child(2)",
       "targets": [
-        ["css=a:nth-child(2) > .buttonSmall", "css:finder"],
-        ["xpath=//a[2]/div", "xpath:position"]
+        ["css=.btn:nth-child(2)", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Activities/Services')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "20c98ff3-9dd4-4726-8c8b-d7d6b48e00f1",
-      "comment": "",
-      "command": "mouseOver",
-      "target": "css=a:nth-child(2) > .buttonSmall",
-      "targets": [
-        ["css=a:nth-child(2) > .buttonSmall", "css:finder"],
-        ["xpath=//a[2]/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "c1b10434-4a81-409c-838a-30f4e289b6ff",
-      "comment": "",
-      "command": "mouseOut",
-      "target": "css=a:nth-child(2) > .buttonSmall",
-      "targets": [
-        ["css=a:nth-child(2) > .buttonSmall", "css:finder"],
-        ["xpath=//a[2]/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "47636f29-2a5f-4d5a-94f1-999554dedeae",
+      "id": "120a3be8-9153-45e9-a689-ab6a75e98550",
       "comment": "",
       "command": "click",
-      "target": "css=.buttonBig:nth-child(1)",
+      "target": "css=app-services .btn:nth-child(2)",
       "targets": [
-        ["css=.buttonBig:nth-child(1)", "css:finder"],
-        ["xpath=//div/div", "xpath:position"]
+        ["css=app-services .btn:nth-child(2)", "css:finder"],
+        ["xpath=(//button[@type='button'])[6]", "xpath:attributes"],
+        ["xpath=//app-services/div/div/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Update/Remove')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "4147ad73-63f1-4806-924f-83c406488ce9",
+      "id": "c05e5a22-8bf5-42b1-895e-730d83510248",
       "comment": "",
       "command": "click",
-      "target": "css=.buttonBig:nth-child(2)",
+      "target": "css=app-services .btn:nth-child(3)",
       "targets": [
-        ["css=.buttonBig:nth-child(2)", "css:finder"],
-        ["xpath=//div/div[2]", "xpath:position"]
+        ["css=app-services .btn:nth-child(3)", "css:finder"],
+        ["xpath=(//button[@type='button'])[7]", "xpath:attributes"],
+        ["xpath=//app-services/div/div/button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'Register a Member')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "842a3132-2c26-4085-bb32-009fb211c60f",
+      "id": "518bc0da-d791-4c82-97f1-22f8989c014d",
       "comment": "",
       "command": "click",
-      "target": "css=.buttonBig:nth-child(3)",
+      "target": "css=app-root > .text-center .btn:nth-child(1)",
       "targets": [
-        ["css=.buttonBig:nth-child(3)", "css:finder"],
-        ["xpath=//div[3]", "xpath:position"]
+        ["css=app-root > .text-center .btn:nth-child(1)", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Members')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "7a9278b6-aab4-4e08-8704-8c7b7d744c3e",
+      "id": "267932a6-39de-41a4-91fb-0902df08fdd7",
       "comment": "",
       "command": "click",
-      "target": "css=a:nth-child(2) > .buttonSmall",
+      "target": "css=app-members .btn:nth-child(2)",
       "targets": [
-        ["css=a:nth-child(2) > .buttonSmall", "css:finder"],
-        ["xpath=//a[2]/div", "xpath:position"]
+        ["css=app-members .btn:nth-child(2)", "css:finder"],
+        ["xpath=(//button[@type='button'])[6]", "xpath:attributes"],
+        ["xpath=//app-members/div/div/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Update/Remove')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "388d7b62-e468-4717-b7ba-566bdfd4c654",
+      "id": "72499e42-a988-4192-85b5-224a3c200f82",
       "comment": "",
       "command": "click",
-      "target": "css=a:nth-child(1) > .buttonSmall",
+      "target": "css=.btn:nth-child(3)",
       "targets": [
-        ["css=a:nth-child(1) > .buttonSmall", "css:finder"],
-        ["xpath=//a/div", "xpath:position"]
+        ["css=.btn:nth-child(3)", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'Reports')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "71d71d72-eb9c-4a42-a831-7e8bb9fc7043",
+      "id": "4aff8607-03f2-4845-b66a-97ff15b29dbc",
       "comment": "",
       "command": "click",
-      "target": "css=a:nth-child(3) > .buttonSmall",
+      "target": "css=app-reports .btn:nth-child(1)",
       "targets": [
-        ["css=a:nth-child(3) > .buttonSmall", "css:finder"],
-        ["xpath=//a[3]/div", "xpath:position"]
+        ["css=app-reports .btn:nth-child(1)", "css:finder"],
+        ["xpath=(//button[@type='button'])[5]", "xpath:attributes"],
+        ["xpath=//app-reports/div/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Print Reports')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "8f4c954d-e2e5-4b07-9a81-d359b2b53e7f",
+      "id": "e7459d0e-7bb9-47b1-93b6-0a6fa1fd3926",
       "comment": "",
       "command": "click",
-      "target": "css=a:nth-child(1) > .buttonSmall",
+      "target": "css=.btn:nth-child(4)",
       "targets": [
-        ["css=a:nth-child(1) > .buttonSmall", "css:finder"],
-        ["xpath=//a/div", "xpath:position"]
+        ["css=.btn:nth-child(4)", "css:finder"],
+        ["xpath=(//button[@type='button'])[4]", "xpath:attributes"],
+        ["xpath=//button[4]", "xpath:position"],
+        ["xpath=//button[contains(.,'Documentation')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "b1cbe986-82f7-45b3-904c-8fbabd29311a",
+      "id": "576fea28-1b97-40c3-812f-093b2c0df1ed",
       "comment": "",
       "command": "click",
-      "target": "css=a:nth-child(4) > .buttonSmall",
+      "target": "css=.btn:nth-child(3)",
       "targets": [
-        ["css=a:nth-child(4) > .buttonSmall", "css:finder"],
-        ["xpath=//a[4]/div", "xpath:position"]
+        ["css=.btn:nth-child(3)", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'Reports')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "57ba0eb7-03ff-4377-adc3-0693e38df3cc",
+      "id": "1653b1ff-93d1-4c8a-9357-6c261932e35e",
       "comment": "",
       "command": "click",
-      "target": "css=a:nth-child(1) > .buttonSmall",
+      "target": "css=app-reports .btn:nth-child(2)",
       "targets": [
-        ["css=a:nth-child(1) > .buttonSmall", "css:finder"],
-        ["xpath=//a/div", "xpath:position"]
+        ["css=app-reports .btn:nth-child(2)", "css:finder"],
+        ["xpath=(//button[@type='button'])[6]", "xpath:attributes"],
+        ["xpath=//app-reports/div/div/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Export Information')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "a28ffa4d-d981-4ef8-9b83-8719c9e3ac6d",
+      "id": "a8f9d0d7-cb21-46db-93d0-608166b90faa",
       "comment": "",
       "command": "click",
-      "target": "css=a:nth-child(2) > .buttonSmall",
+      "target": "css=.btn:nth-child(4)",
       "targets": [
-        ["css=a:nth-child(2) > .buttonSmall", "css:finder"],
-        ["xpath=//a[2]/div", "xpath:position"]
+        ["css=.btn:nth-child(4)", "css:finder"],
+        ["xpath=(//button[@type='button'])[4]", "xpath:attributes"],
+        ["xpath=//button[4]", "xpath:position"],
+        ["xpath=//button[contains(.,'Documentation')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "287c525f-6110-4a48-9a23-71d8f3c94112",
-      "comment": "",
-      "command": "mouseOver",
-      "target": "css=a:nth-child(2) > .buttonSmall",
-      "targets": [
-        ["css=a:nth-child(2) > .buttonSmall", "css:finder"],
-        ["xpath=//a[2]/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "a8200ba4-0e59-4cd4-9761-7c03395483e2",
-      "comment": "",
-      "command": "mouseOut",
-      "target": "css=a:nth-child(2) > .buttonSmall",
-      "targets": [
-        ["css=a:nth-child(2) > .buttonSmall", "css:finder"],
-        ["xpath=//a[2]/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "9e22c92d-1dc0-4df5-887e-6bc73305f414",
+      "id": "2076cc02-a75f-48b2-a3fe-ed184a99e2c4",
       "comment": "",
       "command": "click",
-      "target": "css=a:nth-child(1) > .buttonSmall",
+      "target": "css=a > .btn",
       "targets": [
-        ["css=a:nth-child(1) > .buttonSmall", "css:finder"],
-        ["xpath=//a/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "6ba07f7e-7bc6-422f-b49f-be0e59fd937b",
-      "comment": "",
-      "command": "click",
-      "target": "css=a:nth-child(2) > .buttonSmall",
-      "targets": [
-        ["css=a:nth-child(2) > .buttonSmall", "css:finder"],
-        ["xpath=//a[2]/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "e5b94247-f385-4749-beba-a3d0ca64547b",
-      "comment": "",
-      "command": "click",
-      "target": "css=a:nth-child(3) > .buttonSmall",
-      "targets": [
-        ["css=a:nth-child(3) > .buttonSmall", "css:finder"],
-        ["xpath=//a[3]/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "5f8c03ee-9a17-46d5-9572-ba98c8444e15",
-      "comment": "",
-      "command": "click",
-      "target": "css=a:nth-child(2) > .buttonSmall",
-      "targets": [
-        ["css=a:nth-child(2) > .buttonSmall", "css:finder"],
-        ["xpath=//a[2]/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "4b4c8cb3-1c97-4afe-81d8-9a7d8c939aac",
-      "comment": "",
-      "command": "mouseOver",
-      "target": "css=a:nth-child(2) > .buttonSmall",
-      "targets": [
-        ["css=a:nth-child(2) > .buttonSmall", "css:finder"],
-        ["xpath=//a[2]/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "bad75788-bb61-448e-b2d1-7d43cf7ff1c2",
-      "comment": "",
-      "command": "mouseOut",
-      "target": "css=a:nth-child(2) > .buttonSmall",
-      "targets": [
-        ["css=a:nth-child(2) > .buttonSmall", "css:finder"],
-        ["xpath=//a[2]/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "0e1eca3f-df18-4c43-b971-878c7fba2afd",
-      "comment": "",
-      "command": "click",
-      "target": "css=a:nth-child(4) > .buttonSmall",
-      "targets": [
-        ["css=a:nth-child(4) > .buttonSmall", "css:finder"],
-        ["xpath=//a[4]/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "4a0adf0c-550a-46cd-9c2c-a8ae31938ca9",
-      "comment": "",
-      "command": "click",
-      "target": "css=a:nth-child(3) > .buttonSmall",
-      "targets": [
-        ["css=a:nth-child(3) > .buttonSmall", "css:finder"],
-        ["xpath=//a[3]/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "a870e1d2-8bcc-47fb-bd2c-1e1acc173eb2",
-      "comment": "",
-      "command": "click",
-      "target": "css=a:nth-child(2) > .buttonSmall",
-      "targets": [
-        ["css=a:nth-child(2) > .buttonSmall", "css:finder"],
-        ["xpath=//a[2]/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "82b43087-820a-477b-a664-13a3f57b1b87",
-      "comment": "",
-      "command": "mouseOver",
-      "target": "css=a:nth-child(2) > .buttonSmall",
-      "targets": [
-        ["css=a:nth-child(2) > .buttonSmall", "css:finder"],
-        ["xpath=//a[2]/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "07dab006-b81d-4eb3-97d0-fc9848099aee",
-      "comment": "",
-      "command": "mouseOut",
-      "target": "css=a:nth-child(2) > .buttonSmall",
-      "targets": [
-        ["css=a:nth-child(2) > .buttonSmall", "css:finder"],
-        ["xpath=//a[2]/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "152faf30-9b39-4bae-8a7e-5f71aa1e6460",
-      "comment": "",
-      "command": "click",
-      "target": "css=a:nth-child(3) > .buttonSmall",
-      "targets": [
-        ["css=a:nth-child(3) > .buttonSmall", "css:finder"],
-        ["xpath=//a[3]/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "1fef3aa8-20a6-49a3-943b-f91ca609dfb6",
-      "comment": "",
-      "command": "click",
-      "target": "css=a:nth-child(1) > .buttonSmall",
-      "targets": [
-        ["css=a:nth-child(1) > .buttonSmall", "css:finder"],
-        ["xpath=//a/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "52c75c7f-02c4-4f58-a569-60ca964383a7",
-      "comment": "",
-      "command": "click",
-      "target": "css=a:nth-child(3) > .buttonSmall",
-      "targets": [
-        ["css=a:nth-child(3) > .buttonSmall", "css:finder"],
-        ["xpath=//a[3]/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "38ec0f3c-d0fd-4500-be9f-598a2b6636b5",
-      "comment": "",
-      "command": "click",
-      "target": "css=a:nth-child(4) > .buttonSmall",
-      "targets": [
-        ["css=a:nth-child(4) > .buttonSmall", "css:finder"],
-        ["xpath=//a[4]/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "50ec2bb2-ebf5-4c9d-923b-7ad23e7cd078",
-      "comment": "",
-      "command": "click",
-      "target": "css=a:nth-child(4) > .buttonSmall",
-      "targets": [
-        ["css=a:nth-child(4) > .buttonSmall", "css:finder"],
-        ["xpath=//a[4]/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "098cedb4-105f-4393-8268-450db26bf8af",
-      "comment": "",
-      "command": "click",
-      "target": "css=a:nth-child(3) > .buttonSmall",
-      "targets": [
-        ["css=a:nth-child(3) > .buttonSmall", "css:finder"],
-        ["xpath=//a[3]/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "729bf913-42cc-4ee2-8fbe-104e5ff10547",
-      "comment": "",
-      "command": "click",
-      "target": "css=a:nth-child(4) > .buttonSmall",
-      "targets": [
-        ["css=a:nth-child(4) > .buttonSmall", "css:finder"],
-        ["xpath=//a[4]/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "a819a409-0ed8-4ee0-be52-552550b527ef",
-      "comment": "",
-      "command": "click",
-      "target": "css=a:nth-child(2) > .buttonSmall",
-      "targets": [
-        ["css=a:nth-child(2) > .buttonSmall", "css:finder"],
-        ["xpath=//a[2]/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "1bee490c-ecdf-42f4-8f34-4b1dff2155b5",
-      "comment": "",
-      "command": "mouseOver",
-      "target": "css=a:nth-child(2) > .buttonSmall",
-      "targets": [
-        ["css=a:nth-child(2) > .buttonSmall", "css:finder"],
-        ["xpath=//a[2]/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "b889d1e0-44bc-4517-a709-47beb95d13de",
-      "comment": "",
-      "command": "mouseOut",
-      "target": "css=a:nth-child(2) > .buttonSmall",
-      "targets": [
-        ["css=a:nth-child(2) > .buttonSmall", "css:finder"],
-        ["xpath=//a[2]/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "5616b3b2-2ac7-4458-921e-fbd081ec9955",
-      "comment": "",
-      "command": "click",
-      "target": "css=a:nth-child(4) > .buttonSmall",
-      "targets": [
-        ["css=a:nth-child(4) > .buttonSmall", "css:finder"],
-        ["xpath=//a[4]/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "c70505ae-5a8e-4c66-a929-57b0b332ed88",
-      "comment": "",
-      "command": "click",
-      "target": "css=a:nth-child(1) > .buttonSmall",
-      "targets": [
-        ["css=a:nth-child(1) > .buttonSmall", "css:finder"],
-        ["xpath=//a/div", "xpath:position"]
+        ["css=a > .btn", "css:finder"],
+        ["xpath=(//button[@type='button'])[5]", "xpath:attributes"],
+        ["xpath=//a/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Github Repo')]", "xpath:innerText"]
       ],
       "value": ""
     }]
@@ -450,6 +222,6 @@
     "timeout": 300,
     "tests": ["7d53e1ce-b032-4f3a-b70c-2a60f2e4909b"]
   }],
-  "urls": ["http://test-senior-app.s3-website.us-east-2.amazonaws.com/"],
+  "urls": ["http://test-senior-app.s3-website.us-east-2.amazonaws.com/", "http://elasticbeanstalk-us-east-1-998369988177.s3-website-us-east-1.amazonaws.com/"],
   "plugins": []
 }
