@@ -1,0 +1,179 @@
+{
+  "id": "6ce74feb-6eed-42e4-8348-8efe5648a584",
+  "version": "2.0",
+  "name": "NavTest",
+  "url": "localhost:4200",
+  "tests": [{
+    "id": "1a266dc1-1e84-4a37-8fac-660898695fab",
+    "name": "NavTest",
+    "commands": [{
+      "id": "5a346e18-b7c1-4c17-b5ff-789d0fa702a0",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:4200/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8ab4441c-afb0-47c8-8e7c-a040c509f70c",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "165ca33d-2b7b-4f92-9a06-ca66b9c87e57",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(1)",
+      "targets": [
+        ["css=.btn:nth-child(1)", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Members')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2ae20a54-7209-4e19-bbb6-44a9d7ad226f",
+      "comment": "",
+      "command": "click",
+      "target": "css=app-root > .text-center .btn:nth-child(2)",
+      "targets": [
+        ["css=app-root > .text-center .btn:nth-child(2)", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Activities/Services')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e84664fb-25bc-4b4e-aca7-86a512efc924",
+      "comment": "",
+      "command": "click",
+      "target": "css=app-root > .text-center .btn:nth-child(3)",
+      "targets": [
+        ["css=app-root > .text-center .btn:nth-child(3)", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'Reports')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f91ead65-fc50-4510-a83d-d2bef9d081b9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(4)",
+      "targets": [
+        ["css=.btn:nth-child(4)", "css:finder"],
+        ["xpath=(//button[@type='button'])[4]", "xpath:attributes"],
+        ["xpath=//button[4]", "xpath:position"],
+        ["xpath=//button[contains(.,'Documentation')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a8ff9cb3-ce20-44a4-bbd9-f5af671f11e5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-group > .btn:nth-child(1)",
+      "targets": [
+        ["css=.btn-group > .btn:nth-child(1)", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Members')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f89d3146-44a9-4ed7-b4a8-735682e15b42",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(1)",
+      "targets": [
+        ["css=.btn:nth-child(1)", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Members')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0060d001-d962-49bf-8006-c9e733f47315",
+      "comment": "",
+      "command": "click",
+      "target": "css=app-root > .text-center .btn:nth-child(2)",
+      "targets": [
+        ["css=app-root > .text-center .btn:nth-child(2)", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Activities/Services')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9d76ae47-d302-4201-84c6-de41edbc2060",
+      "comment": "",
+      "command": "click",
+      "target": "css=app-services .btn:nth-child(1)",
+      "targets": [
+        ["css=app-services .btn:nth-child(1)", "css:finder"],
+        ["xpath=(//button[@type='button'])[5]", "xpath:attributes"],
+        ["xpath=//app-services/div/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Add an Activity')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0b32ea7a-2cb3-4ca4-9784-7d6f5cafcee6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(2)",
+      "targets": [
+        ["css=.btn:nth-child(2)", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Activities/Services')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1f46ecbf-ef70-4ecd-b5cc-44bc47441431",
+      "comment": "",
+      "command": "click",
+      "target": "css=app-root > .text-center .btn:nth-child(3)",
+      "targets": [
+        ["css=app-root > .text-center .btn:nth-child(3)", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'Reports')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c8a96f8f-bdf5-4e65-b918-791138536124",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(4)",
+      "targets": [
+        ["css=.btn:nth-child(4)", "css:finder"],
+        ["xpath=(//button[@type='button'])[4]", "xpath:attributes"],
+        ["xpath=//button[4]", "xpath:position"],
+        ["xpath=//button[contains(.,'Documentation')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "468ea5fa-9a95-4be6-9f74-48abd20dd552",
+      "comment": "",
+      "command": "click",
+      "target": "css=a > .btn",
+      "targets": [
+        ["css=a > .btn", "css:finder"],
+        ["xpath=(//button[@type='button'])[5]", "xpath:attributes"],
+        ["xpath=//a/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Github Repo')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "fd0cc548-0141-4252-bb7c-8fd3da5460e7",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://test-senior-app.s3-website.us-east-2.amazonaws.com/", "localhost:4200"],
+  "plugins": []
+}
