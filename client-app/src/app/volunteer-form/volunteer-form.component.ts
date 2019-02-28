@@ -5,8 +5,8 @@ import { Info }    from '../Info';
 
 @Component({
   selector: 'app-Volunteer-form',
-  templateUrl: './Volunteer-form.component.html',
-  styleUrls: ['./Volunteer-form.component.css']
+  templateUrl: './volunteer-form.component.html',
+  styleUrls: ['./volunteer-form.component.css']
 })
 export class VolunteerFormComponent {
 
