@@ -1,0 +1,25 @@
+language: node_js
+node_js:
+  - "9"
+dist: trusty
+sudo: required
+addons:
+  - chrome: stable
+before_script:
+  - cd client-app
+  - npm install -g @angular/cli
+  - npm install -g @angular-devkit/build-angular
+  - npm install -g @angular/compiler-cli
+  - npm install -g @angular/compiler
+  - npm install -g typescript
+  
+script:
+- npm install
+- npm install rxjs-compat
+- npm link
+- npm install chromedriver
+- npm install selenium-side-runner
+- ng build --prod --base-href https://github.com/Rusty89/SeniorCenterManagmentStudio/tree/develop/client-app
+- selenium-side-runner NavTest.side
+- selenium-side-runner AddRemoveMemberTest.side
+- selenium-side-runner NavTestLocal.side

@@ -1,5 +1,45 @@
-	<h1 id="menuTitle">Members</h1>
-	<div class="buttonContainer">
-		<div class="buttonBig">Add</div>
-		<div class="buttonBig">Update/Remove</div>
+<h1 id="menuTitle">Members</h1>
+<div class="text-center">
+	<div class="btn-group btn-group-lg" role="group" aria-label="...">
+		<button type="button" class="btn btn-secondary btn-lg mr-1 ml-1" routerLink="/info-form">Add</button>
+		<button type="button" class="btn btn-secondary btn-lg mr-1 ml-1">Update/Remove</button>
 	</div>
+</div>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">address</th>
+        <th scope="col">apt</th>
+        <th scope="col">city</th>
+        <th scope="col">state</th>
+        <th scope="col">zip</th>
+        <th scope="col">month</th>
+        <th scope="col">phone</th>
+        <th scope="col">Email</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let member of members">
+            <td>{{member.firstName}}</td>
+            <td>{{member.lastName}}</td>
+            <td>{{member.address}}</td>
+            <td>{{member.apt}}</td>
+            <td>{{member.city}}</td>
+            <td>{{member.state}}</td>
+            <td>{{member.zip}}</td>
+            <td>{{member.month}}</td>
+            <td>{{member.phone}}</td>
+            <td>{{member.email}}</td>
+            <td>
+                <button type="button" class="btn btn-success" (click)="deleteMember(member.email)">Delete</button>
+            </td>
+        </tr>      
+    </tbody>
+</table>
+
+
+

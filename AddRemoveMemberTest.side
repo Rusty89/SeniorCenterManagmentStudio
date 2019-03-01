@@ -1,0 +1,287 @@
+{
+  "id": "fbcf7fe1-ca67-4eb7-9e04-9f5d91b5e45c",
+  "version": "2.0",
+  "name": "Add/Remove Member",
+  "url": "http://elasticbeanstalk-us-east-1-998369988177.s3-website-us-east-1.amazonaws.com/",
+  "tests": [{
+    "id": "5ffad24c-f6eb-4ce2-ab63-442d78610f71",
+    "name": "Add Member",
+    "commands": [{
+      "id": "68996671-e447-4ffa-8446-647d3cfa2406",
+      "comment": "",
+      "command": "open",
+      "target": "http://elasticbeanstalk-us-east-1-998369988177.s3-website-us-east-1.amazonaws.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c8764fcb-c6d8-4437-b5ca-ea7460d1c5db",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "826x691",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8dfa34fb-3e59-4f74-912d-8be9de22aac6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(1)",
+      "targets": [
+        ["css=.btn:nth-child(1)", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Members')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "534dadcf-c769-4621-b321-46bcbcf4fb23",
+      "comment": "",
+      "command": "click",
+      "target": "css=app-members > .text-center .btn:nth-child(1)",
+      "targets": [
+        ["css=app-members > .text-center .btn:nth-child(1)", "css:finder"],
+        ["xpath=(//button[@type='button'])[5]", "xpath:attributes"],
+        ["xpath=//app-members/div/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Add')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7ce11fe8-05eb-4b25-bb09-6258395890db",
+      "comment": "",
+      "command": "click",
+      "target": "id=firstName",
+      "targets": [
+        ["id=firstName", "id"],
+        ["name=firstName", "name"],
+        ["css=#firstName", "css:finder"],
+        ["xpath=//input[@id='firstName']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ccd62f6a-b7f1-4fd7-a1a0-3c2f50c83b05",
+      "comment": "",
+      "command": "type",
+      "target": "id=firstName",
+      "targets": [
+        ["id=firstName", "id"],
+        ["name=firstName", "name"],
+        ["css=#firstName", "css:finder"],
+        ["xpath=//input[@id='firstName']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Rusty"
+    }, {
+      "id": "7842ccba-940d-4528-a034-374a03bd5c62",
+      "comment": "",
+      "command": "type",
+      "target": "id=lastName",
+      "targets": [
+        ["id=lastName", "id"],
+        ["name=lastName", "name"],
+        ["css=#lastName", "css:finder"],
+        ["xpath=//input[@id='lastName']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "Clayton"
+    }, {
+      "id": "7ba9df5a-2b1e-4cae-93d2-a64327a50a20",
+      "comment": "",
+      "command": "type",
+      "target": "id=address",
+      "targets": [
+        ["id=address", "id"],
+        ["name=address", "name"],
+        ["css=#address", "css:finder"],
+        ["xpath=//input[@id='address']", "xpath:attributes"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": "722 Cedar St"
+    }, {
+      "id": "6a05b32b-fa55-41b8-a211-df9c38165b06",
+      "comment": "",
+      "command": "type",
+      "target": "id=city",
+      "targets": [
+        ["id=city", "id"],
+        ["name=city", "name"],
+        ["css=#city", "css:finder"],
+        ["xpath=//input[@id='city']", "xpath:attributes"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "Anaconda"
+    }, {
+      "id": "8a5140c8-eca5-4e98-ae10-b87e2d33a7ea",
+      "comment": "",
+      "command": "type",
+      "target": "id=state",
+      "targets": [
+        ["id=state", "id"],
+        ["name=state", "name"],
+        ["css=#state", "css:finder"],
+        ["xpath=//input[@id='state']", "xpath:attributes"],
+        ["xpath=//div[2]/div[2]/input", "xpath:position"]
+      ],
+      "value": "MT"
+    }, {
+      "id": "b9c10baf-f6d1-4338-80b2-6fc8cbc99e05",
+      "comment": "",
+      "command": "type",
+      "target": "id=zip",
+      "targets": [
+        ["id=zip", "id"],
+        ["name=zip", "name"],
+        ["css=#zip", "css:finder"],
+        ["xpath=//input[@id='zip']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "59711"
+    }, {
+      "id": "a81d644a-8f63-452f-8921-3e81270a6ffd",
+      "comment": "",
+      "command": "type",
+      "target": "id=phone",
+      "targets": [
+        ["id=phone", "id"],
+        ["name=phone", "name"],
+        ["css=#phone", "css:finder"],
+        ["xpath=//input[@id='phone']", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "4066910574"
+    }, {
+      "id": "4f9b05bd-60f2-4690-abef-41fc4545c05b",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": "rusty_clayton@yahoo.com"
+    }, {
+      "id": "73d47cf0-2c81-4555-a086-a2040cde64b9",
+      "comment": "",
+      "command": "click",
+      "target": "id=month",
+      "targets": [
+        ["id=month", "id"],
+        ["name=month", "name"],
+        ["css=#month", "css:finder"],
+        ["xpath=//input[@id='month']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d8b80aac-e957-43ba-9101-ad524caa357a",
+      "comment": "",
+      "command": "click",
+      "target": "id=month",
+      "targets": [
+        ["id=month", "id"],
+        ["name=month", "name"],
+        ["css=#month", "css:finder"],
+        ["xpath=//input[@id='month']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9f7870c1-6513-479f-bc6e-a15959684fcc",
+      "comment": "",
+      "command": "type",
+      "target": "id=month",
+      "targets": [
+        ["id=month", "id"],
+        ["name=month", "name"],
+        ["css=#month", "css:finder"],
+        ["xpath=//input[@id='month']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "2019-02-01"
+    }, {
+      "id": "ebae2c67-d333-4040-bc3e-815e0087e8d6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-success",
+      "targets": [
+        ["css=.btn-success", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Submit')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1e55e502-f2f5-4f77-a462-e64ac3ff22ad",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "840eb927-450c-469e-888c-cacda9e73385",
+    "name": "Remove Member",
+    "commands": [{
+      "id": "e77c6abc-43ad-4c84-aafe-d354128e3db7",
+      "comment": "",
+      "command": "open",
+      "target": "http://elasticbeanstalk-us-east-1-998369988177.s3-website-us-east-1.amazonaws.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2eaa51e5-acac-42ef-a233-34f859405b12",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "826x691",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d85fa684-caee-4c4a-9cd8-b403a8c5ec5c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(1)",
+      "targets": [
+        ["css=.btn:nth-child(1)", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Members')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "01bce56a-d4b7-40da-8a39-e8ac108d5e21",
+      "comment": "",
+      "command": "click",
+      "target": "css=app-members .btn:nth-child(2)",
+      "targets": [
+        ["css=app-members .btn:nth-child(2)", "css:finder"],
+        ["xpath=(//button[@type='button'])[6]", "xpath:attributes"],
+        ["xpath=//app-members/div/div/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Update/Remove')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e26eabdf-6c96-4e87-be48-6f67ed26d1fd",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(2) .btn",
+      "targets": [
+        ["css=tr:nth-child(2) .btn", "css:finder"],
+        ["xpath=(//button[@type='button'])[8]", "xpath:attributes"],
+        ["xpath=//tr[2]/td[11]/button", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "312ca348-45e9-41ad-8d57-1e00ca5c9248",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["5ffad24c-f6eb-4ce2-ab63-442d78610f71"]
+  }],
+  "urls": ["http://elasticbeanstalk-us-east-1-998369988177.s3-website-us-east-1.amazonaws.com/"],
+  "plugins": []
+}
