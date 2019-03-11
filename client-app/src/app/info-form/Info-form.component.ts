@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Info }    from '../Info';
 import { Router } from '@angular/router';
 import { Member } from '../models/member';
 import { MemberFetchService } from '../api-services/member-fetch.service';

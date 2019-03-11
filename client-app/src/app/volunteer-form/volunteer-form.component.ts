@@ -1,8 +1,6 @@
 
 import { Component } from '@angular/core';
 
-import { Info }    from '../Info';
-
 @Component({
   selector: 'app-Volunteer-form',
   templateUrl: './volunteer-form.component.html',

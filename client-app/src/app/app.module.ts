@@ -1,42 +1,43 @@
+import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule }   from '@angular/forms';
+import { ReactiveFormsModule }    from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
-import { HttpClientModule } from '@angular/common/http';
-import { RouterModule, Routes } from '@angular/router';
+// used to create fake backend
+import { fakeBackendProvider } from './_helpers/fake-backend';
 
+import { AppComponent }  from './app.component';
+import { routing }        from './app-routing.module';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { MembersComponent } from './members/members.component';
-import { VolunteersComponent } from './volunteers/volunteers.component';
-import { ServicesComponent } from './services/services.component';
-import { ReportsComponent } from './reports/reports.component';
-import { DocumentationComponent } from './documentation/documentation.component';
-import { InfoFormComponent } from './info-form/Info-form.component';
-import { VolunteerFormComponent } from './volunteer-form/volunteer-form.component';
-import { ActivityFormComponent } from './activity-form/Activity-form.component';
-import { MemberFetchService } from './api-services/member-fetch.service';
+import { AlertComponent } from './_components/alert.component';
+import { JwtInterceptor } from './_helpers/jwt.interceptor';
+import { ErrorInterceptor } from './_helpers/error.interceptor';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    MembersComponent,
-    VolunteersComponent,
-    ServicesComponent,
-    ReportsComponent,
-    DocumentationComponent,
-    InfoFormComponent,
-    VolunteerFormComponent,
-    ActivityFormComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule
-  ],
-  providers: [MemberFetchService],
-  bootstrap: [AppComponent]
+    imports: [
+        BrowserModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        routing
+    ],
+    declarations: [
+        AppComponent,
+        AlertComponent,
+        HomeComponent,
+        LoginComponent,
+        RegisterComponent
+    ],
+    providers: [
+        { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+        { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+
+        // provider used to create fake backend
+        fakeBackendProvider
+    ],
+    bootstrap: [AppComponent]
 })
+
 export class AppModule { }
