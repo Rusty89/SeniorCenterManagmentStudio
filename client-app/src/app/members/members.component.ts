@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-
+import { Router, ActivatedRoute } from '@angular/router';
 import { MemberFetchService } from '../api-services/member-fetch.service';
+import { User } from '@app/_models';
+import { UserService, AuthenticationService } from '@app/_services';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-members',
@@ -9,14 +11,20 @@ import { MemberFetchService } from '../api-services/member-fetch.service';
   styleUrls: ['./members.component.css']
 })
 export class MembersComponent implements OnInit {
+   constructor(
 
-  constructor(private memberService: MemberFetchService, private router:Router) { }
+    private memberService: MemberFetchService, 
+) {
+
+}
 
   public members;
 
   ngOnInit() {
 	  this.loadMembers();
   }
+
+
 
   private loadMembers() {
     this.memberService.getMembers().subscribe(
