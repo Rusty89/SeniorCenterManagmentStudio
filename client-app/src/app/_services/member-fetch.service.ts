@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
-import { Member } from '../models/member';
+import { Member } from '../_models/member';
 
 //Change the following URL with your own API Gateway URL.
 const API_URL:string = 'https://jln3dnryx2.execute-api.us-east-1.amazonaws.com/Dev/member';

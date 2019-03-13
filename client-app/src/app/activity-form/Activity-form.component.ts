@@ -3,9 +3,9 @@ import { Component } from '@angular/core';
 
 
 @Component({
-  selector: 'app-Activity-form',
-  templateUrl: './Activity-form.component.html',
-  styleUrls: ['./Activity-form.component.css']
+  selector: 'app-activity-form',
+  templateUrl: './activity-form.component.html',
+  styleUrls: ['./activity-form.component.css']
 })
 export class ActivityFormComponent {
 

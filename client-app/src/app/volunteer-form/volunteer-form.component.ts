@@ -1,17 +1,22 @@
 
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-Volunteer-form',
+  selector: 'app-volunteer-form',
   templateUrl: './volunteer-form.component.html',
   styleUrls: ['./volunteer-form.component.css']
 })
-export class VolunteerFormComponent {
+export class VolunteerFormComponent implements OnInit {
+
+  constructor() { }
 
   submitted = false;
 
   onSubmit() { this.submitted = true; }
 
-  // TODO: Remove this when we're done
-  // get diagnostic() { return JSON.stringify(this.model); }
+  ngOnInit() {
+    console.log("test")
+  }
+
 }

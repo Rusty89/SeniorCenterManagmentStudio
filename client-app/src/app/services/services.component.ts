@@ -10,6 +10,7 @@ export class ServicesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log("test")
   }
 
 }

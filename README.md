@@ -53,5 +53,6 @@ Login and user privileges are handled through Amazon Cognito.
 * Stores Date of Birth as the month only, not as day month and year.(2/24/19)
 * Add a member opens a new page instead of a pop-up (3/1/2019)
 * DB key is on a month (3/1/2019)
+* ngModel breaks app when wrapped with login functionality (3/13/2019)
 
 Email Brandon.may1026@gmail.com for any additional support needed
