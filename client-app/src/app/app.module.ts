@@ -18,6 +18,12 @@ import { VolunteerFormComponent } from './volunteer-form/volunteer-form.componen
 import { ActivityFormComponent } from './activity-form/Activity-form.component';
 import { MemberFetchService } from './api-services/member-fetch.service';
 
+
+
+import{BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import{MatButtonModule, MatCheckboxModule,MatTableModule,MatDialogModule,}from "@angular/material";
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,10 +38,17 @@ import { MemberFetchService } from './api-services/member-fetch.service';
   ],
   imports: [
     BrowserModule,
+	BrowserAnimationsModule,
+	MatButtonModule,
+	MatCheckboxModule,
+	MatTableModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+	MatDialogModule
   ],
+  
+  
   providers: [MemberFetchService],
   bootstrap: [AppComponent]
 })

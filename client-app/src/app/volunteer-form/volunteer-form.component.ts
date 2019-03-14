@@ -1,7 +1,8 @@
-
 import { Component } from '@angular/core';
-
+import { Router } from '@angular/router';
 import { Info }    from '../Info';
+
+
 
 @Component({
   selector: 'app-Volunteer-form',
@@ -14,6 +15,8 @@ export class VolunteerFormComponent {
 
   onSubmit() { this.submitted = true; }
 
+  
   // TODO: Remove this when we're done
   // get diagnostic() { return JSON.stringify(this.model); }
 }
+

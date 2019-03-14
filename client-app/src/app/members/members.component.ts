@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { InfoFormComponent } from '.././info-form/Info-form.component';
 
 import { MemberFetchService } from '../api-services/member-fetch.service';
+
+
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 @Component({
   selector: 'app-members',
@@ -10,7 +14,7 @@ import { MemberFetchService } from '../api-services/member-fetch.service';
 })
 export class MembersComponent implements OnInit {
 
-  constructor(private memberService: MemberFetchService, private router:Router) { }
+  constructor(private memberService: MemberFetchService, private router:Router,public dialog: MatDialog) { }
 
   public members;
 
@@ -32,4 +36,17 @@ export class MembersComponent implements OnInit {
     });
   }
 
+  openDialog(): void {
+    const dialogRef = this.dialog.open(InfoFormComponent, {
+      
+      
+    });
+
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+  
+  
 }

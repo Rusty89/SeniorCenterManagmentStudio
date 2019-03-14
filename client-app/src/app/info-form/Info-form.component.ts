@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Member } from '../models/member';
 import { MemberFetchService } from '../api-services/member-fetch.service';
 
+
 @Component({
   selector: 'app-Info-form',
   templateUrl: './Info-form.component.html',
@@ -18,6 +19,7 @@ export class InfoFormComponent {
 
   ngOnInit() {
     this.member = new Member();
+
   }
 
   saveMember() {
