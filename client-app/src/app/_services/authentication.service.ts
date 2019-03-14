@@ -20,7 +20,46 @@ export class AuthenticationService {
         return this.currentUserSubject.value;
     }
 
-    login(username: string, password: string) {
+    login(username: string, password: string) 
+    {
+        return this.http.post<any>(`${environment.apiUrl}/single-user`, { username, password })
+            .pipe(map(user => {
+
+                //console.log("\n===> [ " + JSON.stringify(user) + " ] <===\n");
+                var tmp =  JSON.parse(JSON.stringify(user));
+                //console.log("\n===> [ " + tmp.ma_token + " ] <===\n");
+                //console.log("\n===> [ " + tmp.Id + " ] <===\n");
+
+                // login successful if there's a jwt token in the response
+                if (user && tmp.ma_token) 
+                {
+                    // store user details and jwt token in local storage to keep user logged in between page refreshes
+                    localStorage.setItem('currentUser', JSON.stringify(user));
+                    this.currentUserSubject.next(user);
+                }
+                return user;
+            }));
+
+            /*
+            search(term: string): Observable<SearchItem[]> {
+                let apiURL = `${this.apiRoot}?term=${term}&media=music&limit=20`;
+                return this.http.get(apiURL).pipe(
+                  map(res => {
+                    return res.results.map(item => {
+                      return new SearchItem(
+                        item.trackName,
+                        item.artistName,
+                        item.trackViewUrl,
+                        item.artworkUrl30,
+                        item.artistId
+                      );
+                    });
+                  })
+                );
+                */
+
+
+        /*
         return this.http.post<any>(`${environment.apiUrl}/users/authenticate`, { username, password })
             .pipe(map(user => {
                 // login successful if there's a jwt token in the response
@@ -32,6 +71,7 @@ export class AuthenticationService {
 
                 return user;
             }));
+        */
     }
 
     logout() {

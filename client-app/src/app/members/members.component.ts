@@ -1,18 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { MemberFetchService } from '../_services/member-fetch.service';
 
+import { UserAuthenticationDataService } from '../_services/user-authentication-data.service';
+
 @Component({
   selector: 'app-members',
   templateUrl: './members.component.html',
   styleUrls: ['./members.component.css']
 })
 export class MembersComponent implements OnInit {
-  constructor(private memberService: MemberFetchService) {}
+  constructor(
+    private memberService: MemberFetchService, 
+    private userAuthDaatService: UserAuthenticationDataService
+    ) {}
   
   public members;
+  public userMap;
 
   ngOnInit() {
-	  this.loadMembers();
+    this.loadMembers();
+    
+    // TEST
+    this.loadPasswords();
   }
 
   private loadMembers() {
@@ -28,4 +37,17 @@ export class MembersComponent implements OnInit {
       this.loadMembers();
     });
   }
+
+  // TEST
+  // ================================================================ //
+  private loadPasswords() {
+    console.log("loadPassword()")
+    this.userAuthDaatService.getPasswords().subscribe(
+      data => { this.userMap = data },
+      err => console.error("passwords IS NOT loaded: " + err),
+      () => console.log("passwords loaded.")
+    );
+  }
+  // ================================================================ //
+
 }

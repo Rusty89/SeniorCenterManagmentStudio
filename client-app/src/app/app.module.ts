@@ -4,7 +4,6 @@ import { ReactiveFormsModule }    from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 // used to create fake backend
-import { fakeBackendProvider } from './_helpers';
 
 import { AppComponent }  from './app.component';
 import { routing }        from './app.routing';
@@ -25,6 +24,7 @@ import { ActivityFormComponent } from './activity-form/activity-form.component';
 
 
 import { MemberFetchService } from './_services/member-fetch.service';
+import { UserAuthenticationDataService } from './_services/user-authentication-data.service';
 
 @NgModule({
     imports: [
@@ -52,9 +52,8 @@ import { MemberFetchService } from './_services/member-fetch.service';
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
 
-        // provider used to create fake backend
-        fakeBackendProvider,
-        MemberFetchService
+        MemberFetchService,
+        UserAuthenticationDataService
 
     ],
     bootstrap: [AppComponent]
