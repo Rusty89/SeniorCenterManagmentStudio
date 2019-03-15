@@ -17,8 +17,7 @@ export class ServicesComponent implements OnInit {
   
   openDialog(): void {
     const dialogRef = this.dialog.open(ActivityFormComponent, {
-       height: '400px',
-		width: '600px',
+     
     });
 
 
