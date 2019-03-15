@@ -6,6 +6,8 @@ import { User } from './_models';
 
 @Component({ selector: 'app', templateUrl: 'app.component.html' })
 export class AppComponent {
+    title = 'Senior Center Management Studio';
+
     currentUser: User;
 
     constructor(

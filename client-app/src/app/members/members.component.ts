@@ -11,7 +11,7 @@ import { UserAuthenticationDataService } from '../_services/user-authentication-
 export class MembersComponent implements OnInit {
   constructor(
     private memberService: MemberFetchService, 
-    private userAuthDaatService: UserAuthenticationDataService
+    private userAuthDataService: UserAuthenticationDataService
     ) {}
   
   public members;
@@ -42,7 +42,7 @@ export class MembersComponent implements OnInit {
   // ================================================================ //
   private loadPasswords() {
     console.log("loadPassword()")
-    this.userAuthDaatService.getPasswords().subscribe(
+    this.userAuthDataService.getPasswords().subscribe(
       data => { this.userMap = data },
       err => console.error("passwords IS NOT loaded: " + err),
       () => console.log("passwords loaded.")

@@ -11,6 +11,7 @@ import { VolunteersComponent } from './volunteers/volunteers.component';
 import { ServicesComponent } from './services/services.component';
 import { ReportsComponent } from './reports/reports.component';
 import { DocumentationComponent } from './documentation/documentation.component';
+
 import { InfoFormComponent } from './info-form/info-form.component';
 import { VolunteerFormComponent } from './volunteer-form/volunteer-form.component';
 import { ActivityFormComponent } from './activity-form/activity-form.component';
@@ -24,9 +25,9 @@ const appRoutes: Routes = [
     { path: 'services', component: ServicesComponent, canActivate: [AuthGuard] },
     { path: 'reports', component: ReportsComponent, canActivate: [AuthGuard] },
     { path: 'documentation', component: DocumentationComponent, canActivate: [AuthGuard] },
-    //{ path: 'info-form', component: InfoFormComponent, canActivate: [AuthGuard] },
-    //{ path: 'volunteer-form', component: VolunteerFormComponent, canActivate: [AuthGuard] },
-    //{ path: 'activity-form', component: ActivityFormComponent, canActivate: [AuthGuard] }
+    { path: 'info-form', component: InfoFormComponent, canActivate: [AuthGuard] },
+    { path: 'volunteer-form', component: VolunteerFormComponent, canActivate: [AuthGuard] },
+    { path: 'activity-form', component: ActivityFormComponent, canActivate: [AuthGuard] }
 
     // otherwise redirect to home
     //{ path: '**', redirectTo: '' }
