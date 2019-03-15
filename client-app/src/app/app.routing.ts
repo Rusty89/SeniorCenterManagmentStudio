@@ -12,9 +12,9 @@ import { ServicesComponent } from './services/services.component';
 import { ReportsComponent } from './reports/reports.component';
 import { DocumentationComponent } from './documentation/documentation.component';
 
-import { InfoFormComponent } from './info-form/info-form.component';
+import { InfoFormComponent } from './info-form/Info-form.component';
 import { VolunteerFormComponent } from './volunteer-form/volunteer-form.component';
-import { ActivityFormComponent } from './activity-form/activity-form.component';
+import { ActivityFormComponent } from './activity-form/Activity-form.component';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },

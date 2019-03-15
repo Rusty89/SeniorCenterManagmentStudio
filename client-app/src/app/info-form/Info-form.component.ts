@@ -5,8 +5,8 @@ import { MemberFetchService } from '../_services/member-fetch.service';
 
 @Component({
   selector: 'app-info-form',
-  templateUrl: './info-form.component.html',
-  styleUrls: ['./info-form.component.css']
+  templateUrl: './Info-form.component.html',
+  styleUrls: ['./Info-form.component.css']
 })
 export class InfoFormComponent implements OnInit  {
 
