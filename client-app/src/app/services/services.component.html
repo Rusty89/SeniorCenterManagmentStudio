@@ -1,8 +1,7 @@
 <h1 id="menuTitle">Services</h1>
 <div class="text-center">
 	<div class="btn-group btn-group-lg" role="group" aria-label="...">
-		<button type="button" class="btn btn-secondary btn-lg mr-1 ml-1" routerLink="/activity-form">Add an Activity</button>
-		<button type="button" class="btn btn-secondary btn-lg mr-1 ml-1">Update/Remove</button>
-		<button type="button" class="btn btn-secondary btn-lg mr-1 ml-1">Register a Member</button>
+		<button  mat-raised-button (click)="openDialog()" class="btn btn-success btn-lg mr-1 ml-1">Add an Activity</button>
+		<button type="button" class="btn btn-primary btn-lg mr-1 ml-1" data-toggle="modal" routerLink="/activity-form">Update/Remove</button>
 	</div>
 </div>

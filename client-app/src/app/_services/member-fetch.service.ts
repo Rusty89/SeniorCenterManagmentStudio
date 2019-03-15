@@ -4,7 +4,7 @@ import {Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import { Member } from '../_models/member';
 
-//Change the following URL with your own API Gateway URL.
+// api url for members
 const API_URL:string = 'https://jln3dnryx2.execute-api.us-east-1.amazonaws.com/Dev/member';
 
 @Injectable()
@@ -13,6 +13,7 @@ export class MemberFetchService {
   constructor(private http: HttpClient) {  }
 
 
+// return all members from the database
 getMembers()
   {
     return this.http.get(API_URL)
@@ -37,6 +38,7 @@ getMembers()
     });
   }
 
+  // remove member from the database
   deleteMember(memberEmail: string)
   {
     return this.http.delete(API_URL,
@@ -47,6 +49,7 @@ getMembers()
       });
   }
 
+  // post member to the database
   saveMember(member: Member)
   {
     let headers = new HttpHeaders({ 'Content-Type': 'application/json' });

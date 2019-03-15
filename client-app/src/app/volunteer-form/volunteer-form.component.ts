@@ -15,7 +15,6 @@ export class VolunteerFormComponent implements OnInit {
   onSubmit() { this.submitted = true; }
 
   ngOnInit() {
-    console.log("test")
   }
 
 }

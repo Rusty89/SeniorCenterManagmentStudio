@@ -27,10 +27,10 @@ const appRoutes: Routes = [
     { path: 'documentation', component: DocumentationComponent, canActivate: [AuthGuard] },
     { path: 'info-form', component: InfoFormComponent, canActivate: [AuthGuard] },
     { path: 'volunteer-form', component: VolunteerFormComponent, canActivate: [AuthGuard] },
-    { path: 'activity-form', component: ActivityFormComponent, canActivate: [AuthGuard] }
+    { path: 'activity-form', component: ActivityFormComponent, canActivate: [AuthGuard] },
 
     // otherwise redirect to home
-    //{ path: '**', redirectTo: '' }
+    { path: '**', redirectTo: '' }
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);

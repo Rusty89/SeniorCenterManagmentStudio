@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { MemberFetchService } from '../_services/member-fetch.service';
+import { Router } from '@angular/router';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
-import { UserAuthenticationDataService } from '../_services/user-authentication-data.service';
+import { InfoFormComponent } from '.././info-form/Info-form.component';
+
+import { MemberFetchService } from '../_services/member-fetch.service';
 
 @Component({
   selector: 'app-members',
@@ -9,19 +12,13 @@ import { UserAuthenticationDataService } from '../_services/user-authentication-
   styleUrls: ['./members.component.css']
 })
 export class MembersComponent implements OnInit {
-  constructor(
-    private memberService: MemberFetchService, 
-    private userAuthDataService: UserAuthenticationDataService
-    ) {}
+  constructor(private memberService: MemberFetchService, private router:Router, public dialog: MatDialog) { }
   
   public members;
   public userMap;
 
   ngOnInit() {
     this.loadMembers();
-    
-    // TEST
-    this.loadPasswords();
   }
 
   private loadMembers() {
@@ -38,16 +35,13 @@ export class MembersComponent implements OnInit {
     });
   }
 
-  // TEST
-  // ================================================================ //
-  private loadPasswords() {
-    console.log("loadPassword()")
-    this.userAuthDataService.getPasswords().subscribe(
-      data => { this.userMap = data },
-      err => console.error("passwords IS NOT loaded: " + err),
-      () => console.log("passwords loaded.")
-    );
+  // used for opening modal
+  openDialog(): void {
+    const dialogRef = this.dialog.open(InfoFormComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
-  // ================================================================ //
 
 }

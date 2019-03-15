@@ -1,11 +1,10 @@
 ﻿import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-
 import { ReactiveFormsModule }    from '@angular/forms';
 import { FormsModule } from '@angular/forms';
-
-// used to create fake backend
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MatButtonModule, MatCheckboxModule, MatTableModule, MatDialogModule } from "@angular/material";
 
 import { AppComponent }  from './app.component';
 import { routing }        from './app.routing';
@@ -24,7 +23,6 @@ import { DocumentationComponent } from './documentation/documentation.component'
 import { VolunteerFormComponent } from './volunteer-form/volunteer-form.component';
 import { InfoFormComponent } from './info-form/info-form.component';
 import { ActivityFormComponent } from './activity-form/activity-form.component';
-
 
 import { MemberFetchService } from './_services/member-fetch.service';
 import { UserAuthenticationDataService } from './_services/user-authentication-data.service';
@@ -47,9 +45,14 @@ import { UserAuthenticationDataService } from './_services/user-authentication-d
     ],
     imports: [
         BrowserModule,
+        BrowserAnimationsModule,
+        MatButtonModule,
+        MatCheckboxModule,
+        MatTableModule,
         ReactiveFormsModule,
         FormsModule,
         HttpClientModule,
+        MatDialogModule,
         routing
     ],
     providers: [
