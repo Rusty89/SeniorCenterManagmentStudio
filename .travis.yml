@@ -23,7 +23,6 @@ script:
 - npm link
 
 - ng build --prod --base-href https://github.com/Rusty89/SeniorCenterManagmentStudio/tree/develop/client-app
-- cd ../
 - npm install chromedriver
 - npm install selenium-side-runner
 - selenium-side-runner NavTest.side
