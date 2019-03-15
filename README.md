@@ -8,8 +8,12 @@ There are temporarily two forms of login for added sercurity. The first uses a u
 
 The second is a login/registration system written by us. Currently, anyone can register for an account and has admin access after login. All pages are locked down until logged in. Passwords are (temporarily) stored in plain text in a database, please do not use real username/password combinations used elsewhere. 
 
+
+### Refreshing Pages
+Refreshing pages currently breaks the site until you navigate back to home. This is an issue with angular routing and Amazon AWS, we will implement a fix in the next release. This is noted on the bug list. 
+
 ### Adding Members
-Once logged in, click on the members button, and then on Add. Fill in all of the information for the member being added, and then click submit. A member will be added to the database.
+Once logged in, click on the members button, and then on Add. Fill in all of the information for the member being added, and then click submit. A member will be added to the database. After adding a member, you must navigate to a different page and then back to see the member load. Refreshing is still not working right.
 
 ### Deleting Members
 Once logged in, click on the delete button in the member table to remove from the database
@@ -63,3 +67,4 @@ The angular build files are hosted in a AWS S3 bucket. This will load the angula
 * All form text is centered where it shouldn't be (3/14/2019)
 
 Email Brandon.may1026@gmail.com for any additional support needed
+
