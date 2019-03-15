@@ -15,6 +15,8 @@ before_script:
   
 script:
 - npm install
+- npm install @angular/platform-browser
+- npm install @angular/material
 - npm install rxjs-compat
 - npm link
 - npm install chromedriver
