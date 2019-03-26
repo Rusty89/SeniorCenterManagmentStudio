@@ -14,7 +14,7 @@ before_script:
 
   - cd client-app
   - ln --symbolic /usr/lib/chromium-browser/chromedriver "${HOME}/bin/chromedriver"
-  - chromium-chromedriver --headless --disable-gpu
+  - chrome --headless --disable-gpu
   - npm install -g @angular/cli
   - npm install -g @angular-devkit/build-angular
   - npm install -g @angular/compiler-cli
