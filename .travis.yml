@@ -22,7 +22,7 @@ script:
 - npm install chromedriver
 - npm install selenium-side-runner
 - ng build --prod --base-href https://github.com/Rusty89/SeniorCenterManagmentStudio/tree/develop/client-app
-- ng test --no-watch --code-coverage
+- ng test --no-watch --code-coverage --browsers=ChromeHeadless
 - selenium-side-runner NavTest.side
 - selenium-side-runner AddRemoveMemberTest.side
 - selenium-side-runner NavTestLocal.side
