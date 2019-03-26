@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
 
-
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 html, body {
 	height: 90%;
@@ -97,5 +97,11 @@ a:active {
   color: white;
   background-color: transparent;
   text-decoration: none;
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
 }
 

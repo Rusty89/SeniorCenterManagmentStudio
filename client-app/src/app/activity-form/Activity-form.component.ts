@@ -1,19 +1,26 @@
-
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { Activity } from '../_models/activity';
+import { ActivityFetchService } from '../_services/activity-fetch.service';
 
-import { Info }    from '../Info';
 
 @Component({
-  selector: 'app-Activity-form',
-  templateUrl: './Activity-form.component.html',
-  styleUrls: ['./Activity-form.component.css']
+  selector: 'app-activity-form',
+  templateUrl: './activity-form.component.html',
+  styleUrls: ['./activity-form.component.css']
 })
 export class ActivityFormComponent {
 
-  submitted = false;
+  constructor(private аctivityService: ActivityFetchService, private router: Router) { }
 
-  onSubmit() { this.submitted = true; }
+  activity: Activity;
 
-  // TODO: Remove this when we're done
-  // get diagnostic() { return JSON.stringify(this.model); }
+  ngOnInit() {
+    this.activity = new Activity();
+  }
+
+  saveActivity() {
+    this.аctivityService.saveActivity(this.activity).toPromise().then(() => {this.router.navigate['services']});
+  }
+
 }

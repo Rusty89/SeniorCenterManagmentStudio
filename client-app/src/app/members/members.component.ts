@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
-import { MemberFetchService } from '../api-services/member-fetch.service';
+import { InfoFormComponent } from '.././info-form/Info-form.component';
+
+import { MemberFetchService } from '../_services/member-fetch.service';
 
 @Component({
   selector: 'app-members',
@@ -9,13 +12,13 @@ import { MemberFetchService } from '../api-services/member-fetch.service';
   styleUrls: ['./members.component.css']
 })
 export class MembersComponent implements OnInit {
-
-  constructor(private memberService: MemberFetchService, private router:Router) { }
-
+  constructor(private memberService: MemberFetchService, private router:Router, public dialog: MatDialog) { }
+  
   public members;
+  public userMap;
 
   ngOnInit() {
-	  this.loadMembers();
+    this.loadMembers();
   }
 
   private loadMembers() {
@@ -29,6 +32,15 @@ export class MembersComponent implements OnInit {
   deleteMember(memberEmail: string) {
     this.memberService.deleteMember(memberEmail).subscribe(() => {
       this.loadMembers();
+    });
+  }
+
+  // used for opening modal
+  openDialog(): void {
+    const dialogRef = this.dialog.open(InfoFormComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
     });
   }
 

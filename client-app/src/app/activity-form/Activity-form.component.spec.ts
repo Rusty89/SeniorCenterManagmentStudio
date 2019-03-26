@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ActivityFormComponent } from './Activity-form.component';
+import { ActivityFormComponent } from './activity-form.component';
 
 describe('ActivityFormComponent', () => {
   let component: ActivityFormComponent;

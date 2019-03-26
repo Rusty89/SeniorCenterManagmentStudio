@@ -1,8 +1,38 @@
 <h1 id="menuTitle">Services</h1>
 <div class="text-center">
 	<div class="btn-group btn-group-lg" role="group" aria-label="...">
-		<button type="button" class="btn btn-secondary btn-lg mr-1 ml-1" routerLink="/activity-form">Add an Activity</button>
-		<button type="button" class="btn btn-secondary btn-lg mr-1 ml-1">Update/Remove</button>
-		<button type="button" class="btn btn-secondary btn-lg mr-1 ml-1">Register a Member</button>
+		<button  mat-raised-button (click)="openDialog()" class="btn btn-success btn-lg mr-1 ml-1">Add an Activity</button>
+		<button type="button" class="btn btn-primary btn-lg mr-1 ml-1" data-toggle="modal" routerLink="/activity-form">Update/Remove</button>
 	</div>
 </div>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Activity Name</th>
+        <th scope="col">Time</th>
+        <th scope="col">Days</th>
+        <th scope="col">City</th>
+        <th scope="col">state</th>
+		<th scope="col">Zip Code</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Email</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let activity of activities">
+			<td>{{activity.className}}</td>
+			<td>{{activity.time}}</td>
+			<td>{{activity.days}}</td>
+			<td>{{activity.city}}</td>
+			<td>{{activity.state}}</td>
+			<td>{{activity.zip}}</td>
+			<td>{{activity.phone}}</td>
+			<td>{{activity.email}}</td>
+            <td>
+                <button type="button" class="btn btn-success" (click)="deleteActivity(activity.email)">Delete</button>
+            </td>
+        </tr>      
+    </tbody>
+</table>
