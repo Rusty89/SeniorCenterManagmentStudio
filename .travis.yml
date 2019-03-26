@@ -3,8 +3,12 @@ node_js:
   - "9"
 dist: trusty
 sudo: required
-addons:
-  - chrome: stable
+addons:  
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
 before_script:
   - cd client-app
   - npm install -g @angular/cli
@@ -23,6 +27,6 @@ script:
 - npm install selenium-side-runner
 - ng build --prod --base-href https://github.com/Rusty89/SeniorCenterManagmentStudio/tree/develop/client-app
 - ng test --no-watch --code-coverage --browsers=ChromeHeadless
-- selenium-side-runner NavTest.side
-- selenium-side-runner AddRemoveMemberTest.side
-- selenium-side-runner NavTestLocal.side
+- selenium-side-runner --browsers=ChromeHeadless ../NavTest.side
+- selenium-side-runner --browsers=ChromeHeadless ../AddRemoveMemberTest.side
+- selenium-side-runner --browsers=ChromeHeadless ../NavTestLocal.side

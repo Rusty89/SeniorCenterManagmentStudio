@@ -26,6 +26,7 @@
     "angular-dom": "^0.2.1",
     "angular-modal-service": "^0.15.1",
     "bootstrap": "^3.3.7",
+    "chromedriver": "^2.46.0",
     "core-js": "^2.5.4",
     "jquery": "^3.3.1",
     "popper.js": "^1.14.7",
