@@ -37,8 +37,13 @@ export class MembersComponent implements OnInit {
 
   // used for opening modal
   openDialog(): void {
-    const dialogRef = this.dialog.open(InfoFormComponent);
-
+    const dialogRef = this.dialog.open(InfoFormComponent, {
+		  
+		  data: {
+			dataKey: "jimbo"
+		  }
+		});
+	
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });

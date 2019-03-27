@@ -3,7 +3,7 @@
 	<form>
 		<div class="form-group">
 			<label for="firstName">First Name</label>
-			<input type="text" class="form-control" id="firstName" aria-describedby="firstName" placeholder="John" 
+			<input type="text" class="form-control" id="firstName" aria-describedby="firstName" placeholder={{data.dataKey}}
 			[(ngModel)]="member.firstName" name="firstName">
 
 			<label for="lastName">Last Name</label>
