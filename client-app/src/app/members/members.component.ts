@@ -40,6 +40,8 @@ export class MembersComponent implements OnInit {
     const dialogRef = this.dialog.open(InfoFormComponent);
 
     dialogRef.afterClosed().subscribe(result => {
+      //this.router.navigate([MembersComponent]);
+      this.loadMembers();
       console.log('The dialog was closed');
     });
   }

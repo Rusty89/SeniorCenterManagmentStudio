@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { Activity } from '../_models/activity';
 import { ActivityFetchService } from '../_services/activity-fetch.service';
 
@@ -13,12 +14,10 @@ import { ServicesComponent } from '../services/services.component';
 })
 export class ActivityFormComponent {
 
-  constructor(private аctivityService: ActivityFetchService, private router: Router) { }
-
-  // ONLY FOR THE TEST PURPOSE
-  // ================================================================================== //
-  public tmp = ServicesComponent.getActivity();
-  // ================================================================================== //
+  constructor(
+    private аctivityService: ActivityFetchService, 
+    private router: Router,
+    @Inject(MAT_DIALOG_DATA) private data: any) { }
 
   activity: Activity;
 

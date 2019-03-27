@@ -20,11 +20,6 @@ export class ServicesComponent implements OnInit {
 
   public activities;
 
-  // ONLY FOR THE TEST PURPOSE
-  // ================================================================================== //
-  private static activityTmp;
-  // ================================================================================== //
-
   ngOnInit() {
     this.loadActivities();
   }
@@ -49,30 +44,30 @@ export class ServicesComponent implements OnInit {
     
     // --------------------------------------------------------------------- //
     this.loadActivities();
+    var tmp;
 
     // Loop via activities and find specific activity by email
     this.activities.forEach((activity) => {
       if (activity.email === activityEmail)
       {
-        ServicesComponent.activityTmp = activity;
+        tmp = activity;
         console.log("From activities: " + activity.email);
       }
     });
     // --------------------------------------------------------------------- //
     
-    const dialogRef = this.dialog.open(ActivityFormComponent);
+    //const dialogRef = this.dialog.open(ActivityFormComponent);
     
-    /*
+    
     const dialogRef = this.dialog.open(ActivityFormComponent, {
-      hasBackdrop: false,
       data: {
-        activity: this.activityTmp
+        activity: tmp
       }
     });
-    */
     
-
     dialogRef.afterClosed().subscribe(result => {
+      this.loadActivities();
+      
       console.log('Update dialog: ' + activityEmail);
     });
   }
@@ -82,11 +77,6 @@ export class ServicesComponent implements OnInit {
   {
 
   }
-
-  public static getActivity()
-  {
-    return ServicesComponent.activityTmp;
-  }
   // ================================================================================== //
 
   // opens modal
@@ -94,6 +84,8 @@ export class ServicesComponent implements OnInit {
     const dialogRef = this.dialog.open(ActivityFormComponent);
 
     dialogRef.afterClosed().subscribe(result => {
+      this.loadActivities();
+
       console.log('The dialog was closed');
     });
   }
