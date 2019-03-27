@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
@@ -13,12 +13,17 @@ import { ActivityFetchService } from '../_services/activity-fetch.service';
 })
 export class ServicesComponent implements OnInit {
 
-  constructor(private activityService: ActivityFetchService, private router:Router, public dialog: MatDialog) { }
+  constructor(
+    private activityService: ActivityFetchService, 
+    private router:Router, 
+    public dialog: MatDialog) { }
 
   public activities;
 
-  // TEST
-  public activityTmp;
+  // ONLY FOR THE TEST PURPOSE
+  // ================================================================================== //
+  private static activityTmp;
+  // ================================================================================== //
 
   ngOnInit() {
     this.loadActivities();
@@ -38,21 +43,34 @@ export class ServicesComponent implements OnInit {
     });
   }
 
-  // TEST
+  // ONLY FOR THE TEST PURPOSE
   // ================================================================================== //
   openUpdateDialog(activityEmail: string): void {
-    const dialogRef = this.dialog.open(ActivityFormComponent);
-
+    
+    // --------------------------------------------------------------------- //
     this.loadActivities();
 
     // Loop via activities and find specific activity by email
     this.activities.forEach((activity) => {
       if (activity.email === activityEmail)
       {
-        this.activityTmp = activity;
+        ServicesComponent.activityTmp = activity;
         console.log("From activities: " + activity.email);
       }
     });
+    // --------------------------------------------------------------------- //
+    
+    const dialogRef = this.dialog.open(ActivityFormComponent);
+    
+    /*
+    const dialogRef = this.dialog.open(ActivityFormComponent, {
+      hasBackdrop: false,
+      data: {
+        activity: this.activityTmp
+      }
+    });
+    */
+    
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('Update dialog: ' + activityEmail);
@@ -63,6 +81,11 @@ export class ServicesComponent implements OnInit {
   updateActivity(activityEmail: string)
   {
 
+  }
+
+  public static getActivity()
+  {
+    return ServicesComponent.activityTmp;
   }
   // ================================================================================== //
 

@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { Activity } from '../_models/activity';
 import { ActivityFetchService } from '../_services/activity-fetch.service';
 
+import { ServicesComponent } from '../services/services.component';
+
 
 @Component({
   selector: 'app-activity-form',
@@ -12,6 +14,11 @@ import { ActivityFetchService } from '../_services/activity-fetch.service';
 export class ActivityFormComponent {
 
   constructor(private аctivityService: ActivityFetchService, private router: Router) { }
+
+  // ONLY FOR THE TEST PURPOSE
+  // ================================================================================== //
+  public tmp = ServicesComponent.getActivity();
+  // ================================================================================== //
 
   activity: Activity;
 
