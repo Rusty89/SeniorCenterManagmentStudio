@@ -30,7 +30,4 @@ script:
 
 - npm install selenium-side-runner
 - ng build --prod --base-href https://github.com/Rusty89/SeniorCenterManagmentStudio/tree/develop/client-app
-- ng test --no-watch --code-coverage --browsers=ChromeHeadless
-- selenium-side-runner --browsers=ChromeHeadless ../NavTest.side
-- selenium-side-runner --browsers=ChromeHeadless ../AddRemoveMemberTest.side
-- selenium-side-runner --browsers=ChromeHeadless ../NavTestLocal.side
+- ng test --no-watch --code-coverage 

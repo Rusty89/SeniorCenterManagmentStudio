@@ -4,8 +4,8 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-activity-form',
-  templateUrl: './activity-form.component.html',
-  styleUrls: ['./activity-form.component.css']
+  templateUrl: './Activity-form.component.html',
+  styleUrls: ['./Activity-form.component.css']
 })
 export class ActivityFormComponent {
 
