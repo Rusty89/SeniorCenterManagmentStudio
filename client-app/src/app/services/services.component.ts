@@ -17,6 +17,9 @@ export class ServicesComponent implements OnInit {
 
   public activities;
 
+  // TEST
+  public activityTmp;
+
   ngOnInit() {
     this.loadActivities();
   }
@@ -34,6 +37,34 @@ export class ServicesComponent implements OnInit {
       this.loadActivities();
     });
   }
+
+  // TEST
+  // ================================================================================== //
+  openUpdateDialog(activityEmail: string): void {
+    const dialogRef = this.dialog.open(ActivityFormComponent);
+
+    this.loadActivities();
+
+    // Loop via activities and find specific activity by email
+    this.activities.forEach((activity) => {
+      if (activity.email === activityEmail)
+      {
+        this.activityTmp = activity;
+        console.log("From activities: " + activity.email);
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('Update dialog: ' + activityEmail);
+    });
+  }
+
+  // TEST
+  updateActivity(activityEmail: string)
+  {
+
+  }
+  // ================================================================================== //
 
   // opens modal
   openDialog(): void {
