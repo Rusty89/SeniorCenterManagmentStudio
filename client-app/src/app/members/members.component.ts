@@ -42,9 +42,12 @@ export class MembersComponent implements OnInit {
 		  data: {
 			dataKey: "jimbo"
 		  }
+		  
 		});
-	
+
     dialogRef.afterClosed().subscribe(result => {
+	  
+		
       console.log('The dialog was closed');
     });
   }

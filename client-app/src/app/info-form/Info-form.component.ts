@@ -16,7 +16,7 @@ export class InfoFormComponent implements OnInit  {
 
   member: Member;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private memberService: MemberFetchService,
+  constructor( private memberService: MemberFetchService,
     private router: Router) { }
 
 
