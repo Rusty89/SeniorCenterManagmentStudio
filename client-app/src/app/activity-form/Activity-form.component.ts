@@ -26,7 +26,22 @@ export class ActivityFormComponent {
   }
 
   saveActivity() {
-    this.аctivityService.saveActivity(this.activity).toPromise().then(() => {this.router.navigate['services']});
+    this.аctivityService.saveActivity(this.activity).toPromise().then(() => {
+      //this.router.navigate['services']
+      this.router.navigate([ServicesComponent]);
+    });
+  }
+
+  updateActivity(activityEmail: string)
+  {
+    // Delete activity by email
+    this.аctivityService.deleteActivity(this.data.activity.email);
+
+    // Add new activity
+    this.аctivityService.saveActivity(this.data.activity).toPromise().then(() => {
+      //this.router.navigate['services']
+      this.router.navigate([ServicesComponent]);
+    });
   }
 
 }

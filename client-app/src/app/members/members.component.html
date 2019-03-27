@@ -35,6 +35,7 @@
           <td>{{member.phone}}</td>
           <td>{{member.email}}</td>
           <td>
+              <button  mat-raised-button (click)="openUpdateDialog(member.email)" class="btn btn-success btn-lg mr-1 ml-1">Update</button>
               <button type="button" class="btn btn-danger" (click)="deleteMember(member.email)">Delete</button>
           </td>
       </tr>      

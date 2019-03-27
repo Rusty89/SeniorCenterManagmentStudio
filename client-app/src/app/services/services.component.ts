@@ -38,10 +38,11 @@ export class ServicesComponent implements OnInit {
     });
   }
 
-  // ONLY FOR THE TEST PURPOSE
+  // Send data into update dialog
   // ================================================================================== //
   openUpdateDialog(activityEmail: string): void {
     
+    // Get all activities and find one activity by email
     // --------------------------------------------------------------------- //
     this.loadActivities();
     var tmp;
@@ -51,14 +52,11 @@ export class ServicesComponent implements OnInit {
       if (activity.email === activityEmail)
       {
         tmp = activity;
-        console.log("From activities: " + activity.email);
       }
     });
     // --------------------------------------------------------------------- //
     
-    //const dialogRef = this.dialog.open(ActivityFormComponent);
-    
-    
+    // Open update dialog and sent data into update dialog
     const dialogRef = this.dialog.open(ActivityFormComponent, {
       data: {
         activity: tmp
@@ -68,14 +66,8 @@ export class ServicesComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       this.loadActivities();
       
-      console.log('Update dialog: ' + activityEmail);
+      console.log('Update dialog was closed');
     });
-  }
-
-  // TEST
-  updateActivity(activityEmail: string)
-  {
-
   }
   // ================================================================================== //
 
