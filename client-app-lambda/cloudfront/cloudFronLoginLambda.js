@@ -5,8 +5,8 @@
  * provide Basic HTTP Authentication for a static website hosted in an
  * Amazon S3 bucket through Couldfront.
  *
- * URL: https://d16i00kw0z90lc.cloudfront.net/
- * S3-Bucket: s3-bucket-scms
+ * URL: https://d32v9t9jekje0e.cloudfront.net/
+ * S3-Bucket: s3-testing-login
  */
  
 'use strict';
@@ -18,8 +18,8 @@ exports.handler = (event, context, callback) => {
     const headers = request.headers;
  
     // Configure authentication
-    const authUser = 'SCMS';
-    const authPass = 'ESOF031119';
+    const authUser = '*****';
+    const authPass = '**********';
  
     // Construct the Basic Auth string
     const authString = 'Basic ' + new Buffer(authUser + ':' + authPass).toString('base64');
