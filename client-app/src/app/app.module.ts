@@ -21,8 +21,8 @@ import { ReportsComponent } from './reports/reports.component';
 import { DocumentationComponent } from './documentation/documentation.component';
 
 import { VolunteerFormComponent } from './volunteer-form/volunteer-form.component';
-import { InfoFormComponent } from './info-form/Info-form.component';
-import { ActivityFormComponent } from './activity-form/Activity-form.component';
+import { InfoFormComponent } from './info-form/info-form.component';
+import { ActivityFormComponent } from './activity-form/activity-form.component';
 
 import { MemberFetchService } from './_services/member-fetch.service';
 import { UserAuthenticationDataService } from './_services/user-authentication-data.service';

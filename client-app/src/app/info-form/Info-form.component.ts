@@ -9,8 +9,8 @@ import { Inject } from '@angular/core';
 
 @Component({
   selector: 'app-info-form',
-  templateUrl: './Info-form.component.html',
-  styleUrls: ['./Info-form.component.css']
+  templateUrl: './info-form.component.html',
+  styleUrls: ['./info-form.component.css']
 })
 export class InfoFormComponent implements OnInit  {
 
