@@ -27,6 +27,7 @@ import { ActivityFormComponent } from './activity-form/Activity-form.component';
 import { MemberFetchService } from './_services/member-fetch.service';
 import { ActivityFetchService } from './_services/activity-fetch.service';
 import { UserAuthenticationDataService } from './_services/user-authentication-data.service';
+import { VolunteerFetchService } from './_services/volunteer-fetch.service';
 
 @NgModule({
     declarations: [
@@ -62,7 +63,8 @@ import { UserAuthenticationDataService } from './_services/user-authentication-d
 
         MemberFetchService,
         ActivityFetchService,
-        UserAuthenticationDataService
+        UserAuthenticationDataService,
+        VolunteerFetchService
 
     ],
     bootstrap: [AppComponent]
