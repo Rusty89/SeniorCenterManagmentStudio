@@ -17,7 +17,7 @@ import { ActivityFetchService } from '../_services/activity-fetch.service';
 export class ActivityFormComponent {
 
   constructor(
-    private аctivityService: ActivityFetchService, 
+    private activityService: ActivityFetchService, 
     private router: Router,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
@@ -29,7 +29,7 @@ export class ActivityFormComponent {
   }
 
   saveActivity() {
-    this.аctivityService.saveActivity(this.activity).toPromise().then(() => {
+    this.activityService.saveActivity(this.activity).toPromise().then(() => {
       //this.router.navigate['services']
       window.location.reload();
     });
@@ -38,10 +38,10 @@ export class ActivityFormComponent {
   updateActivity(activityEmail: string)
   {
     // Delete activity by email
-    this.аctivityService.deleteActivity(this.data.activity.email);
+    this.activityService.deleteActivity(this.data.activity.email);
 
     // Add new activity
-    this.аctivityService.saveActivity(this.data.activity).toPromise().then(() => {
+    this.activityService.saveActivity(this.data.activity).toPromise().then(() => {
       //this.router.navigate['services']
       window.location.reload();
     });
