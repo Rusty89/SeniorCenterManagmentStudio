@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
-import { InfoFormComponent } from '.././info-form/Info-form.component';
+import { InfoFormComponent } from '.././info-form/info-form.component';
 
 import { MemberFetchService } from '../_services/member-fetch.service';
 
