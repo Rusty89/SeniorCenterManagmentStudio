@@ -5,7 +5,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { Volunteer } from '../_models/volunteer';
 import { VolunteerFetchService } from '../_services/volunteer-fetch.service';
 
-import { VolunteersComponent } from '../volunteers/volunteers.component';
+
 
 
 @Component({
@@ -21,7 +21,7 @@ export class VolunteerFormComponent implements OnInit {
   constructor(
     private volunteerService: VolunteerFetchService,
     private router: Router,
-    @Inject(MAT_DIALOG_DATA) private data: any) { }
+    @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
     this.volunteer = new Volunteer();
@@ -31,7 +31,7 @@ export class VolunteerFormComponent implements OnInit {
   saveVolunteer() {
     this.volunteerService.saveVolunteer(this.volunteer).toPromise().then(() => {
       //this.router.navigate(['volunteers']);
-      this.router.navigate([VolunteersComponent]);
+      window.location.reload();
     });
   }
 
@@ -43,7 +43,7 @@ export class VolunteerFormComponent implements OnInit {
 
     // Add new activity
     this.volunteerService.saveVolunteer(this.data.volunteer).toPromise().then(() => {
-      this.router.navigate([VolunteersComponent]);
+      window.location.reload();
     });
   }
 

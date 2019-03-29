@@ -4,7 +4,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
-import { ActivityFormComponent } from '.././activity-form/Activity-form.component';
+import { ActivityFormComponent } from '.././activity-form/activity-form.component';
 
 
 import { ActivityFetchService } from '../_services/activity-fetch.service';
