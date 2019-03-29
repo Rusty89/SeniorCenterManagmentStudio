@@ -15,11 +15,10 @@ before_script:
   
 script:
 - npm install
+- npm install @angular/platform-browser
+- npm install @angular/material
 - npm install rxjs-compat
 - npm link
 - npm install chromedriver
 - npm install selenium-side-runner
 - ng build --prod --base-href https://github.com/Rusty89/SeniorCenterManagmentStudio/tree/develop/client-app
-- selenium-side-runner NavTest.side
-- selenium-side-runner AddRemoveMemberTest.side
-- selenium-side-runner NavTestLocal.side

@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
-import { MemberFetchService } from '../api-services/member-fetch.service';
+import { InfoFormComponent } from '.././info-form/info-form.component';
+import { DeleteConfirmComponent } from '.././delete-confirm/delete-confirm.component';
+
+import { MemberFetchService } from '../_services/member-fetch.service';
 
 @Component({
   selector: 'app-members',
@@ -10,12 +14,13 @@ import { MemberFetchService } from '../api-services/member-fetch.service';
 })
 export class MembersComponent implements OnInit {
 
-  constructor(private memberService: MemberFetchService, private router:Router) { }
-
+  constructor(private memberService: MemberFetchService, private router:Router, public dialog: MatDialog) { }
+  
   public members;
+  public userMap;
 
   ngOnInit() {
-	  this.loadMembers();
+    this.loadMembers();
   }
 
   private loadMembers() {
@@ -29,6 +34,64 @@ export class MembersComponent implements OnInit {
   deleteMember(memberEmail: string) {
     this.memberService.deleteMember(memberEmail).subscribe(() => {
       this.loadMembers();
+    });
+  }
+
+
+  // Send data into update dialog
+  // ================================================================================== //
+  openUpdateDialog(memberEmail: string): void {
+    
+    // Get all activities and find one activity by email
+    // --------------------------------------------------------------------- //
+    this.loadMembers();
+    var tmp;
+
+    // Loop via activities and find specific activity by email
+    this.members.forEach((member) => {
+      if (member.email === memberEmail)
+      {
+        tmp = member;
+      }
+    });
+    // --------------------------------------------------------------------- //
+    
+    // Open update dialog and sent data into update dialog
+    const dialogRef = this.dialog.open(InfoFormComponent, {
+      data: {
+        member: tmp
+      }
+    });
+    
+    dialogRef.afterClosed().subscribe(result => {
+      this.loadMembers();
+      
+      console.log('Update dialog was closed');
+    });
+  }
+  // ================================================================================== //
+
+
+  // used for opening modal
+  openDialog(): void {
+    const dialogRef = this.dialog.open(InfoFormComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+
+      this.loadMembers();
+
+      console.log('The dialog was closed');
+    });
+  }
+
+  openDeleteDialog(memberEmail: string): void {
+    const dialogRef = this.dialog.open(DeleteConfirmComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+
+      this.deleteMember(memberEmail);
+
+      console.log('The delete dialog was closed');
     });
   }
 

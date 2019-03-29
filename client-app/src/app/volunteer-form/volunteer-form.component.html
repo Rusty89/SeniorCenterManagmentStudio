@@ -1,60 +1,125 @@
 <div class="container">
-  <h1>Volunteer Information Form</h1>
-  <form>
-    <div class="form-group">
-      <label for="firstName">First Name</label>
-      <input type="text" class="form-control" id="firstName" aria-describedby="firstName" placeholder="John"
-              name="firstName">
-      <br />
-      <label for="lastName">Last Name</label>
-      <input type="text" class="form-control" id="lastName" aria-describedby="lastName" placeholder="Smith"
-              name="lastName">
-      <br />
 
-      <div class="row">
-        <div class="col-6">
-          <label for="address">Address</label>
-          <input type="textt" class="form-control" id="address" aria-describedby="address" placeholder="123 Main St."  name="address">
+
+  <!-- Test if tmp: volunteer is null or not  -->
+  <!-- This div will be displayed tmp is not null -->
+  <div *ngIf="data; else show">
+      <h1>Volunteer Information Form</h1>
+      <form>
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" class="form-control" id="firstName" aria-describedby="firstName" placeholder="John" 
+          [(ngModel)]="data.volunteer.firstName" name="firstName">
+    
+          <label for="lastName">Last Name</label>
+          <input type="text" class="form-control" id="lastName" aria-describedby="lastName" placeholder="Smith"
+          [(ngModel)]="data.volunteer.lastName" name="lastName">
+      
+          <div class="row">
+            <div class="col-6">
+              <label for="address">Address</label>
+              <input type="textt" class="form-control" id="address" aria-describedby="address" placeholder="123 Main St." [(ngModel)]="data.volunteer.address" name="address">
+            </div>
+            <div class="col-6">
+              <label for="apt">Apt #</label>
+              <input type="text" class="form-control" id="apt" aria-describedby="apt" placeholder="Suite #05"
+              [(ngModel)]="data.volunteer.apt" name="apt">
+            </div>
+          </div>
+    
+          <div class="row">
+            <div class="col-4">
+              <label for="city">City</label>
+              <input type="text" class="form-control" id="city" aria-describedby="city" placeholder="Belgrade" 
+              [(ngModel)]="data.volunteer.city" name="city">
+            </div>
+            <div class="col-4">
+              <label for="state">State</label>
+              <input type="text" class="form-control" id="state" aria-describedby="state" placeholder="MT" 
+              [(ngModel)]="data.volunteer.state" name="state">
+            </div>
+            <div class="col-4">
+              <label for="zip">Zip Code</label>
+              <input type="text" class="form-control" id="zip" aria-describedby="zip" placeholder="59714" 
+              [(ngModel)]="data.volunteer.zip" name="zip">
+            </div>
+          </div>
+    
+          <label for="date">Date of Birth</label>
+          <input type="date" class="form-control" id="month" aria-describedby="month" placeholder="January" 
+          [(ngModel)]="data.volunteer.month" name="month">
+    
+          <label for="phone">Phone</label>
+          <input type="text" class="form-control" id="phone" aria-describedby="phone" placeholder="406-777-0123" 
+          [(ngModel)]="data.volunteer.phone" name="phone">
+    
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="example@AOL.com" [(ngModel)]="data.volunteer.email" name="email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    
         </div>
-        <div class="col-6">
-          <label for="apt">Apt #</label>
-          <input type="text" class="form-control" id="apt" aria-describedby="apt" placeholder="Suite #05"
-                  name="apt">
-        </div>
-      </div>
-      <br />
-      <div class="row">
-        <div class="col-4">
-          <label for="city">City</label>
-          <input type="text" class="form-control" id="city" aria-describedby="city" placeholder="Belgrade"
-                  name="city">
-        </div>
-        <div class="col-4">
-          <label for="state">State</label>
-          <input type="text" class="form-control" id="state" aria-describedby="state" placeholder="MT"
-                  name="state">
-        </div>
-        <div class="col-4">
-          <label for="zip">Zip Code</label>
-          <input type="text" class="form-control" id="zip" aria-describedby="zip" placeholder="59714"
-                  name="zip">
-        </div>
-      </div>
-      <br />
-      <label for="date">Date of Birth</label>
-      <input type="date" class="form-control" id="month" aria-describedby="month" placeholder="January"
-              name="month">
-      <br />
-      <label for="phone">Phone</label>
-      <input type="text" class="form-control" id="phone" aria-describedby="phone" placeholder="406-777-0123"
-              name="phone">
-      <br />
-      <label for="email">Email address</label>
-      <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="example@AOL.com"  name="email">
-      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-      <br />
-      <button type="submit" class="btn btn-success" >Submit</button>
-    </div>
-  </form>
+        <button type="submit" class="btn btn-success" (click)="updateVolunteer(data.volunteer.email)" mat-dialog-close>Submit</button>
+      </form>
+  </div>
+
+  <ng-template #show>
+      <h1>Volunteer Information Form</h1>
+      <form>
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" id="firstName" aria-describedby="firstName" placeholder="John" 
+            [(ngModel)]="volunteer.firstName" name="firstName">
+      
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control" id="lastName" aria-describedby="lastName" placeholder="Smith"
+            [(ngModel)]="volunteer.lastName" name="lastName">
+        
+            <div class="row">
+              <div class="col-6">
+                <label for="address">Address</label>
+                <input type="textt" class="form-control" id="address" aria-describedby="address" placeholder="123 Main St." [(ngModel)]="volunteer.address" name="address">
+              </div>
+              <div class="col-6">
+                <label for="apt">Apt #</label>
+                <input type="text" class="form-control" id="apt" aria-describedby="apt" placeholder="Suite #05"
+                [(ngModel)]="volunteer.apt" name="apt">
+              </div>
+            </div>
+      
+            <div class="row">
+              <div class="col-4">
+                <label for="city">City</label>
+                <input type="text" class="form-control" id="city" aria-describedby="city" placeholder="Belgrade" 
+                [(ngModel)]="volunteer.city" name="city">
+              </div>
+              <div class="col-4">
+                <label for="state">State</label>
+                <input type="text" class="form-control" id="state" aria-describedby="state" placeholder="MT" 
+                [(ngModel)]="volunteer.state" name="state">
+              </div>
+              <div class="col-4">
+                <label for="zip">Zip Code</label>
+                <input type="text" class="form-control" id="zip" aria-describedby="zip" placeholder="59714" 
+                [(ngModel)]="volunteer.zip" name="zip">
+              </div>
+            </div>
+      
+            <label for="date">Date of Birth</label>
+            <input type="date" class="form-control" id="month" aria-describedby="month" placeholder="January" 
+            [(ngModel)]="volunteer.month" name="month">
+      
+            <label for="phone">Phone</label>
+            <input type="text" class="form-control" id="phone" aria-describedby="phone" placeholder="406-777-0123" 
+            [(ngModel)]="volunteer.phone" name="phone">
+      
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="example@AOL.com" [(ngModel)]="volunteer.email" name="email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      
+          </div>
+          <button type="submit" class="btn btn-success" (click)="saveVolunteer()" mat-dialog-close>Submit</button>
+        </form>
+  </ng-template>
+
+
 </div>
-

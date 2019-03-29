@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "client-app": {
+    "angular-registration-login-example": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/client-app",
+            "outputPath": "dist/angular-registration-login-example",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -25,8 +25,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
-            "es5BrowserSupport": true
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -58,18 +57,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "client-app:build"
+            "browserTarget": "angular-registration-login-example:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "client-app:build:production"
+              "browserTarget": "angular-registration-login-example:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "client-app:build"
+            "browserTarget": "angular-registration-login-example:build"
           }
         },
         "test": {
@@ -103,7 +102,7 @@
         }
       }
     },
-    "client-app-e2e": {
+    "angular-registration-login-example-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -112,11 +111,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "client-app:serve"
+            "devServerTarget": "angular-registration-login-example:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "client-app:serve:production"
+              "devServerTarget": "angular-registration-login-example:serve:production"
             }
           }
         },
@@ -132,5 +131,5 @@
       }
     }
   },
-  "defaultProject": "client-app"
+  "defaultProject": "angular-registration-login-example"
 }
