@@ -12,19 +12,19 @@ import { ServicesComponent } from './services/services.component';
 import { ReportsComponent } from './reports/reports.component';
 import { DocumentationComponent } from './documentation/documentation.component';
 
-import { InfoFormComponent } from './info-form/Info-form.component';
+import { InfoFormComponent } from './info-form/info-form.component';
 import { VolunteerFormComponent } from './volunteer-form/volunteer-form.component';
-import { ActivityFormComponent } from './activity-form/Activity-form.component';
+import { ActivityFormComponent } from './activity-form/activity-form.component';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },
     { path: 'login', component: LoginComponent },
-    { path: 'register', component: RegisterComponent },
+    { path: 'register', component: RegisterComponent, canActivate: [AuthGuard] },
     { path: 'members', component: MembersComponent, canActivate: [AuthGuard] },
     { path: 'volunteers', component: VolunteersComponent, canActivate: [AuthGuard] },
     { path: 'services', component: ServicesComponent, canActivate: [AuthGuard] },
     { path: 'reports', component: ReportsComponent, canActivate: [AuthGuard] },
-    { path: 'documentation', component: DocumentationComponent, canActivate: [AuthGuard] },
+    { path: 'documentation', component: DocumentationComponent },
     { path: 'info-form', component: InfoFormComponent, canActivate: [AuthGuard] },
     { path: 'volunteer-form', component: VolunteerFormComponent, canActivate: [AuthGuard] },
     { path: 'activity-form', component: ActivityFormComponent, canActivate: [AuthGuard] },

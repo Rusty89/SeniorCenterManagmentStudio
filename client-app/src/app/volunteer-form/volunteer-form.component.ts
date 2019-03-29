@@ -1,5 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+
+import { Component, OnInit, Inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { Volunteer } from '../_models/volunteer';
+import { VolunteerFetchService } from '../_services/volunteer-fetch.service';
+
+
+
 
 @Component({
   selector: 'app-volunteer-form',
@@ -8,13 +15,36 @@ import { Router } from '@angular/router';
 })
 export class VolunteerFormComponent implements OnInit {
 
-  constructor() { }
 
-  submitted = false;
+  volunteer: Volunteer;
 
-  onSubmit() { this.submitted = true; }
+  constructor(
+    private volunteerService: VolunteerFetchService,
+    private router: Router,
+    @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
+    this.volunteer = new Volunteer();
+  }
+
+
+  saveVolunteer() {
+    this.volunteerService.saveVolunteer(this.volunteer).toPromise().then(() => {
+      //this.router.navigate(['volunteers']);
+      window.location.reload();
+    });
+  }
+
+  updateVolunteer(volunteerEmail: string)
+  {
+    // Delete activity by email
+    this.volunteerService.deleteVolunteer(this.data.volunteer.email);
+
+
+    // Add new activity
+    this.volunteerService.saveVolunteer(this.data.volunteer).toPromise().then(() => {
+      window.location.reload();
+    });
   }
 
 }

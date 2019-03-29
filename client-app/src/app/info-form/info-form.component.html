@@ -1,0 +1,129 @@
+<div class="container">
+
+
+  <!-- Test if tmp: activity is null or not  -->
+  <!-- This div will be displayed tmp is not null -->
+  <div *ngIf="data; else show">
+		<h1>Member Information Form</h1>
+		<form>
+			<div class="form-group">
+				<label for="firstName">First Name</label>
+				<input type="text" class="form-control" id="firstName" aria-describedby="firstName" placeholder="John" 
+				[(ngModel)]="data.member.firstName" name="firstName">
+	
+				<label for="lastName">Last Name</label>
+				<input type="text" class="form-control" id="lastName" aria-describedby="lastName" placeholder="Smith"
+				[(ngModel)]="data.member.lastName" name="lastName">
+		
+				<div class="row">
+					<div class="col-6">
+						<label for="address">Address</label>
+						<input type="textt" class="form-control" id="address" aria-describedby="address" placeholder="123 Main St." [(ngModel)]="data.member.address" name="address">
+					</div>
+					<div class="col-6">
+						<label for="apt">Apt #</label>
+						<input type="text" class="form-control" id="apt" aria-describedby="apt" placeholder="Suite #05"
+						[(ngModel)]="data.member.apt" name="apt">
+					</div>
+
+				</div>
+	
+				<div class="row">
+					<div class="col-4">
+						<label for="city">City</label>
+						<input type="text" class="form-control" id="city" aria-describedby="city" placeholder="Belgrade" 
+						[(ngModel)]="data.member.city" name="city">
+					</div>
+					<div class="col-4">
+						<label for="state">State</label>
+						<input type="text" class="form-control" id="state" aria-describedby="state" placeholder="MT" 
+						[(ngModel)]="data.member.state" name="state">
+					</div>
+					<div class="col-4">
+						<label for="zip">Zip Code</label>
+						<input type="text" class="form-control" id="zip" aria-describedby="zip" placeholder="59714" 
+						[(ngModel)]="data.member.zip" name="zip">
+					</div>
+				</div>
+	
+				<label for="date">Date of Birth</label>
+				<input type="date" class="form-control" id="month" aria-describedby="month" placeholder="January" 
+				[(ngModel)]="data.member.month" name="month">
+	
+				<label for="phone">Phone</label>
+				<input type="text" class="form-control" id="phone" aria-describedby="phone" placeholder="406-777-0123" 
+				[(ngModel)]="data.member.phone" name="phone">
+	
+				<label for="email">Email address</label>
+				<input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="example@AOL.com" [(ngModel)]="data.member.email" name="email">
+				<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+	
+			</div>
+
+			<button type="submit" class="btn btn-success" (click)="updateMember(data.member.email)" mat-dialog-close>Submit</button>
+		</form>
+  </div>
+
+  <ng-template #show>
+		<h1>Member Information Form</h1>
+		<form>
+			<div class="form-group">
+				<label for="firstName">First Name</label>
+				<input type="text" class="form-control" id="firstName" aria-describedby="firstName" placeholder="John" 
+				[(ngModel)]="member.firstName" name="firstName">
+	
+				<label for="lastName">Last Name</label>
+				<input type="text" class="form-control" id="lastName" aria-describedby="lastName" placeholder="Smith"
+				[(ngModel)]="member.lastName" name="lastName">
+		
+				<div class="row">
+					<div class="col-6">
+						<label for="address">Address</label>
+						<input type="textt" class="form-control" id="address" aria-describedby="address" placeholder="123 Main St." [(ngModel)]="member.address" name="address">
+					</div>
+					<div class="col-6">
+						<label for="apt">Apt #</label>
+						<input type="text" class="form-control" id="apt" aria-describedby="apt" placeholder="Suite #05"
+						[(ngModel)]="member.apt" name="apt">
+					</div>
+
+				</div>
+	
+				<div class="row">
+					<div class="col-4">
+						<label for="city">City</label>
+						<input type="text" class="form-control" id="city" aria-describedby="city" placeholder="Belgrade" 
+						[(ngModel)]="member.city" name="city">
+					</div>
+					<div class="col-4">
+						<label for="state">State</label>
+						<input type="text" class="form-control" id="state" aria-describedby="state" placeholder="MT" 
+						[(ngModel)]="member.state" name="state">
+					</div>
+					<div class="col-4">
+						<label for="zip">Zip Code</label>
+						<input type="text" class="form-control" id="zip" aria-describedby="zip" placeholder="59714" 
+						[(ngModel)]="member.zip" name="zip">
+					</div>
+				</div>
+	
+				<label for="date">Date of Birth</label>
+				<input type="date" class="form-control" id="month" aria-describedby="month" placeholder="January" 
+				[(ngModel)]="member.month" name="month">
+	
+				<label for="phone">Phone</label>
+				<input type="text" class="form-control" id="phone" aria-describedby="phone" placeholder="406-777-0123" 
+				[(ngModel)]="member.phone" name="phone">
+	
+				<label for="email">Email address</label>
+				<input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="example@AOL.com" [(ngModel)]="member.email" name="email">
+				<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+	
+			</div>
+
+			<button type="submit" class="btn btn-success" (click)="saveMember()" mat-dialog-close>Submit</button>
+		</form>
+  </ng-template>
+
+
+</div>

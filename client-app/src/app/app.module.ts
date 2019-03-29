@@ -21,11 +21,16 @@ import { ReportsComponent } from './reports/reports.component';
 import { DocumentationComponent } from './documentation/documentation.component';
 
 import { VolunteerFormComponent } from './volunteer-form/volunteer-form.component';
-import { InfoFormComponent } from './info-form/Info-form.component';
-import { ActivityFormComponent } from './activity-form/Activity-form.component';
+import { InfoFormComponent } from './info-form/info-form.component';
+import { ActivityFormComponent } from './activity-form/activity-form.component';
 
 import { MemberFetchService } from './_services/member-fetch.service';
+
+import { ActivityFetchService } from './_services/activity-fetch.service';
 import { UserAuthenticationDataService } from './_services/user-authentication-data.service';
+import { VolunteerFetchService } from './_services/volunteer-fetch.service';;
+import { DeleteConfirmComponent } from './delete-confirm/delete-confirm.component'
+
 
 @NgModule({
     declarations: [
@@ -41,7 +46,8 @@ import { UserAuthenticationDataService } from './_services/user-authentication-d
         DocumentationComponent,
         InfoFormComponent,
         VolunteerFormComponent,
-        ActivityFormComponent
+        ActivityFormComponent,
+        DeleteConfirmComponent
     ],
     imports: [
         BrowserModule,
@@ -60,7 +66,11 @@ import { UserAuthenticationDataService } from './_services/user-authentication-d
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
 
         MemberFetchService,
-        UserAuthenticationDataService
+
+        ActivityFetchService,
+        UserAuthenticationDataService,
+        VolunteerFetchService
+
 
     ],
     bootstrap: [AppComponent]

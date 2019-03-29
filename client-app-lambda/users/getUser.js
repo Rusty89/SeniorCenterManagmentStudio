@@ -36,4 +36,13 @@ exports.handler = (event, context, callback) => {
             }
         }
     });
+
 };
+
+
+/*
+{
+    "username": "USERNAME2"
+}
+*/
+
