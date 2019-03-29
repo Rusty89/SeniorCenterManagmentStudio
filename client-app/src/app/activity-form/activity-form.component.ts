@@ -43,7 +43,7 @@ export class ActivityFormComponent {
   {
     // Delete activity by email
 
-    this.аctivityService.deleteActivity(this.data.activity.email);
+    this.activityService.deleteActivity(this.data.activity.email);
 
     // Add new activity
     this.activityService.saveActivity(this.data.activity).toPromise().then(() => {
