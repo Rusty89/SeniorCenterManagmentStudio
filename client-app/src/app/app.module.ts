@@ -28,7 +28,8 @@ import { MemberFetchService } from './_services/member-fetch.service';
 
 import { ActivityFetchService } from './_services/activity-fetch.service';
 import { UserAuthenticationDataService } from './_services/user-authentication-data.service';
-import { VolunteerFetchService } from './_services/volunteer-fetch.service';
+import { VolunteerFetchService } from './_services/volunteer-fetch.service';;
+import { DeleteConfirmComponent } from './delete-confirm/delete-confirm.component'
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { VolunteerFetchService } from './_services/volunteer-fetch.service';
         DocumentationComponent,
         InfoFormComponent,
         VolunteerFormComponent,
-        ActivityFormComponent
+        ActivityFormComponent,
+        DeleteConfirmComponent
     ],
     imports: [
         BrowserModule,

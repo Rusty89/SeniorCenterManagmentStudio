@@ -1,30 +1,44 @@
-# Senior Center Managment Studio
+# Senior Center Management Studio
+The app lives on the url: https://d32v9t9jekje0e.cloudfront.net/
 
 # USER DOCUMENTATION
 User Documentation is written for admin users. The site is supported for both desktop use and mobile use.
 
 ### Logging In
-There are temporarily two forms of login for added sercurity. The first uses a username/password handled by Amazon before any site pages can be accessed. To request access, please email Brandon (see below).
-
-The second is a login/registration system written by us. Currently, anyone can register for an account and has admin access after login. All pages are locked down until logged in. Passwords are (temporarily) stored in plain text in a database, please do not use real username/password combinations used elsewhere. 
-
-
-### Refreshing Pages
-Refreshing pages currently breaks the site until you navigate back to home. This is an issue with angular routing and Amazon AWS, we will implement a fix in the next release. This is noted on the bug list. 
+Every page of the site besides login and documentation is locked behind a secure login. Request a username/password from Brandon.may1026@gmail.com. Admins can create other admin accounts once logged in.
 
 ### Adding Members
 Once logged in, click on the members button, and then on Add. Fill in all of the information for the member being added, and then click submit. A member will be added to the database. After adding a member, you must navigate to a different page and then back to see the member load. Refreshing is still not working right.
 
+### Updating Members
+From the members page, simply click the update button in the row of the member you'd like to add. This will populate a modal with the current member information that you can change however you'd like.
+
 ### Deleting Members
 Once logged in, click on the delete button in the member table to remove from the database
 
+### Adding Volunteers
+Works just like adding members.
+
+### Updating Volunteers
+Works just like updating members.
+
+### Deleting Volunteers
+Works just like deleting members.
+
 ### Adding Activities
+Works just like adding members.
+
+### Updating Activities
+Works just like updating members.
 
 ### Deleting Activities
+Works just like deleting members.
 
 ### Print Reports
+This feature is not yet supported.
 
 ### Export Reports
+This feature is not yet supported.
 
 # DEVELOPER DOCUMENTATION
 - Github Repository: https://github.com/Rusty89/SeniorCenterManagmentStudio
@@ -54,17 +68,21 @@ The angular build files are hosted in a AWS S3 bucket. This will load the angula
 * Automated Testing 
 - Travis CI
 
-## Bugs
-* Refreshing while it is hosted on S3 currently does not work (2/24/19)
+## Known Bugs
+* ~~Refreshing while it is hosted on S3 currently does not work (2/24/19)~~
 * Mobile needs optimized (2/24/19)
 * ~~Adding a member opens a new page instead of a pop-up modal (3/1/2019)~~
 * DB key is on a month (3/1/2019)
 * ~~ngModel breaks app when wrapped with login functionality (3/13/2019)~~
 * If a bad username or password are supplied at login, no error message is given (3/14/2019)
-* Modals don't die on a page switch or reload (3/14/2019)
-* Modals keep generating by repeat button presses instead of toggline on/off (3/14/2019)
-* Member/Services modals don't render under the scope of login functionality (3/14/2019)
-* All form text is centered where it shouldn't be (3/14/2019)
+* ~~Modals don't die on a page switch or reload (3/14/2019)~~
+* ~~Modals keep generating by repeat button presses instead of toggline on/off (3/14/2019)~~
+* ~~Member/Services modals don't render under the scope of login functionality (3/14/2019)~~
+* ~~All form text is centered where it shouldn't be (3/14/2019)~~
+* Some forms don't fit well in modals (3/29/2019)
+* Activities form has extra fields not used/relevant to activities
+* No Reports features are implemented, the reports buttons do nothing
+* 
 
 Email Brandon.may1026@gmail.com for any additional support needed
 
