@@ -38,11 +38,16 @@ export class LoginComponent implements OnInit {
     // convenience getter for easy access to form fields
     get f() { return this.loginForm.controls; }
 
+    refresh(): void {
+        window.location.reload();
+    }
+
     onSubmit() {
         this.submitted = true;
 
         // stop here if form is invalid
         if (this.loginForm.invalid) {
+           // this.refresh();
             return;
         }
 
@@ -56,6 +61,8 @@ export class LoginComponent implements OnInit {
                 error => {
                     this.alertService.error(error);
                     this.loading = false;
+                    
+
                 });
     }
 }
