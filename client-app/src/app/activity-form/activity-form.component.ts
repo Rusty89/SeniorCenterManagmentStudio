@@ -5,7 +5,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { Activity } from '../_models/activity';
 import { ActivityFetchService } from '../_services/activity-fetch.service';
 
-import { ServicesComponent } from '../services/services.component';
+
 
 
 
@@ -31,7 +31,7 @@ export class ActivityFormComponent {
   saveActivity() {
     this.аctivityService.saveActivity(this.activity).toPromise().then(() => {
       //this.router.navigate['services']
-      this.router.navigate([ServicesComponent]);
+      window.location.reload();
     });
   }
 
@@ -43,7 +43,7 @@ export class ActivityFormComponent {
     // Add new activity
     this.аctivityService.saveActivity(this.data.activity).toPromise().then(() => {
       //this.router.navigate['services']
-      this.router.navigate([ServicesComponent]);
+      window.location.reload();
     });
   }
 
