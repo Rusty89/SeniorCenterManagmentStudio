@@ -18,7 +18,7 @@ export class ActivityFormComponent {
 
   constructor(
 
-    private аctivityService: ActivityFetchService, 
+    private activityService: ActivityFetchService, 
     private router: Router,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
