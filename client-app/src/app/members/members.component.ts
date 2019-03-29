@@ -16,6 +16,7 @@ export class MembersComponent implements OnInit {
   constructor(private memberService: MemberFetchService, private router:Router, public dialog: MatDialog) { }
   
   public members;
+  public userMap;
 
   ngOnInit() {
     this.loadMembers();
@@ -34,6 +35,7 @@ export class MembersComponent implements OnInit {
       this.loadMembers();
     });
   }
+
 
   // Send data into update dialog
   // ================================================================================== //
@@ -68,13 +70,16 @@ export class MembersComponent implements OnInit {
   }
   // ================================================================================== //
 
+
   // used for opening modal
   openDialog(): void {
     const dialogRef = this.dialog.open(InfoFormComponent);
 
     dialogRef.afterClosed().subscribe(result => {
+
       //this.router.navigate([MembersComponent]);
       this.loadMembers();
+
       console.log('The dialog was closed');
     });
   }

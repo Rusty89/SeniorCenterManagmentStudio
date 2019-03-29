@@ -1,3 +1,4 @@
+
 import { Component, OnInit, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
@@ -6,12 +7,14 @@ import { VolunteerFetchService } from '../_services/volunteer-fetch.service';
 
 import { VolunteersComponent } from '../volunteers/volunteers.component';
 
+
 @Component({
   selector: 'app-volunteer-form',
   templateUrl: './volunteer-form.component.html',
   styleUrls: ['./volunteer-form.component.css']
 })
 export class VolunteerFormComponent implements OnInit {
+
 
   volunteer: Volunteer;
 
@@ -23,6 +26,7 @@ export class VolunteerFormComponent implements OnInit {
   ngOnInit() {
     this.volunteer = new Volunteer();
   }
+
 
   saveVolunteer() {
     this.volunteerService.saveVolunteer(this.volunteer).toPromise().then(() => {
@@ -36,9 +40,11 @@ export class VolunteerFormComponent implements OnInit {
     // Delete activity by email
     this.volunteerService.deleteVolunteer(this.data.volunteer.email);
 
+
     // Add new activity
     this.volunteerService.saveVolunteer(this.data.volunteer).toPromise().then(() => {
       this.router.navigate([VolunteersComponent]);
     });
   }
+
 }

@@ -20,6 +20,7 @@ exports.handler = (event, context, callback) => {
      "message":"[member authentication] information saved successfully."
     });
   });
+
 };
 
 
@@ -38,3 +39,4 @@ exports.handler = (event, context, callback) => {
     "email": "example@AOL.com"
 }
 */
+

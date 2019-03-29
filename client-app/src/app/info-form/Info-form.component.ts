@@ -1,3 +1,4 @@
+
 import { Component, OnInit, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
@@ -5,6 +6,7 @@ import { Member } from '../_models/member';
 import { MemberFetchService } from '../_services/member-fetch.service';
 
 import { MembersComponent } from '../members/members.component';
+
 
 @Component({
   selector: 'app-info-form',
@@ -31,6 +33,7 @@ export class InfoFormComponent implements OnInit  {
     });
   }
 
+
   updateMember(memberEmail: string)
   {
     // Delete activity by email
@@ -41,4 +44,5 @@ export class InfoFormComponent implements OnInit  {
       this.router.navigate([MembersComponent]);
     });
   }
+
 }

@@ -1,3 +1,4 @@
+
 import { Component, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
@@ -5,6 +6,7 @@ import { Activity } from '../_models/activity';
 import { ActivityFetchService } from '../_services/activity-fetch.service';
 
 import { ServicesComponent } from '../services/services.component';
+
 
 
 @Component({
@@ -18,6 +20,7 @@ export class ActivityFormComponent {
     private аctivityService: ActivityFetchService, 
     private router: Router,
     @Inject(MAT_DIALOG_DATA) private data: any) { }
+
 
   activity: Activity;
 
@@ -43,5 +46,6 @@ export class ActivityFormComponent {
       this.router.navigate([ServicesComponent]);
     });
   }
+
 
 }

@@ -1,10 +1,14 @@
+
 import { Component, OnInit, Inject } from '@angular/core';
+
 import { Router } from '@angular/router';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 import { ActivityFormComponent } from '.././activity-form/Activity-form.component';
 
+
 import { ActivityFetchService } from '../_services/activity-fetch.service';
+
 
 @Component({
   selector: 'app-services',
@@ -13,12 +17,14 @@ import { ActivityFetchService } from '../_services/activity-fetch.service';
 })
 export class ServicesComponent implements OnInit {
 
+
   constructor(
     private activityService: ActivityFetchService, 
     private router:Router, 
     public dialog: MatDialog) { }
 
   public activities;
+
 
   ngOnInit() {
     this.loadActivities();

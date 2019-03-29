@@ -1,5 +1,6 @@
 <div class="container">
 
+
   <!-- Test if tmp: activity is null or not  -->
   <!-- This div will be displayed tmp is not null -->
   <div *ngIf="data; else show">
@@ -24,6 +25,7 @@
 						<input type="text" class="form-control" id="apt" aria-describedby="apt" placeholder="Suite #05"
 						[(ngModel)]="data.member.apt" name="apt">
 					</div>
+
 				</div>
 	
 				<div class="row">
@@ -57,6 +59,7 @@
 				<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 	
 			</div>
+
 			<button type="submit" class="btn btn-success" (click)="updateMember(data.member.email)" mat-dialog-close>Submit</button>
 		</form>
   </div>
@@ -83,6 +86,7 @@
 						<input type="text" class="form-control" id="apt" aria-describedby="apt" placeholder="Suite #05"
 						[(ngModel)]="member.apt" name="apt">
 					</div>
+
 				</div>
 	
 				<div class="row">
@@ -116,8 +120,10 @@
 				<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 	
 			</div>
+
 			<button type="submit" class="btn btn-success" (click)="saveMember()" mat-dialog-close>Submit</button>
 		</form>
   </ng-template>
+
 
 </div>

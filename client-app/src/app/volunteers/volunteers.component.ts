@@ -4,7 +4,9 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 import { VolunteerFormComponent } from '.././volunteer-form/volunteer-form.component';
 
+
 import { VolunteerFetchService } from '../_services/volunteer-fetch.service';
+
 
 
 @Component({
@@ -13,6 +15,7 @@ import { VolunteerFetchService } from '../_services/volunteer-fetch.service';
   styleUrls: ['./volunteers.component.css']
 })
 export class VolunteersComponent implements OnInit {
+
 
   constructor(private volunteerService: VolunteerFetchService, private router:Router, public dialog: MatDialog) { }
 
@@ -77,5 +80,6 @@ export class VolunteersComponent implements OnInit {
       this.loadVolunteers();
       console.log('The dialog was closed');
     });
+
   }
 }

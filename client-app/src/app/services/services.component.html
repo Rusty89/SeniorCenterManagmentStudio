@@ -4,6 +4,7 @@
 		<button  mat-raised-button (click)="openDialog()" class="btn btn-success btn-lg mr-1 ml-1">Add an Activity</button>
 		<button type="button" class="btn btn-primary btn-lg mr-1 ml-1" data-toggle="modal" routerLink="/activity-form">Update/Remove</button>
 	</div>
+
 </div>
 
 <table class="table">
@@ -41,4 +42,5 @@
 <!-- TEST -->
 <div *ngIf="activityTmp">
     <h1> Update by this email: {{ activityTmp.email }} </h1>
+
 </div>
