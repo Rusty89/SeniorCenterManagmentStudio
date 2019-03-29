@@ -20,7 +20,7 @@ export class InfoFormComponent implements OnInit  {
   constructor(
     private memberService: MemberFetchService,
     private router: Router,
-    @Inject(MAT_DIALOG_DATA) private data: any) { }
+    @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
     this.member = new Member();
