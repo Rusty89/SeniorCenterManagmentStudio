@@ -68,6 +68,7 @@ The angular build files are hosted in a AWS S3 bucket. This will load the angula
 * Automated Testing 
 - Travis CI
 
+
 ## Known Bugs
 * ~~Refreshing while it is hosted on S3 currently does not work (2/24/19)~~
 * Mobile needs optimized (2/24/19)
