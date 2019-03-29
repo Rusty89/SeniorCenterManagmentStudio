@@ -5,7 +5,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { Member } from '../_models/member';
 import { MemberFetchService } from '../_services/member-fetch.service';
 
-import { MembersComponent } from '../members/members.component';
+
 
 
 @Component({
@@ -20,7 +20,9 @@ export class InfoFormComponent implements OnInit  {
   constructor(
     private memberService: MemberFetchService,
     private router: Router,
-    @Inject(MAT_DIALOG_DATA) private data: any) { }
+
+    @Inject(MAT_DIALOG_DATA) public data: any) { }
+
 
   ngOnInit() {
     this.member = new Member();
@@ -29,7 +31,9 @@ export class InfoFormComponent implements OnInit  {
   saveMember() {
     this.memberService.saveMember(this.member).toPromise().then(() => {
       //this.router.navigate(['members']);
-      this.router.navigate([MembersComponent]);
+
+      window.location.reload();
+
     });
   }
 
@@ -41,7 +45,9 @@ export class InfoFormComponent implements OnInit  {
 
     // Add new activity
     this.memberService.saveMember(this.data.member).toPromise().then(() => {
-      this.router.navigate([MembersComponent]);
+
+      window.location.reload();
+
     });
   }
 

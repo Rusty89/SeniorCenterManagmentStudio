@@ -105,3 +105,7 @@ a:active {
     float: none;
 }
 
+.form-horizontal .control-label.text-left{
+	text-align: left;
+}
+

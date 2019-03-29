@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
-import { InfoFormComponent } from '.././info-form/Info-form.component';
+import { InfoFormComponent } from '.././info-form/info-form.component';
+import { DeleteConfirmComponent } from '.././delete-confirm/delete-confirm.component';
 
 import { MemberFetchService } from '../_services/member-fetch.service';
 
@@ -77,10 +78,20 @@ export class MembersComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
 
-      //this.router.navigate([MembersComponent]);
       this.loadMembers();
 
       console.log('The dialog was closed');
+    });
+  }
+
+  openDeleteDialog(memberEmail: string): void {
+    const dialogRef = this.dialog.open(DeleteConfirmComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+
+      this.deleteMember(memberEmail);
+
+      console.log('The delete dialog was closed');
     });
   }
 

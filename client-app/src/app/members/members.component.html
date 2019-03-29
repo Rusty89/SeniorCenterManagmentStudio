@@ -1,47 +1,48 @@
 <h1 id="menuTitle">Members</h1>
 <div class="text-center">
-	<div class="btn-group btn-group-lg" role="group" aria-label="...">
-		<button type="button" class="btn btn-success btn-lg mr-1 ml-1" (click)="openDialog()">Add</button>
-		<button type="button" class="btn btn-primary btn-lg mr-1 ml-1">Update/Remove</button>
-	</div>
+    <button type="button" class="btn btn-success btn-lg mr-1 ml-1" (click)="openDialog()">Add Member</button>
 </div>
 <br />
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">First Name</th>
-      <th scope="col">Last Name</th>
-      <th scope="col">Address</th>
-      <th scope="col">Apt</th>
-      <th scope="col">City</th>
-      <th scope="col">State</th>
-      <th scope="col">Zip</th>
-      <th scope="col">Month</th>
-      <th scope="col">Phone</th>
-      <th scope="col">Email</th>
-      <th scope="col">Action</th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr *ngFor="let member of members">
-          <td>{{member.firstName}}</td>
-          <td>{{member.lastName}}</td>
-          <td>{{member.address}}</td>
-          <td>{{member.apt}}</td>
-          <td>{{member.city}}</td>
-          <td>{{member.state}}</td>
-          <td>{{member.zip}}</td>
-          <td>{{member.month}}</td>
-          <td>{{member.phone}}</td>
-          <td>{{member.email}}</td>
-          <td>
+<div class="col-12">
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col" class="text-center">First Name</th>
+                    <th scope="col" class="text-center">Last Name</th>
+                    <th scope="col" class="text-center">Address</th>
+                    <th scope="col" class="text-center">Apt</th>
+                    <th scope="col" class="text-center">City</th>
+                    <th scope="col" class="text-center">State</th>
+                    <th scope="col" class="text-center">Zip</th>
+                    <th scope="col" class="text-center">Month</th>
+                    <th scope="col" class="text-center">Phone</th>
+                    <th scope="col" class="text-center">Email</th>
+                    <th scope="col" class="text-center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let member of members">
+                    <td>{{member.firstName}}</td>
+                    <td>{{member.lastName}}</td>
+                    <td>{{member.address}}</td>
+                    <td>{{member.apt}}</td>
+                    <td>{{member.city}}</td>
+                    <td>{{member.state}}</td>
+                    <td>{{member.zip}}</td>
+                    <td>{{member.month}}</td>
+                    <td>{{member.phone}}</td>
+                    <td>{{member.email}}</td>
+                    <td>
 
-              <button  mat-raised-button (click)="openUpdateDialog(member.email)" class="btn btn-success btn-lg mr-1 ml-1">Update</button>
-
-              <button type="button" class="btn btn-danger" (click)="deleteMember(member.email)">Delete</button>
-          </td>
-      </tr>      
-  </tbody>
-</table>
-
-
+                        <button type="button" class="btn btn-warning"
+                            (click)="openUpdateDialog(member.email)">Update</button>
+                        &nbsp;
+                        <button type="button" class="btn btn-danger"
+                            (click)="deleteMember(member.email)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

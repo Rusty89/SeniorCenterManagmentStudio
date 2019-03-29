@@ -1,3 +1,4 @@
+
 ﻿import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -28,7 +29,8 @@ import { MemberFetchService } from './_services/member-fetch.service';
 
 import { ActivityFetchService } from './_services/activity-fetch.service';
 import { UserAuthenticationDataService } from './_services/user-authentication-data.service';
-import { VolunteerFetchService } from './_services/volunteer-fetch.service';
+import { VolunteerFetchService } from './_services/volunteer-fetch.service';;
+import { DeleteConfirmComponent } from './delete-confirm/delete-confirm.component'
 
 
 @NgModule({
@@ -46,6 +48,8 @@ import { VolunteerFetchService } from './_services/volunteer-fetch.service';
         InfoFormComponent,
         VolunteerFormComponent,
         ActivityFormComponent
+,
+        DeleteConfirmComponent
     ],
     imports: [
         BrowserModule,
@@ -75,3 +79,4 @@ import { VolunteerFetchService } from './_services/volunteer-fetch.service';
 })
 
 export class AppModule { }
+
