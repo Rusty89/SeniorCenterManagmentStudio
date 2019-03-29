@@ -1,45 +1,102 @@
 <div class="container">
-  <h1>Activity Information Form</h1>
-  <form>
-    <div class="form-group">
-      <label for="className">Activity Name</label>
-      <input type="text" class="form-control" id="className" aria-describedby="className" placeholder="Hot Yoga">
-      <br />
 
-      <div class="row">
-        <div class="col-6">
-          <label for="time">Time</label>
-          <input type="text" class="form-control" id="time" aria-describedby="time" placeholder="12pm - 1pm">
-        </div>
-        <div class="col-6">
-          <label for="days">Days</label>
-          <input type="text" class="form-control" id="days" aria-describedby="days" placeholder="Tuesday">
-        </div>
-      </div>
-      <br />
-      <div class="row">
-        <div class="col-4">
-          <label for="city">City</label>
-          <input type="text" class="form-control" id="city" aria-describedby="city" placeholder="Belgrade">
-        </div>
-        <div class="col-4">
-          <label for="state">State</label>
-          <input type="text" class="form-control" id="state" aria-describedby="state" placeholder="MT">
-        </div>
-        <div class="col-4">
-          <label for="zip">Zip Code</label>
-          <input type="text" class="form-control" id="zip" aria-describedby="zip" placeholder="59714">
-        </div>
-      </div>
-      <br />
-      <label for="phone">Phone</label>
-      <input type="text" class="form-control" id="phone" aria-describedby="phone" placeholder="406-777-0123">
-      <br />
-      <label for="email">Email address</label>
-      <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="example@AOL.com">
-      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-      <br />
-      <button type="submit" class="btn btn-success" mat-dialog-close>Submit</button>
-    </div>
-  </form>
+
+  <!-- Test is tmp: activity is null or not  -->
+  <!-- This div will be displayed tmp is not null -->
+  <div *ngIf="data; else show">
+      <h1>Activity Information Form</h1>
+      <form>
+          <div class="form-group">
+            <label for="className">Activity Name</label>
+            <input type="text" class="form-control" id="className" aria-describedby="className" placeholder="Hot Yoga" [(ngModel)]="data.activity.className" name="className">
+            <br />
+      
+            <div class="row">
+              <div class="col-6">
+                <label for="time">Time</label>
+                <input type="text" class="form-control" id="time" aria-describedby="time" placeholder="12:00 pm - 1:00 pm" [(ngModel)]="data.activity.time" name="time">
+              </div>
+              <div class="col-6">
+                <label for="days">Days</label>
+                <input type="text" class="form-control" id="days" aria-describedby="days" placeholder="Tuesday" [(ngModel)]="data.activity.days" name="days">
+              </div>
+            </div>
+            <br />
+            <div class="row">
+              <div class="col-4">
+                <label for="city">City</label>
+                <input type="text" class="form-control" id="city" aria-describedby="city" placeholder="Belgrade" [(ngModel)]="data.activity.city" name="city">
+              </div>
+              <div class="col-4">
+                <label for="state">State</label>
+                <input type="text" class="form-control" id="state" aria-describedby="state" placeholder="MT" [(ngModel)]="data.activity.state" name="state">
+              </div>
+              <div class="col-4">
+                <label for="zip">Zip Code</label>
+                <input type="text" class="form-control" id="zip" aria-describedby="zip" placeholder="59714"  [(ngModel)]="data.activity.zip" name="zip">
+              </div>
+            </div>
+            <br />
+            <label for="phone">Phone</label>
+            <input type="text" class="form-control" id="phone" aria-describedby="phone" placeholder="406-777-0123" [(ngModel)]="data.activity.phone" name="phone">
+            <br />
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="example@AOL.com" [(ngModel)]="data.activity.email" name="email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <br />
+            <button type="submit" class="btn btn-success" (click)="updateActivity(data.activity.email)" mat-dialog-close>Submit</button>
+          </div>
+        </form>
+  </div>
+
+  <!-- This div will be displayed tmp is null -->
+  <ng-template #show>
+      <h1>Activity Information Form</h1>
+      <form>
+          <div class="form-group">
+            <label for="className">Activity Name</label>
+            <input type="text" class="form-control" id="className" aria-describedby="className" placeholder="Hot Yoga" [(ngModel)]="activity.className" name="className">
+            <br />
+      
+            <div class="row">
+              <div class="col-6">
+                <label for="time">Time</label>
+                <input type="text" class="form-control" id="time" aria-describedby="time" placeholder="12:00 pm - 1:00 pm" [(ngModel)]="activity.time" name="time">
+              </div>
+              <div class="col-6">
+                <label for="days">Days</label>
+                <input type="text" class="form-control" id="days" aria-describedby="days" placeholder="Tuesday" [(ngModel)]="activity.days" name="days">
+              </div>
+            </div>
+            <br />
+            <div class="row">
+              <div class="col-4">
+                <label for="city">City</label>
+                <input type="text" class="form-control" id="city" aria-describedby="city" placeholder="Belgrade" [(ngModel)]="activity.city" name="city">
+              </div>
+              <div class="col-4">
+                <label for="state">State</label>
+                <input type="text" class="form-control" id="state" aria-describedby="state" placeholder="MT" [(ngModel)]="activity.state" name="state">
+              </div>
+              <div class="col-4">
+                <label for="zip">Zip Code</label>
+                <input type="text" class="form-control" id="zip" aria-describedby="zip" placeholder="59714"  [(ngModel)]="activity.zip" name="zip">
+              </div>
+            </div>
+            <br />
+            <label for="phone">Phone</label>
+            <input type="text" class="form-control" id="phone" aria-describedby="phone" placeholder="406-777-0123" [(ngModel)]="activity.phone" name="phone">
+            <br />
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="example@AOL.com" [(ngModel)]="activity.email" name="email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <br />
+            <button type="submit" class="btn btn-success" (click)="saveActivity()" mat-dialog-close>Submit</button>
+          </div>
+        </form>
+  </ng-template>
+
+
+
 </div>
+

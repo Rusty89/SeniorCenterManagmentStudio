@@ -5,3 +5,39 @@
     <button type="button" class="btn btn-primary btn-lg mr-1 ml-1" data-toggle="modal" routerLink="/volunteer-form">Update/Remove</button>
   </div>
 </div>
+<br />
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Address</th>
+      <th scope="col">Apt</th>
+      <th scope="col">City</th>
+      <th scope="col">State</th>
+      <th scope="col">Zip</th>
+      <th scope="col">Month</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Email</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let volunteer of volunteers">
+          <td>{{volunteer.firstName}}</td>
+          <td>{{volunteer.lastName}}</td>
+          <td>{{volunteer.address}}</td>
+          <td>{{volunteer.apt}}</td>
+          <td>{{volunteer.city}}</td>
+          <td>{{volunteer.state}}</td>
+          <td>{{volunteer.zip}}</td>
+          <td>{{volunteer.month}}</td>
+          <td>{{volunteer.phone}}</td>
+          <td>{{volunteer.email}}</td>
+          <td>
+              <button  mat-raised-button (click)="openUpdateDialog(volunteer.email)" class="btn btn-success btn-lg mr-1 ml-1">Update</button>
+              <button type="button" class="btn btn-danger" (click)="deleteVolunteer(volunteer.email)">Delete</button>
+          </td>
+      </tr>      
+  </tbody>
+</table>
