@@ -44,16 +44,16 @@ export class Member {
     dob: string;
 
     // IS SPOUSE 60yo+?: Checkbox
-    isSpouse: boolean;
+    isSpouse: string;
 
     // DISABLED STATUS: Checkbox
-    isDisabled: boolean;
+    isDisabled: string;
 
     // ARE YOU DISABLED AND LIVING WITH SOMEONE 60+?
-    AYDALWS: boolean;
+    AYDALWS: string;
 
     // VETERAN STATUS: Checkbox
-    isVeteran: boolean;
+    isVeteran: string;
 
     // RACE: Checkbox
     race: string;
@@ -68,19 +68,19 @@ export class Member {
     numInHousehold: string;
 
     // IS ONE PERSON A CAREGIVER?: Checkbox
-    isOnePersonCaregiver: boolean;
+    isOnePersonCaregiver: string;
 
     // MONTHLY HOUSEHOLD INCOME: Checkbox
     monthlyHouseholdIncome: string;
 
     //ARE YOU RECEIVING SERVICES UNDER NAT'L FAMILY CAREGIVER SUPPORT PROGRAM?: Checkbox
-    AYRSUNFCSP: boolean;
+    AYRSUNFCSP: string;
 
     // CAREGIVER: Checkbox
     caregiver: string;
 
     // DO YOU REQUIRE ANY SPECIAL ASSISTANCE (Activies of Daily Living/Instrumental Activities of Daily Living)
-    DYRASA: boolean;
+    DYRASA: string;
 
     // SERVICES REQUIRED: Checkbox
     servicesRequired: string;
@@ -89,10 +89,10 @@ export class Member {
     notes: string;
 
     // WILL THE MEMEBER BE USING MEALS-ON-WHEELS?
-    WTMBUMOW: boolean;
+    WTMBUMOW: string;
 
     // HAVE THEY USED MOW BEFORE:
-    HTUMB: boolean;
+    HTUMB: string;
 
     // START DATE: String
     startDate: string;
@@ -107,12 +107,12 @@ export class Member {
     deliveryDays: string;
 
     // MICROWAVE: Checkbox
-    microwave: boolean;
+    microwave: string;
 
     // ALLERGIES
     // ---------------------------------------------------------------------- //
     // ALLERGIES: Checkbox
-    isAllergies: boolean;
+    isAllergies: string;
 
     // PLEASE SPECIFY: String
     pleaseSpecify: string;

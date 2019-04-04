@@ -17,7 +17,6 @@ export class MembersComponent implements OnInit {
   constructor(private memberService: MemberFetchService, private router:Router, public dialog: MatDialog) { }
   
   public members;
-  public userMap;
 
   ngOnInit() {
     this.loadMembers();

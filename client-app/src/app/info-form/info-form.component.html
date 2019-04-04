@@ -113,13 +113,13 @@
                 <div class="form-group">
                     <div class="radio">
                         <label>
-                            <input type="radio" name="isSpouse" value="true" ng-model="data.member.isSpouse">
+                            <input type="radio" name="isSpouse" value="Yes" [(ngModel)]="data.member.isSpouse">
                             Yes
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="isSpouse" value="false" ng-model="data.member.isSpouse">
+                            <input type="radio" name="isSpouse" value="No" [(ngModel)]="data.member.isSpouse">
                             No
                         </label>
                     </div>
@@ -131,13 +131,13 @@
                 <div class="form-group">
                     <div class="radio">
                         <label>
-                            <input type="radio" name="isDisabled" value="true" ng-model="data.member.isDisabled">
+                            <input type="radio" name="isDisabled" value="Yes" [(ngModel)]="data.member.isDisabled">
                             Yes
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="isDisabled" value="false" ng-model="data.member.isDisabled">
+                            <input type="radio" name="isDisabled" value="No" [(ngModel)]="data.member.isDisabled">
                             No
                         </label>
                     </div>
@@ -149,13 +149,13 @@
                 <div class="form-group">
                     <div class="radio">
                         <label>
-                            <input type="radio" name="AYDALWS" value="true" ng-model="data.member.AYDALWS">
+                            <input type="radio" name="AYDALWS" value="Yes" [(ngModel)]="data.member.AYDALWS">
                             Yes
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="AYDALWS" value="false" ng-model="data.member.AYDALWS">
+                            <input type="radio" name="AYDALWS" value="No" [(ngModel)]="data.member.AYDALWS">
                             No
                         </label>
                     </div>
@@ -167,13 +167,13 @@
                 <div class="form-group">
                     <div class="radio">
                         <label>
-                            <input type="radio" name="isVeteran" value="true" ng-model="data.member.isVeteran">
+                            <input type="radio" name="isVeteran" value="Yes" [(ngModel)]="data.member.isVeteran">
                             Yes
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="isVeteran" value="false" ng-model="data.member.isVeteran">
+                            <input type="radio" name="isVeteran" value="No" [(ngModel)]="data.member.isVeteran">
                             No
                         </label>
                     </div>
@@ -193,37 +193,37 @@
                   <div class="form-group">
                       <div class="radio">
                           <label>
-                              <input type="radio" name="race" value="White" ng-model="data.member.race">
+                              <input type="radio" name="race" value="White" [(ngModel)]="data.member.race">
                               White
                           </label>
                       </div>
                       <div class="radio">
                           <label>
-                              <input type="radio" name="race" value="American Indian/Alaskan Native" ng-model="data.member.race">
+                              <input type="radio" name="race" value="American Indian/Alaskan Native" [(ngModel)]="data.member.race">
                               American Indian/Alaskan Native
                           </label>
                       </div>
                       <div class="radio">
                           <label>
-                              <input type="radio" name="race" value="Asian American" ng-model="data.member.race">
+                              <input type="radio" name="race" value="Asian American" [(ngModel)]="data.member.race">
                               Asian American
                           </label>
                       </div>
                       <div class="radio">
                           <label>
-                              <input type="radio" name="race" value="African American" ng-model="data.member.race">
+                              <input type="radio" name="race" value="African American" [(ngModel)]="data.member.race">
                               African American
                           </label>
                       </div>
                       <div class="radio">
                           <label>
-                              <input type="radio" name="race" value="Native Hawaiian/Pacific Islander" ng-model="data.member.race">
+                              <input type="radio" name="race" value="Native Hawaiian/Pacific Islander" [(ngModel)]="data.member.race">
                               Native Hawaiian/Pacific Islander
                           </label>
                       </div>
                       <div class="radio">
                           <label>
-                              <input type="radio" name="race" value="Other" ng-model="data.member.race">
+                              <input type="radio" name="race" value="Other" [(ngModel)]="data.member.race">
                               Other
                           </label>
                       </div>
@@ -235,19 +235,19 @@
                   <div class="form-group">
                       <div class="radio">
                           <label>
-                              <input type="radio" name="ethnicity" value="Non-Hispanic/Latino" ng-model="data.member.ethnicity">
+                              <input type="radio" name="ethnicity" value="Non-Hispanic/Latino" [(ngModel)]="data.member.ethnicity">
                               Non-Hispanic/Latino
                           </label>
                       </div>
                       <div class="radio">
                           <label>
-                              <input type="radio" name="ethnicity" value="Hispanic/Latino" ng-model="data.member.ethnicity">
+                              <input type="radio" name="ethnicity" value="Hispanic/Latino" [(ngModel)]="data.member.ethnicity">
                               Hispanic/Latino
                           </label>
                       </div>
                       <div class="radio">
                           <label>
-                              <input type="radio" name="ethnicity" value="Other" ng-model="data.member.ethnicity">
+                              <input type="radio" name="ethnicity" value="Other" [(ngModel)]="data.member.ethnicity">
                               Other
                           </label>
                       </div>
@@ -259,19 +259,19 @@
                   <div class="form-group">
                       <div class="radio">
                           <label>
-                              <input type="radio" name="gender" value="Male" ng-model="data.member.gender">
+                              <input type="radio" name="gender" value="Male" [(ngModel)]="data.member.gender">
                               Male
                           </label>
                       </div>
                       <div class="radio">
                           <label>
-                              <input type="radio" name="gender" value="Female" ng-model="data.member.gender">
+                              <input type="radio" name="gender" value="Female" [(ngModel)]="data.member.gender">
                               Female
                           </label>
                       </div>
                       <div class="radio">
                           <label>
-                              <input type="radio" name="gender" value="Other" ng-model="data.member.gender">
+                              <input type="radio" name="gender" value="Other" [(ngModel)]="data.member.gender">
                               Other
                           </label>
                       </div>
@@ -297,13 +297,13 @@
                   <div class="form-group">
                       <div class="radio">
                           <label>
-                              <input type="radio" name="isOnePersonCaregiver" value="true" ng-model="data.member.isOnePersonCaregiver">
+                              <input type="radio" name="isOnePersonCaregiver" value="Yes" [(ngModel)]="data.member.isOnePersonCaregiver">
                               Yes
                           </label>
                       </div>
                       <div class="radio">
                           <label>
-                              <input type="radio" name="isOnePersonCaregiver" value="False" ng-model="data.member.isOnePersonCaregiver">
+                              <input type="radio" name="isOnePersonCaregiver" value="No" [(ngModel)]="data.member.isOnePersonCaregiver">
                               No
                           </label>
                       </div>
@@ -320,13 +320,13 @@
                   <div class="form-group">
                       <div class="radio">
                           <label>
-                              <input type="radio" name="AYRSUNFCSP" value="true" ng-model="data.member.AYRSUNFCSP">
+                              <input type="radio" name="AYRSUNFCSP" value="Yes" [(ngModel)]="data.member.AYRSUNFCSP">
                               Yes
                           </label>
                       </div>
                       <div class="radio">
                           <label>
-                              <input type="radio" name="AYRSUNFCSP" value="False" ng-model="data.member.AYRSUNFCSP">
+                              <input type="radio" name="AYRSUNFCSP" value="No" [(ngModel)]="data.member.AYRSUNFCSP">
                               No
                           </label>
                       </div>
@@ -338,31 +338,31 @@
                   <div class="form-group">
                       <div class="radio">
                           <label>
-                              <input type="radio" name="Caregiver" value="Spouse" ng-model="data.member.Caregiver">
+                              <input type="radio" name="caregiver" value="Spouse" [(ngModel)]="data.member.caregiver">
                               Spouse
                           </label>
                       </div>
                       <div class="radio">
                           <label>
-                              <input type="radio" name="Caregiver" value="Daughter/DIL" ng-model="data.member.Caregiver">
+                              <input type="radio" name="caregiver" value="Daughter/DIL" [(ngModel)]="data.member.caregiver">
                               Daughter/DIL
                           </label>
                       </div>
                       <div class="radio">
                           <label>
-                              <input type="radio" name="Caregiver" value="Son/SIL" ng-model="data.member.Caregiver">
+                              <input type="radio" name="caregiver" value="Son/SIL" [(ngModel)]="data.member.caregiver">
                               Son/SIL
                           </label>
                       </div>
                       <div class="radio">
                           <label>
-                              <input type="radio" name="Caregiver" value="Other Relative" ng-model="data.member.Caregiver">
+                              <input type="radio" name="caregiver" value="Other Relative" [(ngModel)]="data.member.caregiver">
                               Other Relative
                           </label>
                       </div>
                       <div class="radio">
                           <label>
-                              <input type="radio" name="Caregiver" value="Other">
+                            <input type="radio" name="caregiver" value="Other" [(ngModel)]="data.member.caregiver">
                               Other
                           </label>
                       </div>
@@ -370,22 +370,17 @@
               </div>
 
               <div class="col-4">
-                  <label for="monthlyHouseholdIncome">If Other selected: </label>
-                  <input type="text" class="form-control" id="caregiver" aria-describedby="caregiver" placeholder="Other" [(ngModel)]="data.member.caregiver" name="caregiver">
-              </div>
-
-              <div class="col-4">
                   <label for="form-group">DO YOU REQUIRE ANY SPECIAL ASSISTANCE (Activies of Daily Living/Instrumental Activities of Daily Living)?</label>
                   <div class="form-group">
                       <div class="radio">
                           <label>
-                              <input type="radio" name="DYRASA" value="true" ng-model="data.member.DYRASA">
+                              <input type="radio" name="DYRASA" value="Yes" [(ngModel)]="data.member.DYRASA">
                               Yes
                           </label>
                       </div>
                       <div class="radio">
                           <label>
-                              <input type="radio" name="DYRASA" value="False" ng-model="data.member.DYRASA">
+                              <input type="radio" name="DYRASA" value="No" [(ngModel)]="data.member.DYRASA">
                               No
                           </label>
                       </div>
@@ -404,13 +399,13 @@
                   <div class="form-group">
                       <div class="radio">
                           <label>
-                              <input type="radio" name="servicesRequired" value="true" ng-model="data.member.servicesRequired">
+                              <input type="radio" name="servicesRequired" value="Yes" [(ngModel)]="data.member.servicesRequired">
                               Yes
                           </label>
                       </div>
                       <div class="radio">
                           <label>
-                              <input type="radio" name="servicesRequired" value="False" ng-model="data.member.servicesRequired">
+                              <input type="radio" name="servicesRequired" value="No" [(ngModel)]="data.member.servicesRequired">
                               No
                           </label>
                       </div>
@@ -427,13 +422,13 @@
                   <div class="form-group">
                       <div class="radio">
                           <label>
-                              <input type="radio" name="WTMBUMOW" value="true" ng-model="data.member.WTMBUMOW">
+                              <input type="radio" name="WTMBUMOW" value="Yes" [(ngModel)]="data.member.WTMBUMOW">
                               Yes
                           </label>
                       </div>
                       <div class="radio">
                           <label>
-                              <input type="radio" name="WTMBUMOW" value="False" ng-model="data.member.WTMBUMOW">
+                              <input type="radio" name="WTMBUMOW" value="No" [(ngModel)]="data.member.WTMBUMOW">
                               No
                           </label>
                       </div>
@@ -445,13 +440,13 @@
                   <div class="form-group">
                       <div class="radio">
                           <label>
-                              <input type="radio" name="HTUMB" value="true" ng-model="data.member.HTUMB">
+                              <input type="radio" name="HTUMB" value="Yes" [(ngModel)]="data.member.HTUMB">
                               Yes
                           </label>
                       </div>
                       <div class="radio">
                           <label>
-                              <input type="radio" name="HTUMB" value="False" ng-model="data.member.HTUMB">
+                              <input type="radio" name="HTUMB" value="No" [(ngModel)]="data.member.HTUMB">
                               No
                           </label>
                       </div>
@@ -482,13 +477,13 @@
                   <div class="form-group">
                       <div class="radio">
                           <label>
-                              <input type="radio" name="deliveryType" value="Pick-up" ng-model="data.member.deliveryType">
+                              <input type="radio" name="deliveryType" value="Pick-up" [(ngModel)]="data.member.deliveryType">
                               Pick-up
                           </label>
                       </div>
                       <div class="radio">
                           <label>
-                              <input type="radio" name="deliveryType" value="Delivery" ng-model="data.member.deliveryType">
+                              <input type="radio" name="deliveryType" value="Delivery" [(ngModel)]="data.member.deliveryType">
                               Delivery
                           </label>
                       </div>
@@ -500,31 +495,31 @@
                   <div class="form-group">
                       <div class="radio">
                           <label>
-                              <input type="radio" name="deliveryDays" value="Monday" ng-model="data.member.deliveryDays">
+                              <input type="radio" name="deliveryDays" value="Monday" [(ngModel)]="data.member.deliveryDays">
                               Monday
                           </label>
                       </div>
                       <div class="radio">
                           <label>
-                              <input type="radio" name="deliveryDays" value="Tuesday" ng-model="data.member.deliveryDays">
+                              <input type="radio" name="deliveryDays" value="Tuesday" [(ngModel)]="data.member.deliveryDays">
                               Tuesday
                           </label>
                       </div>
                       <div class="radio">
                           <label>
-                              <input type="radio" name="deliveryDays" value="Wednesday" ng-model="data.member.deliveryDays">
+                              <input type="radio" name="deliveryDays" value="Wednesday" [(ngModel)]="data.member.deliveryDays">
                               Wednesday
                           </label>
                       </div>
                       <div class="radio">
                           <label>
-                              <input type="radio" name="deliveryDays" value="Thursday" ng-model="data.member.deliveryDays">
+                              <input type="radio" name="deliveryDays" value="Thursday" [(ngModel)]="data.member.deliveryDays">
                               Thursday
                           </label>
                       </div>
                       <div class="radio">
                           <label>
-                              <input type="radio" name="deliveryDays" value="Friday" ng-model="data.member.deliveryDays">
+                              <input type="radio" name="deliveryDays" value="Friday" [(ngModel)]="data.member.deliveryDays">
                               Friday
                           </label>
                       </div>
@@ -536,13 +531,13 @@
                   <div class="form-group">
                       <div class="radio">
                           <label>
-                              <input type="radio" name="microwave" value="true" ng-model="data.member.microwave">
+                              <input type="radio" name="microwave" value="Yes" [(ngModel)]="data.member.microwave">
                               Yes
                           </label>
                       </div>
                       <div class="radio">
                           <label>
-                              <input type="radio" name="microwave" value="false" ng-model="data.member.microwave">
+                              <input type="radio" name="microwave" value="No" [(ngModel)]="data.member.microwave">
                               No
                           </label>
                       </div>
@@ -561,13 +556,13 @@
                   <div class="form-group">
                       <div class="radio">
                           <label>
-                              <input type="radio" name="isAllergies" value="true" ng-model="data.member.isAllergies">
+                              <input type="radio" name="isAllergies" value="Yes" [(ngModel)]="data.member.isAllergies">
                               Yes
                           </label>
                       </div>
                       <div class="radio">
                           <label>
-                              <input type="radio" name="isAllergies" value="false" ng-model="data.member.isAllergies">
+                              <input type="radio" name="isAllergies" value="No" [(ngModel)]="data.member.isAllergies">
                               No
                           </label>
                       </div>
@@ -592,19 +587,19 @@
                   <div class="form-group">
                       <div class="radio">
                           <label>
-                              <input type="radio" name="mealType" value="Regular" ng-model="data.member.mealType">
+                              <input type="radio" name="mealType" value="Regular" [(ngModel)]="data.member.mealType">
                               Regular
                           </label>
                       </div>
                       <div class="radio">
                           <label>
-                              <input type="radio" name="mealType" value="Diabetic" ng-model="data.member.mealType">
+                              <input type="radio" name="mealType" value="Diabetic" [(ngModel)]="data.member.mealType">
                               Diabetic
                           </label>
                       </div>
                       <div class="radio">
                           <label>
-                              <input type="radio" name="mealType" value="Low Sodium" ng-model="data.member.mealType">
+                              <input type="radio" name="mealType" value="Low Sodium" [(ngModel)]="data.member.mealType">
                               Low Sodium
                           </label>
                       </div>
@@ -616,25 +611,25 @@
                   <div class="form-group">
                       <div class="radio">
                           <label>
-                              <input type="radio" name="milkType" value="1%" ng-model="data.member.milkType">
+                              <input type="radio" name="milkType" value="1%" [(ngModel)]="data.member.milkType">
                               1%
                           </label>
                       </div>
                       <div class="radio">
                           <label>
-                              <input type="radio" name="milkType" value="2%" ng-model="data.member.milkType">
+                              <input type="radio" name="milkType" value="2%" [(ngModel)]="data.member.milkType">
                               2%
                           </label>
                       </div>
                       <div class="radio">
                           <label>
-                              <input type="radio" name="milkType" value="Whole Milk" ng-model="data.member.milkType">
+                              <input type="radio" name="milkType" value="Whole Milk" [(ngModel)]="data.member.milkType">
                               Whole Milk
                           </label>
                       </div>
                       <div class="radio">
                           <label>
-                              <input type="radio" name="milkType" value="No Milk" ng-model="data.member.milkType">
+                              <input type="radio" name="milkType" value="No Milk" [(ngModel)]="data.member.milkType">
                               No Milk
                           </label>
                       </div>
@@ -693,7 +688,7 @@
           </div>
 
         </div>
-        <button type="submit" class="btn btn-success" (click)="saveMember()" mat-dialog-close>Submit</button>
+        <button type="submit" class="btn btn-success" (click)="updateMember(data.member.email)" mat-dialog-close>Submit</button>
       </form>
     </mat-dialog-content>
   </div>
@@ -808,13 +803,13 @@
                   <div class="form-group">
                       <div class="radio">
                           <label>
-                              <input type="radio" name="isSpouse" value="true" ng-model="member.isSpouse">
+                              <input type="radio" name="isSpouse" value="Yes" [(ngModel)]="member.isSpouse">
                               Yes
                           </label>
                       </div>
                       <div class="radio">
                           <label>
-                              <input type="radio" name="isSpouse" value="false" ng-model="member.isSpouse">
+                              <input type="radio" name="isSpouse" value="No" [(ngModel)]="member.isSpouse">
                               No
                           </label>
                       </div>
@@ -826,13 +821,13 @@
                   <div class="form-group">
                       <div class="radio">
                           <label>
-                              <input type="radio" name="isDisabled" value="true" ng-model="member.isDisabled">
+                              <input type="radio" name="isDisabled" value="Yes" [(ngModel)]="member.isDisabled">
                               Yes
                           </label>
                       </div>
                       <div class="radio">
                           <label>
-                              <input type="radio" name="isDisabled" value="false" ng-model="member.isDisabled">
+                              <input type="radio" name="isDisabled" value="No" [(ngModel)]="member.isDisabled">
                               No
                           </label>
                       </div>
@@ -844,13 +839,13 @@
                   <div class="form-group">
                       <div class="radio">
                           <label>
-                              <input type="radio" name="AYDALWS" value="true" ng-model="member.AYDALWS">
+                              <input type="radio" name="AYDALWS" value="Yes" [(ngModel)]="member.AYDALWS">
                               Yes
                           </label>
                       </div>
                       <div class="radio">
                           <label>
-                              <input type="radio" name="AYDALWS" value="false" ng-model="member.AYDALWS">
+                              <input type="radio" name="AYDALWS" value="No" [(ngModel)]="member.AYDALWS">
                               No
                           </label>
                       </div>
@@ -862,13 +857,13 @@
                   <div class="form-group">
                       <div class="radio">
                           <label>
-                              <input type="radio" name="isVeteran" value="true" ng-model="member.isVeteran">
+                              <input type="radio" name="isVeteran" value="Yes" [(ngModel)]="member.isVeteran">
                               Yes
                           </label>
                       </div>
                       <div class="radio">
                           <label>
-                              <input type="radio" name="isVeteran" value="false" ng-model="member.isVeteran">
+                              <input type="radio" name="isVeteran" value="No" [(ngModel)]="member.isVeteran">
                               No
                           </label>
                       </div>
@@ -888,37 +883,37 @@
                     <div class="form-group">
                         <div class="radio">
                             <label>
-                                <input type="radio" name="race" value="White" ng-model="member.race">
+                                <input type="radio" name="race" value="White" [(ngModel)]="member.race">
                                 White
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="race" value="American Indian/Alaskan Native" ng-model="member.race">
+                                <input type="radio" name="race" value="American Indian/Alaskan Native" [(ngModel)]="member.race">
                                 American Indian/Alaskan Native
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="race" value="Asian American" ng-model="member.race">
+                                <input type="radio" name="race" value="Asian American" [(ngModel)]="member.race">
                                 Asian American
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="race" value="African American" ng-model="member.race">
+                                <input type="radio" name="race" value="African American" [(ngModel)]="member.race">
                                 African American
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="race" value="Native Hawaiian/Pacific Islander" ng-model="member.race">
+                                <input type="radio" name="race" value="Native Hawaiian/Pacific Islander" [(ngModel)]="member.race">
                                 Native Hawaiian/Pacific Islander
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="race" value="Other" ng-model="member.race">
+                                <input type="radio" name="race" value="Other" [(ngModel)]="member.race">
                                 Other
                             </label>
                         </div>
@@ -930,19 +925,19 @@
                     <div class="form-group">
                         <div class="radio">
                             <label>
-                                <input type="radio" name="ethnicity" value="Non-Hispanic/Latino" ng-model="member.ethnicity">
+                                <input type="radio" name="ethnicity" value="Non-Hispanic/Latino" [(ngModel)]="member.ethnicity">
                                 Non-Hispanic/Latino
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="ethnicity" value="Hispanic/Latino" ng-model="member.ethnicity">
+                                <input type="radio" name="ethnicity" value="Hispanic/Latino" [(ngModel)]="member.ethnicity">
                                 Hispanic/Latino
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="ethnicity" value="Other" ng-model="member.ethnicity">
+                                <input type="radio" name="ethnicity" value="Other" [(ngModel)]="member.ethnicity">
                                 Other
                             </label>
                         </div>
@@ -954,19 +949,19 @@
                     <div class="form-group">
                         <div class="radio">
                             <label>
-                                <input type="radio" name="gender" value="Male" ng-model="member.gender">
+                                <input type="radio" name="gender" value="Male" [(ngModel)]="member.gender">
                                 Male
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="gender" value="Female" ng-model="member.gender">
+                                <input type="radio" name="gender" value="Female" [(ngModel)]="member.gender">
                                 Female
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="gender" value="Other" ng-model="member.gender">
+                                <input type="radio" name="gender" value="Other" [(ngModel)]="member.gender">
                                 Other
                             </label>
                         </div>
@@ -992,13 +987,13 @@
                     <div class="form-group">
                         <div class="radio">
                             <label>
-                                <input type="radio" name="isOnePersonCaregiver" value="true" ng-model="member.isOnePersonCaregiver">
+                                <input type="radio" name="isOnePersonCaregiver" value="Yes" [(ngModel)]="member.isOnePersonCaregiver">
                                 Yes
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="isOnePersonCaregiver" value="False" ng-model="member.isOnePersonCaregiver">
+                                <input type="radio" name="isOnePersonCaregiver" value="No" [(ngModel)]="member.isOnePersonCaregiver">
                                 No
                             </label>
                         </div>
@@ -1015,13 +1010,13 @@
                     <div class="form-group">
                         <div class="radio">
                             <label>
-                                <input type="radio" name="AYRSUNFCSP" value="true" ng-model="member.AYRSUNFCSP">
+                                <input type="radio" name="AYRSUNFCSP" value="Yes" [(ngModel)]="member.AYRSUNFCSP">
                                 Yes
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="AYRSUNFCSP" value="False" ng-model="member.AYRSUNFCSP">
+                                <input type="radio" name="AYRSUNFCSP" value="No" [(ngModel)]="member.AYRSUNFCSP">
                                 No
                             </label>
                         </div>
@@ -1033,54 +1028,49 @@
                     <div class="form-group">
                         <div class="radio">
                             <label>
-                                <input type="radio" name="Caregiver" value="Spouse" ng-model="member.Caregiver">
+                                <input type="radio" name="caregiver" value="Spouse" [(ngModel)]="member.caregiver">
                                 Spouse
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="Caregiver" value="Daughter/DIL" ng-model="member.Caregiver">
+                                <input type="radio" name="caregiver" value="Daughter/DIL" [(ngModel)]="member.caregiver">
                                 Daughter/DIL
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="Caregiver" value="Son/SIL" ng-model="member.Caregiver">
+                                <input type="radio" name="caregiver" value="Son/SIL" [(ngModel)]="member.caregiver">
                                 Son/SIL
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="Caregiver" value="Other Relative" ng-model="member.Caregiver">
+                                <input type="radio" name="caregiver" value="Other Relative" [(ngModel)]="member.caregiver">
                                 Other Relative
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="Caregiver" value="Other">
+                                <input type="radio" name="caregiver" value="Other" [(ngModel)]="member.caregiver">
                                 Other
                             </label>
                         </div>
                     </div>
                 </div>
-  
-                <div class="col-4">
-                    <label for="monthlyHouseholdIncome">If Other selected: </label>
-                    <input type="text" class="form-control" id="caregiver" aria-describedby="caregiver" placeholder="Other" [(ngModel)]="member.caregiver" name="caregiver">
-                </div>
-  
+    
                 <div class="col-4">
                     <label for="form-group">DO YOU REQUIRE ANY SPECIAL ASSISTANCE (Activies of Daily Living/Instrumental Activities of Daily Living)?</label>
                     <div class="form-group">
                         <div class="radio">
                             <label>
-                                <input type="radio" name="DYRASA" value="true" ng-model="member.DYRASA">
+                                <input type="radio" name="DYRASA" value="Yes" [(ngModel)]="member.DYRASA">
                                 Yes
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="DYRASA" value="False" ng-model="member.DYRASA">
+                                <input type="radio" name="DYRASA" value="No" [(ngModel)]="member.DYRASA">
                                 No
                             </label>
                         </div>
@@ -1099,13 +1089,13 @@
                     <div class="form-group">
                         <div class="radio">
                             <label>
-                                <input type="radio" name="servicesRequired" value="true" ng-model="member.servicesRequired">
+                                <input type="radio" name="servicesRequired" value="Yes" [(ngModel)]="member.servicesRequired">
                                 Yes
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="servicesRequired" value="False" ng-model="member.servicesRequired">
+                                <input type="radio" name="servicesRequired" value="No" [(ngModel)]="member.servicesRequired">
                                 No
                             </label>
                         </div>
@@ -1122,13 +1112,13 @@
                     <div class="form-group">
                         <div class="radio">
                             <label>
-                                <input type="radio" name="WTMBUMOW" value="true" ng-model="member.WTMBUMOW">
+                                <input type="radio" name="WTMBUMOW" value="Yes" [(ngModel)]="member.WTMBUMOW">
                                 Yes
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="WTMBUMOW" value="False" ng-model="member.WTMBUMOW">
+                                <input type="radio" name="WTMBUMOW" value="No" [(ngModel)]="member.WTMBUMOW">
                                 No
                             </label>
                         </div>
@@ -1140,13 +1130,13 @@
                     <div class="form-group">
                         <div class="radio">
                             <label>
-                                <input type="radio" name="HTUMB" value="true" ng-model="member.HTUMB">
+                                <input type="radio" name="HTUMB" value="Yes" [(ngModel)]="member.HTUMB">
                                 Yes
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="HTUMB" value="False" ng-model="member.HTUMB">
+                                <input type="radio" name="HTUMB" value="No" [(ngModel)]="member.HTUMB">
                                 No
                             </label>
                         </div>
@@ -1177,13 +1167,13 @@
                     <div class="form-group">
                         <div class="radio">
                             <label>
-                                <input type="radio" name="deliveryType" value="Pick-up" ng-model="member.deliveryType">
+                                <input type="radio" name="deliveryType" value="Pick-up" [(ngModel)]="member.deliveryType">
                                 Pick-up
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="deliveryType" value="Delivery" ng-model="member.deliveryType">
+                                <input type="radio" name="deliveryType" value="Delivery" [(ngModel)]="member.deliveryType">
                                 Delivery
                             </label>
                         </div>
@@ -1195,31 +1185,31 @@
                     <div class="form-group">
                         <div class="radio">
                             <label>
-                                <input type="radio" name="deliveryDays" value="Monday" ng-model="member.deliveryDays">
+                                <input type="radio" name="deliveryDays" value="Monday" [(ngModel)]="member.deliveryDays">
                                 Monday
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="deliveryDays" value="Tuesday" ng-model="member.deliveryDays">
+                                <input type="radio" name="deliveryDays" value="Tuesday" [(ngModel)]="member.deliveryDays">
                                 Tuesday
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="deliveryDays" value="Wednesday" ng-model="member.deliveryDays">
+                                <input type="radio" name="deliveryDays" value="Wednesday" [(ngModel)]="member.deliveryDays">
                                 Wednesday
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="deliveryDays" value="Thursday" ng-model="member.deliveryDays">
+                                <input type="radio" name="deliveryDays" value="Thursday" [(ngModel)]="member.deliveryDays">
                                 Thursday
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="deliveryDays" value="Friday" ng-model="member.deliveryDays">
+                                <input type="radio" name="deliveryDays" value="Friday" [(ngModel)]="member.deliveryDays">
                                 Friday
                             </label>
                         </div>
@@ -1231,13 +1221,13 @@
                     <div class="form-group">
                         <div class="radio">
                             <label>
-                                <input type="radio" name="microwave" value="true" ng-model="member.microwave">
+                                <input type="radio" name="microwave" value="Yes" [(ngModel)]="member.microwave">
                                 Yes
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="microwave" value="false" ng-model="member.microwave">
+                                <input type="radio" name="microwave" value="No" [(ngModel)]="member.microwave">
                                 No
                             </label>
                         </div>
@@ -1256,13 +1246,13 @@
                     <div class="form-group">
                         <div class="radio">
                             <label>
-                                <input type="radio" name="isAllergies" value="true" ng-model="member.isAllergies">
+                                <input type="radio" name="isAllergies" value="Yes" [(ngModel)]="member.isAllergies">
                                 Yes
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="isAllergies" value="false" ng-model="member.isAllergies">
+                                <input type="radio" name="isAllergies" value="No" [(ngModel)]="member.isAllergies">
                                 No
                             </label>
                         </div>
@@ -1283,23 +1273,23 @@
             <div class="row">
   
                 <div class="col-4">
-                    <label for="form-group">Milk TYPE</label>
+                    <label for="form-group">MEAL TYPE</label>
                     <div class="form-group">
                         <div class="radio">
                             <label>
-                                <input type="radio" name="mealType" value="Regular" ng-model="member.mealType">
+                                <input type="radio" name="mealType" value="Regular" [(ngModel)]="member.mealType">
                                 Regular
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="mealType" value="Diabetic" ng-model="member.mealType">
+                                <input type="radio" name="mealType" value="Diabetic" [(ngModel)]="member.mealType">
                                 Diabetic
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="mealType" value="Low Sodium" ng-model="member.mealType">
+                                <input type="radio" name="mealType" value="Low Sodium" [(ngModel)]="member.mealType">
                                 Low Sodium
                             </label>
                         </div>
@@ -1311,25 +1301,25 @@
                     <div class="form-group">
                         <div class="radio">
                             <label>
-                                <input type="radio" name="milkType" value="1%" ng-model="member.milkType">
+                                <input type="radio" name="milkType" value="1%" [(ngModel)]="member.milkType">
                                 1%
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="milkType" value="2%" ng-model="member.milkType">
+                                <input type="radio" name="milkType" value="2%" [(ngModel)]="member.milkType">
                                 2%
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="milkType" value="Whole Milk" ng-model="member.milkType">
+                                <input type="radio" name="milkType" value="Whole Milk" [(ngModel)]="member.milkType">
                                 Whole Milk
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="milkType" value="No Milk" ng-model="member.milkType">
+                                <input type="radio" name="milkType" value="No Milk" [(ngModel)]="member.milkType">
                                 No Milk
                             </label>
                         </div>

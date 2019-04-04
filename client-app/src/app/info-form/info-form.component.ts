@@ -23,6 +23,38 @@ export class InfoFormComponent implements OnInit  {
 
   ngOnInit() {
     this.member = new Member();
+
+    // Init check-boxes
+    this.initCheckBoxes();
+    
+  }
+
+  private initCheckBoxes()
+  {
+    // We have to specify default values for check boxes
+    // --------------------------------------------------- //
+    this.member.isSpouse = "No";
+    this.member.isDisabled = "No";
+    this.member.AYDALWS = "No";
+    this.member.isVeteran = "No";
+    this.member.isOnePersonCaregiver = "No";
+    this.member.AYRSUNFCSP = "No";
+    this.member.DYRASA = "No";
+    this.member.servicesRequired = "No";
+    this.member.WTMBUMOW = "No";
+    this.member.HTUMB = "No";
+    this.member.microwave = "No";
+    this.member.isAllergies = "No";
+
+    this.member.race = "Other";
+    this.member.ethnicity = "Other";
+    this.member.gender = "Other";
+    this.member.caregiver = "Other";
+    this.member.deliveryType = "Delivery";
+    this.member.deliveryDays = "Friday";
+    this.member.mealType = "Low Sodium";
+    this.member.milkType = "No Milk"; 
+    // --------------------------------------------------- //
   }
 
   saveMember() {
