@@ -1,13 +1,13 @@
-
 import { Component, OnInit, Inject } from '@angular/core';
-
 import { Router } from '@angular/router';
+
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 import { ActivityFormComponent } from '.././activity-form/activity-form.component';
-import { ActivityInvFormComponent } from '.././activity-involvement/activity-inv-form.component';
-
 import { ActivityFetchService } from '../_services/activity-fetch.service';
+
+import { ActivityInvFormComponent } from '.././activity-involvement/activity-inv-form.component';
+import { ActivityInvFetchService } from '../_services/activity-involvement-fetch.service';
 
 
 @Component({
@@ -20,14 +20,19 @@ export class ServicesComponent implements OnInit {
 
   constructor(
     private activityService: ActivityFetchService,
+    private activityInvService: ActivityInvFetchService,
     private router: Router,
     public dialog: MatDialog) { }
 
   public activities;
+  private involvements;
 
 
   ngOnInit() {
     this.loadActivities();
+
+    // Load all Involvements, and after we will send all these data into Involvement-Form
+    this.loadInvolvements();
   }
 
   private loadActivities() {
@@ -36,6 +41,20 @@ export class ServicesComponent implements OnInit {
       err => console.error(err),
       () => console.log("activities loaded.")
     );
+  }
+
+  // Load all Involvement Data
+  private loadInvolvements() {
+    this.activityInvService.getInvolvements().subscribe(
+      data => { this.involvements = data },
+      err => console.error(err),
+      () => console.log("involvements loaded.")
+    );
+
+    // --------------------------------------------------- //
+    // IS NOT WORKING
+    //this.loadInvolvement(this.involvements);
+    // --------------------------------------------------- //
   }
 
   deleteActivity(activityEmail: string) {
@@ -106,7 +125,8 @@ export class ServicesComponent implements OnInit {
     // Open update dialog and sent data into update dialog
     const dialogRef = this.dialog.open(ActivityInvFormComponent, {
       data: {
-        activity: tmp
+        activity: tmp,
+        involvements: this.involvements // all involvements
       }
     });
 
@@ -117,19 +137,6 @@ export class ServicesComponent implements OnInit {
       console.log('Update dialog was closed');
     });
   }
-
-  /*
-  openDialog(): void {
-    const dialogRef = this.dialog.open(ActivityFormComponent);
-
-    dialogRef.afterClosed().subscribe(result => {
-      this.loadActivities();
-
-      console.log('The dialog was closed');
-    });
-  }
-  */
-
 }
 
 
