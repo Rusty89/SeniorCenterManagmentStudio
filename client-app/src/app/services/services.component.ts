@@ -97,6 +97,9 @@ export class ServicesComponent implements OnInit {
 
   // opens modal to sate new activity
   addActivity(): void {
+    // Possible it is good idea to create new empty involvement right after new activity is created
+    // and after you clicked on Members in you be able just to add new member to current activity/involvement
+
     const dialogRef = this.dialog.open(ActivityFormComponent);
 
     dialogRef.afterClosed().subscribe(result => {
