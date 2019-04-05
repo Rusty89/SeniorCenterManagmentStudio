@@ -35,7 +35,7 @@ export class ActivityInvFetchService {
           memberEmails: involvement["ain_m_emails"],
 
 
-          id: involvement['id'],
+          id: involvement['Id'],
         });
       });
       return involvementMap;

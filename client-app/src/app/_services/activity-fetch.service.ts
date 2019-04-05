@@ -28,7 +28,7 @@ export class ActivityFetchService {
           zip: activity["ai_zip"],
           phone: activity["ai_phone"],
           email: activity["ai_email"],
-          id: activity['id'],
+          id: activity['Id'],
         });
       });
       return activityMap;

@@ -5,6 +5,7 @@
   <!-- This div will be displayed tmp is not null -->
   <div *ngIf="data; else show">
       <h1>Volunteer Information Form</h1>
+      <h3>Volunteer ID: {{ data.volunteer.id }}</h3>
       <form>
         <div class="form-group">
           <label for="firstName">First Name</label>

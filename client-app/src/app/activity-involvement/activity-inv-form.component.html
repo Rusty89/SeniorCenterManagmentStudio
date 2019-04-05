@@ -30,7 +30,11 @@
 
 
   <h1>Activity Involvement Form</h1>
-  <h3>Activity Name: {{data.activity.className}}</h3>
+  <h3>
+    Activity Name: {{data.activity.className}}
+    <br />
+    ID: {{ data.activity.id }}
+  </h3>
   <div *ngIf="involvement; else show">
 
       <div class="col-12">
@@ -43,7 +47,11 @@
                       </tr>
                   </thead>
                   <tbody>
-                    <td>{{ involvement.uniqueName }}</td>
+                    <td>
+                      {{ involvement.uniqueName }}
+                      <br />
+                      {{ involvement.id }}
+                    </td>
                     <td>
                       <tr *ngFor="let email of involvement.memberEmails">
                         {{ email }} 

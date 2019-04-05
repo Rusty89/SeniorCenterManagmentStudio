@@ -5,6 +5,7 @@
   <!-- This div will be displayed tmp is not null -->
   <div *ngIf="data; else show">
     <h1>Member Information Form</h1>
+    <h3>Member ID: {{ data.member.id }}</h3>
     <mat-dialog-content>
       <form>
         <div class="form-group">

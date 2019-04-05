@@ -167,7 +167,7 @@ export class MemberFetchService {
             // DOCTOR EMAIL: String
             DE: member['md_DE'],
 
-            id: member['id'],
+            id: member['Id'],
 
           });
         });
