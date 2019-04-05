@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 import { ActivityFormComponent } from '.././activity-form/activity-form.component';
-
+import { ActivityInvFormComponent } from '.././activity-involvement/activity-inv-form.component';
 
 import { ActivityFetchService } from '../_services/activity-fetch.service';
 
@@ -19,8 +19,8 @@ export class ServicesComponent implements OnInit {
 
 
   constructor(
-    private activityService: ActivityFetchService, 
-    private router:Router, 
+    private activityService: ActivityFetchService,
+    private router: Router,
     public dialog: MatDialog) { }
 
   public activities;
@@ -47,7 +47,7 @@ export class ServicesComponent implements OnInit {
   // Send data into update dialog
   // ================================================================================== //
   openUpdateDialog(activityEmail: string): void {
-    
+
     // Get all activities and find one activity by email
     // --------------------------------------------------------------------- //
     this.loadActivities();
@@ -55,29 +55,70 @@ export class ServicesComponent implements OnInit {
 
     // Loop via activities and find specific activity by email
     this.activities.forEach((activity) => {
-      if (activity.email === activityEmail)
-      {
+      if (activity.email === activityEmail) {
         tmp = activity;
       }
     });
     // --------------------------------------------------------------------- //
-    
+
     // Open update dialog and sent data into update dialog
     const dialogRef = this.dialog.open(ActivityFormComponent, {
       data: {
         activity: tmp
       }
     });
-    
+
     dialogRef.afterClosed().subscribe(result => {
       this.loadActivities();
-      
+
       console.log('Update dialog was closed');
     });
   }
   // ================================================================================== //
 
-  // opens modal
+  // opens modal to sate new activity
+  addActivity(): void {
+    const dialogRef = this.dialog.open(ActivityFormComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.loadActivities();
+
+      console.log('The dialog was closed');
+    });
+  }
+
+  // opens modal to add involvement
+  addInvolvement(activityEmail: string): void {
+
+    // Get all activities and find one activity by email
+    // --------------------------------------------------------------------- //
+    this.loadActivities();
+    var tmp;
+
+    // Loop via activities and find specific activity by email
+    this.activities.forEach((activity) => {
+      if (activity.email === activityEmail) {
+        tmp = activity;
+      }
+    });
+    // --------------------------------------------------------------------- //
+
+    // Open update dialog and sent data into update dialog
+    const dialogRef = this.dialog.open(ActivityInvFormComponent, {
+      data: {
+        activity: tmp
+      }
+    });
+
+  
+    dialogRef.afterClosed().subscribe(result => {
+      this.loadActivities();
+
+      console.log('Update dialog was closed');
+    });
+  }
+
+  /*
   openDialog(): void {
     const dialogRef = this.dialog.open(ActivityFormComponent);
 
@@ -87,6 +128,7 @@ export class ServicesComponent implements OnInit {
       console.log('The dialog was closed');
     });
   }
+  */
 
 }
 

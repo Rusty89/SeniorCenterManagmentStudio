@@ -1,7 +1,7 @@
 <h1 id="menuTitle">Activities</h1>
 <div class="text-center">
     <div class="btn-group btn-group-lg" role="group" aria-label="...">
-        <button type="button" class="btn btn-success btn-lg mr-1 ml-1" (click)="openDialog()">Add Activity</button>
+        <button type="button" class="btn btn-success btn-lg mr-1 ml-1" (click)="addActivity()">Add Activity</button>
     </div>
 
 </div>
@@ -32,7 +32,7 @@
                         <button type="button" class="btn btn-danger"
                             (click)="deleteActivity(activity.email)">Delete</button>
                         &nbsp;
-                        <button type="button" class="btn btn-danger">Members</button>
+                        <button type="button" class="btn btn-danger" (click)="addInvolvement(activity.email)">Members</button>
                     </td>
                 </tr>
             </tbody>

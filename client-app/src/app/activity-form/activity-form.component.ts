@@ -43,11 +43,4 @@ export class ActivityFormComponent {
       window.location.reload();
     });
   }
-
-  manageMembers(activityEmail: string)
-  {
-    // Get all members of current activity
-
-    // open members dialog and pass all members of current activity into dialog
-  }
 }

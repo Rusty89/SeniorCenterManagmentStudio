@@ -6,6 +6,8 @@ import { Member } from '../_models/member';
 
 // api url for members
 //const API_URL:string = 'https://jln3dnryx2.execute-api.us-east-1.amazonaws.com/Dev/member';
+
+// NEW API
 const API_URL: string = 'https://5z47iau9oe.execute-api.us-east-1.amazonaws.com/SCMS/member';
 
 @Injectable()

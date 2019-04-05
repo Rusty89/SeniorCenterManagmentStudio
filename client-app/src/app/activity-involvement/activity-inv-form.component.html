@@ -1,0 +1,74 @@
+<div class="container">
+
+  <h1>Activity Involvement Form</h1>
+
+  <h3>Activity Name: {{data.activity.className}}</h3>
+  <div class="col-12">
+      <div class="table-responsive">
+          <table class="table table-striped table-bordered table-hover">
+              <thead class="thead-dark">
+                  <tr>
+                      <th scope="col" class="text-center">Activity Uniq Name</th>
+                      <th scope="col" class="text-center">Members</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let involvement of involvements">
+                      <td>{{ involvement.uniqueName }}</td>
+                      <td>
+                        <tr *ngFor="let email of involvement.memberEmails">
+                            {{ email }} 
+                        </tr>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+
+
+<!--
+  <h1>Activity Involvement Form</h1>
+  <h3>Activity Name: {{data.activity.className}}</h3>
+  <div *ngIf="involvement; else show">
+
+      <div class="col-12">
+          <div class="table-responsive">
+              <table class="table table-striped table-bordered table-hover">
+                  <thead class="thead-dark">
+                      <tr>
+                          <th scope="col" class="text-center">Activity Uniq Name</th>
+                          <th scope="col" class="text-center">Members</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    <td>{{ involvement.uniqueName }}</td>
+                    <td>
+                      <tr *ngFor="let email of involvement.memberEmails">
+                        {{ email }} 
+                      </tr>
+                    </td>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+
+
+  </div>
+  <ng-template #show>
+      <h3>Members are not found</h3>
+  </ng-template>
+-->
+
+
+
+<!--
+  <form>
+      <div class="form-group">
+        <label for="className">Activity Name</label>
+        <input type="text" class="form-control" id="className" aria-describedby="className" placeholder="Hot Yoga" [(ngModel)]="data.activity.className" name="className">
+      </div>
+  </form>
+-->
+
+</div>
