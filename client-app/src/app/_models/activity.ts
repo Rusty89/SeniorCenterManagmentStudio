@@ -2,6 +2,16 @@ export class Activity {
     className: string;
     time: string;
     days: string;
+    location: string;
+    phone: string;
+    id?: string;
+}
+
+/*
+export class Activity {
+    className: string;
+    time: string;
+    days: string;
     city: string;
     state: string;
     zip: string;
@@ -9,3 +19,4 @@ export class Activity {
     email: string;
     id?: string;
 }
+*/

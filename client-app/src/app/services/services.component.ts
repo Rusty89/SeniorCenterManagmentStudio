@@ -57,15 +57,15 @@ export class ServicesComponent implements OnInit {
     // --------------------------------------------------- //
   }
 
-  deleteActivity(activityEmail: string) {
-    this.activityService.deleteActivity(activityEmail).subscribe(() => {
+  deleteActivity(activityID: string) {
+    this.activityService.deleteActivity(activityID).subscribe(() => {
       this.loadActivities();
     });
   }
 
   // Send data into update dialog
   // ================================================================================== //
-  openUpdateDialog(activityEmail: string): void {
+  openUpdateDialog(activityID: string): void {
 
     // Get all activities and find one activity by email
     // --------------------------------------------------------------------- //
@@ -74,7 +74,7 @@ export class ServicesComponent implements OnInit {
 
     // Loop via activities and find specific activity by email
     this.activities.forEach((activity) => {
-      if (activity.email === activityEmail) {
+      if (activity.id === activityID) {
         tmp = activity;
       }
     });
@@ -110,7 +110,7 @@ export class ServicesComponent implements OnInit {
   }
 
   // opens modal to add involvement
-  addInvolvement(activityEmail: string): void {
+  addInvolvement(activityID: string): void {
 
     // Get all activities and find one activity by email
     // --------------------------------------------------------------------- //
@@ -119,7 +119,7 @@ export class ServicesComponent implements OnInit {
 
     // Loop via activities and find specific activity by email
     this.activities.forEach((activity) => {
-      if (activity.email === activityEmail) {
+      if (activity.id === activityID) {
         tmp = activity;
       }
     });

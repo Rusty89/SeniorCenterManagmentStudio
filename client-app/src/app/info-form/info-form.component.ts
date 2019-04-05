@@ -65,14 +65,20 @@ export class InfoFormComponent implements OnInit  {
   }
 
 
-  updateMember(memberEmail: string)
+  updateMember(memberID: string)
   {
     // Delete activity by email
-    this.memberService.deleteMember(this.data.member.email);
+    this.deleteMember(memberID);
 
     // Add new activity
     this.memberService.saveMember(this.data.member).toPromise().then(() => {
       window.location.reload();
+    });
+  }
+
+  deleteMember(memberID: string) {
+    this.memberService.deleteMember(memberID).subscribe(() => {
+
     });
   }
 

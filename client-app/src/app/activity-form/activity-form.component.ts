@@ -32,15 +32,20 @@ export class ActivityFormComponent {
     });
   }
 
-  updateActivity(activityEmail: string)
+  updateActivity(activityID: string)
   {
     // Delete activity by email
-    this.activityService.deleteActivity(this.data.activity.email);
+    //this.activityService.deleteActivity(this.data.activity.email);
+    this.deleteActivity(activityID);
 
     // Add new activity
     this.activityService.saveActivity(this.data.activity).toPromise().then(() => {
       //this.router.navigate['services']
       window.location.reload();
     });
+  }
+
+  private deleteActivity(activityID: string) {
+    this.activityService.deleteActivity(activityID).subscribe(() => { });
   }
 }

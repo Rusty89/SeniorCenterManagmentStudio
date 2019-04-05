@@ -1,5 +1,5 @@
 export class Involvement {
-    uniqueName: string;
+    uniqueName: string; // It should be id of an activity
     memberEmails: string[];
     id?: string;
 }

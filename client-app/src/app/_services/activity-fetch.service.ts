@@ -5,7 +5,10 @@ import 'rxjs/add/operator/map';
 import { Activity } from '../_models/activity';
 
 // api url for members
-const API_URL:string = 'https://jln3dnryx2.execute-api.us-east-1.amazonaws.com/Dev/activity';
+//const API_URL:string = 'https://jln3dnryx2.execute-api.us-east-1.amazonaws.com/Dev/activity';
+
+// New API
+const API_URL:string = 'https://5z47iau9oe.execute-api.us-east-1.amazonaws.com/SCMS/activity';
 
 @Injectable()
 export class ActivityFetchService {
@@ -20,27 +23,24 @@ export class ActivityFetchService {
       let activityMap:Activity[] = [];
       activities && activities.forEach((activity)=>{
         activityMap.push({
-          className: activity["ai_class_name"],
-          time: activity["ai_time"],
-          days: activity["ai_days"],
-          city: activity["ai_city"],
-          state: activity["ai_state"],
-          zip: activity["ai_zip"],
-          phone: activity["ai_phone"],
-          email: activity["ai_email"],
-          id: activity['Id'],
+          className: activity["ad_class_name"],
+          time: activity["ad_time"],
+          days: activity["ad_days"],
+          location: activity["ad_location"],
+          phone: activity["ad_phone"],
+          id: activity['id'],
         });
       });
       return activityMap;
     });
   }
   
-  deleteActivity(activityEmail: string)
+  deleteActivity(activityID: string)
   {
     return this.http.delete(API_URL,
       {
         params: {
-          "email": activityEmail
+          "id": activityID
         }
       });
   }

@@ -167,7 +167,7 @@ export class MemberFetchService {
             // DOCTOR EMAIL: String
             DE: member['md_DE'],
 
-            id: member['Id'],
+            id: member['id'],
 
           });
         });
@@ -176,11 +176,11 @@ export class MemberFetchService {
   }
 
   // remove member from the database
-  deleteMember(memberEmail: string) {
+  deleteMember(memberID: string) {
     return this.http.delete(API_URL,
       {
         params: {
-          "email": memberEmail
+          "id": memberID
         }
       });
   }

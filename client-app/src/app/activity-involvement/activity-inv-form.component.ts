@@ -27,12 +27,14 @@ export class ActivityInvFormComponent {
 
   ngOnInit() {
 
-    // Getting all involvements from blinded data
+    // Getting all involvements from attached data
     this.involvements = this.data.involvements;
 
     // Find specific involvement by its unique name
     this.findInvolvement(); 
 
+    // Get all involvements
+    // is not working
     //this.loadInvolvements();
   }
 
@@ -50,19 +52,23 @@ export class ActivityInvFormComponent {
   // Find specific Involvement
   private findInvolvement() 
   {
+
+    // TEST
     this.involvements.forEach((inv) => {
       if (this.data.activity.email === inv.uniqueName) {
         this.involvement = inv;
       }
     });
 
+    // We should use this one, but not now
     /*
-    this.involvements.forEach((value: Int16Array, key: Involvement) => {
-      if (this.data.activity.email === key.uniqueName) {
-        this.involvement = key;
+    this.involvements.forEach((inv) => {
+      if (this.data.activity.id === inv.uniqueName) {
+        this.involvement = inv;
       }
     });
     */
+
   }
 
   /*
@@ -76,6 +82,11 @@ export class ActivityInvFormComponent {
     this.activityInvService.deleteInvolvement(uniqueName).subscribe(() => {
       this.loaInvolvements();
     });
+  }
+
+  updateInvolvement()
+  {
+    
   }
   */
 }

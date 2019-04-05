@@ -1,5 +1,14 @@
 <div class="container">
 
+    <div *ngIf="involvement; else show">
+      <!-- print  -->
+    </div>
+
+    <ng-template #show>
+        <h3>Members are not found</h3>
+        <!-- here should be form to add new involvement -->
+    </ng-template>
+
   <!--
   <h1>Activity Involvement Form</h1>
 

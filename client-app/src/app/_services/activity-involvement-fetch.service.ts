@@ -21,6 +21,8 @@ export class ActivityInvFetchService {
       let involvementMap:Involvement[] = [];
       involvements && involvements.forEach((involvement)=>{
         involvementMap.push({
+
+          // It should be id of an activity
           uniqueName: involvement["ain_uname"],
 
           // Example of adding involvement
