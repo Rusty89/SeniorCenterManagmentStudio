@@ -57,14 +57,23 @@ export class InfoFormComponent implements OnInit  {
     // --------------------------------------------------- //
   }
 
+  // Saving member
   saveMember() {
     this.memberService.saveMember(this.member).toPromise().then(() => {
-      //this.router.navigate(['members']);
       window.location.reload();
     });
   }
 
+  // Updating member
+  updateMember(member: Member) {
+    this.memberService.updateMember(member).toPromise().then(() => {
+      window.location.reload();
+    });
+  }
 
+  // OLD PART OF CODE, I WOULD KEEP IT FOR NOW
+  // ------------------------------------------------------------------------------------------ //
+  /*
   updateMember(memberID: string)
   {
     // Delete activity by email
@@ -81,5 +90,6 @@ export class InfoFormComponent implements OnInit  {
 
     });
   }
+  */
 
 }

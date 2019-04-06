@@ -27,7 +27,15 @@ DynamoDB: "member_data"
     Amazon Resource Name (ARN):
     arn:aws:dynamodb:us-east-1:998369988177:table/member_data
 
-API-UPDATE - Invoke URL:
+API-UPDATE - Invoke URL: https://5z47iau9oe.execute-api.us-east-1.amazonaws.com/SCMS/member-update
+    POST: add member
+    REQUEST FORMAT: 
+    {
+        "id": "ID_VALUE",
+        "field_name": "value",
+        ...
+        "field_name": "value"
+    }
 // ------------------------------------------------------------------------------------------------------------------ //
 
 // VOLUNTEER
@@ -66,6 +74,14 @@ DynamoDB: "activity_data"
 
 
 API-UPDATE - Invoke URL: https://5z47iau9oe.execute-api.us-east-1.amazonaws.com/SCMS/activity-update
+    POST: add member
+    REQUEST FORMAT: 
+    {
+        "id": "ID_VALUE",
+        "field_name": "value",
+        ...
+        "field_name": "value"
+    }
 // ------------------------------------------------------------------------------------------------------------------ //
 
 // ACTIVITY INVOLVEMENT

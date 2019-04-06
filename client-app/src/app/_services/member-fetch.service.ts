@@ -4,11 +4,15 @@ import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import { Member } from '../_models/member';
 
-// api url for members
+// OLD: api url for members
 //const API_URL:string = 'https://jln3dnryx2.execute-api.us-east-1.amazonaws.com/Dev/member';
 
-// NEW API
+// NEW: API for
 const API_URL: string = 'https://5z47iau9oe.execute-api.us-east-1.amazonaws.com/SCMS/member';
+
+// NEW: API only for updating single member
+const API_URL_UPDATE = 'https://5z47iau9oe.execute-api.us-east-1.amazonaws.com/SCMS/member-update';
+
 
 @Injectable()
 export class MemberFetchService {
@@ -175,6 +179,20 @@ export class MemberFetchService {
       });
   }
 
+  // post member to the database
+  saveMember(member: Member) {
+    let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    let options = { headers: headers };
+    return this.http.post(API_URL, member, options);
+  }
+
+  // post member to the database
+  updateMember(member: Member) {
+    let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    let options = { headers: headers };
+    return this.http.post(API_URL_UPDATE, member, options);
+  }
+
   // remove member from the database
   deleteMember(memberID: string) {
     return this.http.delete(API_URL,
@@ -183,13 +201,6 @@ export class MemberFetchService {
           "id": memberID
         }
       });
-  }
-
-  // post member to the database
-  saveMember(member: Member) {
-    let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    let options = { headers: headers };
-    return this.http.post(API_URL, member, options);
   }
 
 }
