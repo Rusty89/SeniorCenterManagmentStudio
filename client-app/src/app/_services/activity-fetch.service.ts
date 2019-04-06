@@ -4,18 +4,21 @@ import {Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import { Activity } from '../_models/activity';
 
-// api url for members
+// OLD: api url for activities
 //const API_URL:string = 'https://jln3dnryx2.execute-api.us-east-1.amazonaws.com/Dev/activity';
 
-// New API
+// NEW: API for activities
 const API_URL:string = 'https://5z47iau9oe.execute-api.us-east-1.amazonaws.com/SCMS/activity';
+
+// NEW: API only for updating single activity
+const API_URL_UPDATE = 'https://5z47iau9oe.execute-api.us-east-1.amazonaws.com/SCMS/activity-update';
 
 @Injectable()
 export class ActivityFetchService {
 
   constructor(private http: HttpClient) {  }
 
-
+  // Getting all activities
   getActivities()
   {
     return this.http.get(API_URL)
@@ -35,6 +38,15 @@ export class ActivityFetchService {
     });
   }
   
+  // Saving activity
+  saveActivity(activity: Activity)
+  {
+    let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    let options = { headers: headers };
+    return this.http.post(API_URL, activity, options);
+  }
+
+  // Deleting activity
   deleteActivity(activityID: string)
   {
     return this.http.delete(API_URL,
@@ -45,11 +57,12 @@ export class ActivityFetchService {
       });
   }
 
-  saveActivity(activity: Activity)
+  // Updating activity, we are using new API design special for update purpose
+  updateActivity(activity: Activity)
   {
-    let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    let options = { headers: headers };
-    return this.http.post(API_URL, activity, options);
+      let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+      let options = { headers: headers };
+      return this.http.post(API_URL_UPDATE, activity, options);
   }
 
 }

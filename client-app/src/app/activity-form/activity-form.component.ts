@@ -1,4 +1,3 @@
-
 import { Component, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
@@ -25,13 +24,24 @@ export class ActivityFormComponent {
     this.activity = new Activity();
   }
 
+   // Saving activity
   saveActivity() {
     this.activityService.saveActivity(this.activity).toPromise().then(() => {
-      //this.router.navigate['services']
       window.location.reload();
     });
   }
 
+  // Updating activity
+  updateActivity(activity: Activity)
+  {
+    this.activityService.updateActivity(activity).toPromise().then(() => {
+      window.location.reload();
+    });
+  }
+
+  // OLD PART OF CODE, I WOULD KEEP IT FOR NOW
+  // ------------------------------------------------------------------------------------------ //
+  /*
   updateActivity(activityID: string)
   {
     // Delete activity by email
@@ -48,4 +58,6 @@ export class ActivityFormComponent {
   private deleteActivity(activityID: string) {
     this.activityService.deleteActivity(activityID).subscribe(() => { });
   }
+  */
+ // ------------------------------------------------------------------------------------------ //
 }

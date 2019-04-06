@@ -4,7 +4,7 @@ var AWS = require('aws-sdk'), uuid = require('uuid'),
 exports.handler = (event, context, callback) => {
     var params = {
         Item : {
-        "Id" : uuid.v1(),
+        "id" : uuid.v1(),
 
         // NAME: String
         "md_fname" : event.firstName,

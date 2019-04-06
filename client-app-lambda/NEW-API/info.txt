@@ -1,4 +1,3 @@
-
 // MEMBER
 // ------------------------------------------------------------------------------------------------------------------ //
 API - Invoke URL: https://5z47iau9oe.execute-api.us-east-1.amazonaws.com/SCMS/member
@@ -16,15 +15,19 @@ API - Invoke URL: https://5z47iau9oe.execute-api.us-east-1.amazonaws.com/SCMS/me
     DELETE: delete member by email
     REQUEST FORMAT: 
     {
-        "email": "value",
+        "id": "value",
     }
 
 DynamoDB: "member_data"
     Primary partition key
-    md_email (String)
+    id (String)
 
     Region: US East (N. Virginia)
 
+    Amazon Resource Name (ARN):
+    arn:aws:dynamodb:us-east-1:998369988177:table/member_data
+
+API-UPDATE - Invoke URL:
 // ------------------------------------------------------------------------------------------------------------------ //
 
 // VOLUNTEER
@@ -34,7 +37,35 @@ DynamoDB: "member_data"
 
 // ACTIVITY
 // ------------------------------------------------------------------------------------------------------------------ //
+API - Invoke URL: https://5z47iau9oe.execute-api.us-east-1.amazonaws.com/SCMS/activity
+    POST: add activity
+    REQUEST FORMAT: 
+    {
+        "field_name": "value",
+        ...
+        "field_name": "value"
+    }
 
+    GET: get activities
+    REQUEST FORMAT: N/A
+
+    DELETE: delete activity by its id
+    REQUEST FORMAT: 
+    {
+        "id": "value",
+    }
+
+DynamoDB: "activity_data"
+    Primary partition key
+    id (String)
+
+    Region: US East (N. Virginia)
+
+    Amazon Resource Name (ARN):
+    arn:aws:dynamodb:us-east-1:998369988177:table/activity_data
+
+
+API-UPDATE - Invoke URL: https://5z47iau9oe.execute-api.us-east-1.amazonaws.com/SCMS/activity-update
 // ------------------------------------------------------------------------------------------------------------------ //
 
 // ACTIVITY INVOLVEMENT
