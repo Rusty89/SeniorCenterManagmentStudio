@@ -17,9 +17,10 @@
                     <th scope="col" class="text-center">City</th>
                     <th scope="col" class="text-center">State</th>
                     <th scope="col" class="text-center">Zip</th>
-                    <th scope="col" class="text-center">Month</th>
+                    <th scope="col" class="text-center">DOB</th>
                     <th scope="col" class="text-center">Phone</th>
                     <th scope="col" class="text-center">Email</th>
+                    <th scope="col" class="text-center">ID</th>
                     <th scope="col" class="text-center">Action</th>
                 </tr>
             </thead>
@@ -32,15 +33,16 @@
                     <td>{{volunteer.city}}</td>
                     <td>{{volunteer.state}}</td>
                     <td>{{volunteer.zip}}</td>
-                    <td>{{volunteer.month}}</td>
+                    <td>{{volunteer.dob}}</td>
                     <td>{{volunteer.phone}}</td>
                     <td>{{volunteer.email}}</td>
+                    <td>{{volunteer.id}}</td>
                     <td>
                         <button type="button" class="btn btn-warning"
-                            (click)="openUpdateDialog(volunteer.email)">Update</button>
+                            (click)="openUpdateDialog(volunteer.id)">Update</button>
                         &nbsp;
                         <button type="button" class="btn btn-danger"
-                            (click)="deleteVolunteer(volunteer.email)">Delete</button>
+                            (click)="deleteVolunteer(volunteer.id)">Delete</button>
 
                     </td>
                 </tr>

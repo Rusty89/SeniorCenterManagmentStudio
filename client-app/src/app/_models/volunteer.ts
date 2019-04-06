@@ -6,7 +6,7 @@ export class Volunteer {
     city: string;
     state: string;
     zip: string;
-    month: string;
+    dob: string;
     phone: string;
     email: string;
     id?: string;

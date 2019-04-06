@@ -12,7 +12,7 @@ API - Invoke URL: https://5z47iau9oe.execute-api.us-east-1.amazonaws.com/SCMS/me
     GET: get members
     REQUEST FORMAT: N/A
 
-    DELETE: delete member by email
+    DELETE: delete member by id
     REQUEST FORMAT: 
     {
         "id": "value",
@@ -25,10 +25,9 @@ DynamoDB: "member_data"
     Region: US East (N. Virginia)
 
     Amazon Resource Name (ARN):
-    arn:aws:dynamodb:us-east-1:998369988177:table/member_data
 
 API-UPDATE - Invoke URL: https://5z47iau9oe.execute-api.us-east-1.amazonaws.com/SCMS/member-update
-    POST: add member
+    POST: update member
     REQUEST FORMAT: 
     {
         "id": "ID_VALUE",
@@ -40,7 +39,42 @@ API-UPDATE - Invoke URL: https://5z47iau9oe.execute-api.us-east-1.amazonaws.com/
 
 // VOLUNTEER
 // ------------------------------------------------------------------------------------------------------------------ //
+API - Invoke URL: https://5z47iau9oe.execute-api.us-east-1.amazonaws.com/SCMS/volunteer
+    POST: add volunteer
+    REQUEST FORMAT: 
+    {
+        "field_name": "value",
+        ...
+        "field_name": "value"
+    }
 
+    GET: get volunteers
+    REQUEST FORMAT: N/A
+
+    DELETE: delete volunteer by id
+    REQUEST FORMAT: 
+    {
+        "id": "value",
+    }
+
+
+DynamoDB: "volunteer_data"
+    Primary partition key
+    id (String)
+
+    Region: US East (N. Virginia)
+
+    Amazon Resource Name (ARN):
+
+API-UPDATE - Invoke URL: https://5z47iau9oe.execute-api.us-east-1.amazonaws.com/SCMS/volunteer-update
+    POST: update volunteer
+    REQUEST FORMAT: 
+    {
+        "id": "ID_VALUE",
+        "field_name": "value",
+        ...
+        "field_name": "value"
+    }
 // ------------------------------------------------------------------------------------------------------------------ //
 
 // ACTIVITY
@@ -70,11 +104,10 @@ DynamoDB: "activity_data"
     Region: US East (N. Virginia)
 
     Amazon Resource Name (ARN):
-    arn:aws:dynamodb:us-east-1:998369988177:table/activity_data
 
 
 API-UPDATE - Invoke URL: https://5z47iau9oe.execute-api.us-east-1.amazonaws.com/SCMS/activity-update
-    POST: add member
+    POST: update activity
     REQUEST FORMAT: 
     {
         "id": "ID_VALUE",

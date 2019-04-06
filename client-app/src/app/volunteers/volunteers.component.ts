@@ -33,15 +33,15 @@ export class VolunteersComponent implements OnInit {
     );
   }
 
-  deleteVolunteer(volunteerEmail: string) {
-    this.volunteerService.deleteVolunteer(volunteerEmail).subscribe(() => {
+  deleteVolunteer(volunteerID: string) {
+    this.volunteerService.deleteVolunteer(volunteerID).subscribe(() => {
       this.loadVolunteers();
     });
   }
 
   // Send data into update dialog
   // ================================================================================== //
-  openUpdateDialog(volunteerEmail: string): void {
+  openUpdateDialog(volunteerID: string): void {
     
     // Get all activities and find one activity by email
     // --------------------------------------------------------------------- //
@@ -50,7 +50,7 @@ export class VolunteersComponent implements OnInit {
 
     // Loop via activities and find specific activity by email
     this.volunteers.forEach((volunteer) => {
-      if (volunteer.email === volunteerEmail)
+      if (volunteer.id === volunteerID)
       {
         tmp = volunteer;
       }

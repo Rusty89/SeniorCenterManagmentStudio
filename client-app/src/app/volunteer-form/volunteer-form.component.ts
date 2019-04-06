@@ -30,11 +30,20 @@ export class VolunteerFormComponent implements OnInit {
 
   saveVolunteer() {
     this.volunteerService.saveVolunteer(this.volunteer).toPromise().then(() => {
-      //this.router.navigate(['volunteers']);
       window.location.reload();
     });
   }
 
+  updateVolunteer(volunteer: Volunteer)
+  {
+    this.volunteerService.updateVolunteer(volunteer).toPromise().then(() => {
+      window.location.reload();
+    });
+  }
+
+   // OLD PART OF CODE, I WOULD KEEP IT FOR NOW
+  // ------------------------------------------------------------------------------------------ //
+  /*
   updateVolunteer(volunteerEmail: string)
   {
     // Delete activity by email
@@ -46,5 +55,7 @@ export class VolunteerFormComponent implements OnInit {
       window.location.reload();
     });
   }
+  */
+ // ------------------------------------------------------------------------------------------ //
 
 }
