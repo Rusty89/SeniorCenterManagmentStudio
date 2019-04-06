@@ -51,19 +51,21 @@
               <table class="table table-striped table-bordered table-hover">
                   <thead class="thead-dark">
                       <tr>
-                          <th scope="col" class="text-center">Activity Uniq Name</th>
-                          <th scope="col" class="text-center">Members</th>
+                          <th scope="col" class="text-center">Activity-Involvement-ID</th>
+                          <th scope="col" class="text-center">Activity-ID</th>
+                          <th scope="col" class="text-center">Member-IDs</th>
                       </tr>
                   </thead>
                   <tbody>
                     <td>
-                      {{ involvement.uniqueName }}
-                      <br />
                       {{ involvement.id }}
                     </td>
                     <td>
-                      <tr *ngFor="let email of involvement.memberEmails">
-                        {{ email }} 
+                      {{ involvement.activityID }}
+                    </td>
+                    <td>
+                      <tr *ngFor="let IDs of involvement.memberIDs">
+                        {{ IDs }} 
                       </tr>
                     </td>
                   </tbody>

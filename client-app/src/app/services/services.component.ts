@@ -9,6 +9,8 @@ import { ActivityFetchService } from '../_services/activity-fetch.service';
 import { ActivityInvFormComponent } from '.././activity-involvement/activity-inv-form.component';
 import { ActivityInvFetchService } from '../_services/activity-involvement-fetch.service';
 
+import { Involvement } from '../_models/involvement';
+
 
 @Component({
   selector: 'app-services',
@@ -109,18 +111,72 @@ export class ServicesComponent implements OnInit {
     });
   }
 
-  // opens modal to add involvement
-  addInvolvement(activityID: string): void {
 
-    // Get all activities and find one activity by email
+  /*
+  saveInvolvement() {
+    this.activityInvService.saveInvolvement(this.involvement).toPromise().then(() => {
+      window.location.reload();
+    });
+  }
+
+  deleteInvolvement(uniqueName: string) {
+    this.activityInvService.deleteInvolvement(uniqueName).subscribe(() => {
+      this.loaInvolvements();
+    });
+  }
+  */
+
+  // opens modal to add involvement
+  manageMember(activityID: string): void 
+  {
+
+    // Create new involvement for this activity
+    // --------------------------------------------------------------------- //
+    // But before we have to check if we have an involvement for this activity
+    
+    // Get all activities and find one activity by ID
+
+    this.loadInvolvements();
+    var hasInv: boolean;
+
+    // Loop via involvements and find specific involvements by activityID
+    this.involvements.forEach((involvement) => {
+      if (involvement.activityID === activityID) 
+      {
+        hasInv = true;
+        //stop loop and load existing involvement
+      }
+
+      //else create new involvement
+      //addInvolvement(activityID);
+      
+    });
+    // --------------------------------------------------------------------- //
+
+
+    // Get all activities and find one activity by ID
     // --------------------------------------------------------------------- //
     this.loadActivities();
-    var tmp;
+    var tmpActivity;
 
     // Loop via activities and find specific activity by email
     this.activities.forEach((activity) => {
       if (activity.id === activityID) {
-        tmp = activity;
+        tmpActivity = activity;
+      }
+    });
+    // --------------------------------------------------------------------- //
+
+
+    // Get all activities and find one activity by ID
+    // --------------------------------------------------------------------- //
+    this.loadInvolvements();
+    var tmpInvolvement;
+
+    // Loop via involvements and find specific involvements by activityID
+    this.involvements.forEach((involvement) => {
+      if (involvement.activityID === activityID) {
+        tmpInvolvement = involvement;
       }
     });
     // --------------------------------------------------------------------- //
@@ -128,8 +184,8 @@ export class ServicesComponent implements OnInit {
     // Open update dialog and sent data into update dialog
     const dialogRef = this.dialog.open(ActivityInvFormComponent, {
       data: {
-        activity: tmp,
-        involvements: this.involvements // all involvements
+        activity: tmpActivity,
+        involvement: tmpInvolvement
       }
     });
 
@@ -138,6 +194,20 @@ export class ServicesComponent implements OnInit {
       this.loadActivities();
 
       console.log('Update dialog was closed');
+    });
+  }
+
+  private addInvolvement(activityID: string)
+  {
+    var tmpMemberIDs: string[];
+    tmpMemberIDs[0] = "NULL";
+
+    var tmpinvolvement = new Involvement();
+    tmpinvolvement.activityID = activityID;
+    tmpinvolvement.memberIDs = tmpMemberIDs;
+
+    this.activityInvService.saveInvolvement(tmpinvolvement).toPromise().then(() => {
+      window.location.reload();
     });
   }
 }

@@ -28,65 +28,15 @@ export class ActivityInvFormComponent {
   ngOnInit() {
 
     // Getting all involvements from attached data
-    this.involvements = this.data.involvements;
+    //this.involvements = this.data.involvements;
+    this.involvement = this.data.involvement;
 
-    // Find specific involvement by its unique name
-    this.findInvolvement(); 
-
-    // Get all involvements
-    // is not working
-    //this.loadInvolvements();
   }
 
-  // Is not working how it should, so I have to send all involvements from the ServicesComponent
-  // ---------------------------------------------------------------------------------------- //
-  private loadInvolvements() {
-    this.activityInvService.getInvolvements().subscribe(
-      data => { this.involvements = data },
-      err => console.error(err),
-      () => console.log("involvements loaded.")
-    );
-  }
-  // ---------------------------------------------------------------------------------------- //
-
-  // Find specific Involvement
-  private findInvolvement() 
+  updateInvolvement(involvement: Involvement)
   {
-
-    // TEST
-    this.involvements.forEach((inv) => {
-      if (this.data.activity.email === inv.uniqueName) {
-        this.involvement = inv;
-      }
-    });
-
-    // We should use this one, but not now
-    /*
-    this.involvements.forEach((inv) => {
-      if (this.data.activity.id === inv.uniqueName) {
-        this.involvement = inv;
-      }
-    });
-    */
-
-  }
-
-  /*
-  saveInvolvement() {
-    this.activityInvService.saveInvolvement(this.involvement).toPromise().then(() => {
+    this.activityInvService.updateInvolvement(involvement).toPromise().then(() => {
       window.location.reload();
     });
   }
-
-  deleteInvolvement(uniqueName: string) {
-    this.activityInvService.deleteInvolvement(uniqueName).subscribe(() => {
-      this.loaInvolvements();
-    });
-  }
-
-  updateInvolvement()
-  {
-    
-  }
-  */
 }

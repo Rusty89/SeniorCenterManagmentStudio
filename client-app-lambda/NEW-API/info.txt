@@ -119,7 +119,43 @@ API-UPDATE - Invoke URL: https://5z47iau9oe.execute-api.us-east-1.amazonaws.com/
 
 // ACTIVITY INVOLVEMENT
 // ------------------------------------------------------------------------------------------------------------------ //
+Invoke URL: https://5z47iau9oe.execute-api.us-east-1.amazonaws.com/SCMS/activity-involvement
+    POST: add involvement
+    REQUEST FORMAT: 
+    {
+        "field_name": "value",
+        ...
+        "field_name": "value"
+    }
 
+    GET: get involvements
+    REQUEST FORMAT: N/A
+
+    DELETE: delete activity by its id
+    REQUEST FORMAT: 
+    {
+        "id": "value",
+    }
+
+
+DynamoDB: "activity_involvement_data"
+    Primary partition key
+    aid_activity_id (String) // is ID of activity
+
+    Region: US East (N. Virginia)
+
+    Amazon Resource Name (ARN):
+
+
+API-UPDATE - Invoke URL: https://5z47iau9oe.execute-api.us-east-1.amazonaws.com/SCMS/activity-involvement-update
+    POST: update activity involvement
+    REQUEST FORMAT: 
+    {
+        "id": "ID_VALUE",
+        "field_name": "value",
+        ...
+        "field_name": "value"
+    }
 // ------------------------------------------------------------------------------------------------------------------ //
     
 	
