@@ -68,22 +68,7 @@ export class ActivityInvFormComponent implements OnInit{
         // adds member if it's new to the activity
         if (dontAdd === false) {
             involvement.memberIDs.push(memberID);
-
-
-
-
-            // converts array of IDs to array of names
-
-			if((involvement.memberIDs!=null) && (this.members !=null)){
-				for (var i = 0; i < involvement.memberIDs.length; i++) {
-					for (var j = 0; j < this.members.length; j++) {
-						if (involvement.memberIDs[i] === this.members[j].id) {
-							this.involvementsByName.push(this.members[j].firstName)
-							
-						}
-					}
-				}
-			}
+           
         }
 		this.viewMembers(this.involvement);
         this.forPrinting = this.involvementsByName;
