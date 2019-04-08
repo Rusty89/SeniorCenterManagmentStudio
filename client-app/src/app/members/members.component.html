@@ -18,7 +18,7 @@
                     <th scope="col" class="text-center">DOB</th>
                     <th scope="col" class="text-center">Phone</th>
                     <th scope="col" class="text-center">Email</th>
-                    <th scope="col" class="text-center">ID</th>
+                    <!--  <th scope="col" class="text-center">ID</th> -->
                     <th scope="col" class="text-center">Action</th>
                 </tr>
             </thead>
@@ -34,14 +34,13 @@
                     <td>{{member.dob}}</td>
                     <td>{{member.phone}}</td>
                     <td>{{member.email}}</td>
-                    <td>{{member.id}}</td>
+                    <!--  <td>{{member.id}}</td>-->
                     <td>
 
                         <button type="button" class="btn btn-warning"
                             (click)="openUpdateDialog(member.id)">Update</button>
                         &nbsp;
-                        <button type="button" class="btn btn-danger"
-                            (click)="deleteMember(member.id)">Delete</button>
+                        <button type="button" class="btn btn-danger" (click)="deleteMember(member.id)">Delete</button>
                     </td>
                 </tr>
             </tbody>

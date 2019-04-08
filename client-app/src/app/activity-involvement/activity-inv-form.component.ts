@@ -73,11 +73,13 @@ export class ActivityInvFormComponent implements OnInit{
 
 
             // converts array of IDs to array of names
+
 			if((involvement.memberIDs!=null) && (this.members !=null)){
 				for (var i = 0; i < involvement.memberIDs.length; i++) {
 					for (var j = 0; j < this.members.length; j++) {
 						if (involvement.memberIDs[i] === this.members[j].id) {
-							this.involvementsByName.push(this.members[j].firstName)                      
+							this.involvementsByName.push(this.members[j].firstName)
+							
 						}
 					}
 				}
@@ -86,8 +88,9 @@ export class ActivityInvFormComponent implements OnInit{
 		this.viewMembers(this.involvement);
         this.forPrinting = this.involvementsByName;
 
+
         // prints out the list of members in an involvement
-        this.forPrinting.forEach(element => {
+        this.involvementsByName.forEach(element => {
             console.log("Name: " + element);
         })
 
@@ -104,7 +107,7 @@ export class ActivityInvFormComponent implements OnInit{
 			for (var i = 0; i < involvement.memberIDs.length; i++) {
                 for (var j = 0; j < this.members.length; j++) {
                     if (involvement.memberIDs[i] === this.members[j].id) {
-                        this.involvementsByName.push(this.members[j].firstName)                      
+                        this.involvementsByName.push(this.members[j].firstName.concat(" ".concat(this.members[j].lastName)))                      
                     }
                 }
             }

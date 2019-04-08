@@ -5,48 +5,42 @@
         <ng-template #show>
             <h3>Members are not found</h3>
         </ng-template>
-        <h2>Add Members to {{data.activity.className}}</h2>
+        <h1>Add Members to {{data.activity.className}}</h1>
 
-        <!-- display participating members -->
+        <!-- display participating members 
         <h1>Activity Involvement Form</h1>
         <h3>
             Activity Name: {{data.activity.className}}
             <br />
-            ID: {{ data.activity.id }}
+            //ID: {{ data.activity.id }}
         </h3>
-        <div *ngIf="involvement; else show">
+        -->
 
-            <div class="col-12">
-                <div class="table-responsive">
-                    <table class="table table-striped table-bordered table-hover">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th scope="col" class="text-center">Activity-Involvement-ID</th>
-                                <th scope="col" class="text-center">Activity-ID</th>
-                                <th scope="col" class="text-center">Member-IDs</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <td>
-                                {{ involvement.id}}
-                            </td>
-                            <td>
-                                {{ involvement.activityID }}
-                            </td>
-                            <td>
-                                <tr *ngFor="let x of forPrinting">
-                                    
-                                        
-                                    {{ x }}
-                                    
- 
+        <div class="row">
+            <div *ngIf="involvement; else show">
+
+                <div class="col-12">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col" class="text-center">Enrolled Members</th>
                                 </tr>
-                            </td>
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+
+                                <tr *ngFor="let x of forPrinting">
+                                    {{ x }}
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-        </div>
+		</div>
+ 
+
 
         <!-- display members to add to activity -->
         <div class="col-12">
@@ -74,5 +68,7 @@
             </div>
         </div>
 
+
     </mat-dialog-content>
+
 </div>
