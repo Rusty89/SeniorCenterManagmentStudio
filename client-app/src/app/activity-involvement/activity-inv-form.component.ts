@@ -71,16 +71,18 @@ export class ActivityInvFormComponent {
             for (var i = 0; i < involvement.memberIDs.length; i++) {
                 for (var j = 0; j < this.members.length; j++) {
                     if (involvement.memberIDs[i] === this.members[j].id) {
-                        this.involvementsByName.push(this.members[j].firstName)                      
+                        this.involvementsByName.push(this.members[j].firstName + " " + this.members[j].lastName)                      
                     }
                 }
             }
+
+            this.forPrinting = this.involvementsByName;
         }
 
-        this.forPrinting = this.involvementsByName;
+        //this.forPrinting = this.involvementsByName;
 
         // prints out the list of members in an involvement
-        this.forPrinting.forEach(element => {
+        this.involvementsByName.forEach(element => {
             console.log("Name: " + element);
         })
 
