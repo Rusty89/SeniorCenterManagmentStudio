@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
@@ -17,7 +17,7 @@ import { MembersComponent } from '@app/members/members.component';
     templateUrl: './activity-inv-form.component.html',
     styleUrls: ['./activity-inv-form.component.css']
 })
-export class ActivityInvFormComponent {
+export class ActivityInvFormComponent implements OnInit{
 
     constructor(
         private activityService: ActivityFetchService,
@@ -36,12 +36,16 @@ export class ActivityInvFormComponent {
 
         // Getting all involvements from attached data
         //this.involvements = this.data.involvements;
+		
         this.involvement = this.data.involvement;
         this.loadMembers();
-		this.viewMembers(this.involvement);
+		
+		console.log("init");
         //this.involvementsByName = [];
 
     }
+	
+	
 
     updateInvolvement(involvement: Involvement, memberID: string) {
         this.involvementsByName = [];
@@ -69,13 +73,15 @@ export class ActivityInvFormComponent {
 
 
             // converts array of IDs to array of names
-            for (var i = 0; i < involvement.memberIDs.length; i++) {
-                for (var j = 0; j < this.members.length; j++) {
-                    if (involvement.memberIDs[i] === this.members[j].id) {
-                        this.involvementsByName.push(this.members[j].firstName)                      
-                    }
-                }
-            }
+			if((involvement.memberIDs!=null) && (this.members !=null)){
+				for (var i = 0; i < involvement.memberIDs.length; i++) {
+					for (var j = 0; j < this.members.length; j++) {
+						if (involvement.memberIDs[i] === this.members[j].id) {
+							this.involvementsByName.push(this.members[j].firstName)                      
+						}
+					}
+				}
+			}
         }
 		this.viewMembers(this.involvement);
         this.forPrinting = this.involvementsByName;
@@ -94,13 +100,16 @@ export class ActivityInvFormComponent {
 	
 	private viewMembers(involvement: Involvement){
 		this.involvementsByName = [];
-		for (var i = 0; i < involvement.memberIDs.length; i++) {
+		if((involvement.memberIDs!=null) && (this.members !=null)){
+			for (var i = 0; i < involvement.memberIDs.length; i++) {
                 for (var j = 0; j < this.members.length; j++) {
                     if (involvement.memberIDs[i] === this.members[j].id) {
                         this.involvementsByName.push(this.members[j].firstName)                      
                     }
                 }
             }
+		
+		}
 		
 	}
 	
@@ -120,7 +129,7 @@ export class ActivityInvFormComponent {
 
     private loadMembers() {
         this.memberService.getMembers().subscribe(
-            data => { this.members = data },
+            data => { this.members = data; this.updateInvolvement(this.involvement, data[0].id) },
             err => console.error(err),
             () => console.log("members loaded.")
         );
