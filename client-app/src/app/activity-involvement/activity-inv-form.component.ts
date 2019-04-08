@@ -38,6 +38,7 @@ export class ActivityInvFormComponent {
         //this.involvements = this.data.involvements;
         this.involvement = this.data.involvement;
         this.loadMembers();
+		this.viewMembers(this.involvement);
         //this.involvementsByName = [];
 
     }
@@ -76,7 +77,7 @@ export class ActivityInvFormComponent {
                 }
             }
         }
-
+		this.viewMembers(this.involvement);
         this.forPrinting = this.involvementsByName;
 
         // prints out the list of members in an involvement
@@ -89,6 +90,33 @@ export class ActivityInvFormComponent {
 
 
     }
+	
+	
+	private viewMembers(involvement: Involvement){
+		this.involvementsByName = [];
+		for (var i = 0; i < involvement.memberIDs.length; i++) {
+                for (var j = 0; j < this.members.length; j++) {
+                    if (involvement.memberIDs[i] === this.members[j].id) {
+                        this.involvementsByName.push(this.members[j].firstName)                      
+                    }
+                }
+            }
+		
+	}
+	
+	private removeMember(involvement: Involvement, memberID: string){
+		
+		for (var i = 0; i < involvement.memberIDs.length; i++) {
+                
+				if (involvement.memberIDs[i] === memberID) {
+					this.involvement.memberIDs.splice(i,1);                 
+				}
+                
+            }	
+		
+		this.viewMembers(this.involvement);
+		this.forPrinting = this.involvementsByName;
+	}
 
     private loadMembers() {
         this.memberService.getMembers().subscribe(
