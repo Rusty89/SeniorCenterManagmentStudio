@@ -9,6 +9,7 @@ import { AlertService, AuthenticationService } from '@app/_services';
 export class LoginComponent implements OnInit {
     loginForm: FormGroup;
     loading = false;
+	timeout=false;
     submitted = false;
     returnUrl: string;
 
@@ -57,6 +58,8 @@ export class LoginComponent implements OnInit {
             .subscribe(
                 data => {
                     this.router.navigate([this.returnUrl]);
+					this.startTimer();
+					
                 },
                 error => {
                     this.alertService.error(error);
@@ -65,4 +68,21 @@ export class LoginComponent implements OnInit {
 
                 });
     }
+	
+	
+	timeLeft: number = 5;
+	interval;
+
+	startTimer() {
+    this.interval = setInterval(() => {
+      if(this.timeLeft > 0) {
+        this.timeLeft--;
+		
+      } else {
+		this.timeout=true;
+		this.loading=false;
+        this.timeLeft =5;
+      }
+    },1000)
+  }
 }
