@@ -27,13 +27,15 @@
                     <td>{{activity.location}}</td>
                     <td>{{activity.id}}</td>
                     <td>
-                        <button type="button" class="btn btn-warning"
-                            (click)="openUpdateDialog(activity.id)">Update</button>
+                        <button type="button" class="btn btn-success" (click)="manageMember(activity.id)">Manage
+                            Members</button>
                         &nbsp;
                         <button type="button" class="btn btn-danger"
                             (click)="deleteActivity(activity.id)">Delete</button>
                         &nbsp;
-                        <button type="button" class="btn btn-danger" (click)="manageMember(activity.id)">Members</button>
+                        <button type="button" class="btn btn-warning"
+                            (click)="openUpdateDialog(activity.id)">Update</button>
+
                     </td>
                 </tr>
             </tbody>

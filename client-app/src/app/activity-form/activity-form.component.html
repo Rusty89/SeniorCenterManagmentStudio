@@ -23,47 +23,14 @@
               </div>
             </div>
             <br />
-
-            <!--
-            <div class="row">
-              <div class="col-4">
-                <label for="city">City</label>
-                <input type="text" class="form-control" id="city" aria-describedby="city" placeholder="Belgrade" [(ngModel)]="data.activity.city" name="city">
-              </div>
-              <div class="col-4">
-                <label for="state">State</label>
-                <input type="text" class="form-control" id="state" aria-describedby="state" placeholder="MT" [(ngModel)]="data.activity.state" name="state">
-              </div>
-              <div class="col-4">
-                <label for="zip">Zip Code</label>
-                <input type="text" class="form-control" id="zip" aria-describedby="zip" placeholder="59714"  [(ngModel)]="data.activity.zip" name="zip">
-              </div>
-            </div>
-          -->
-
           <div class="row">
               <div class="col-4">
                 <label for="location">Location</label>
                 <input type="text" class="form-control" id="location" aria-describedby="location" placeholder="Location" [(ngModel)]="data.activity.location" name="location">
               </div>
             </div>
-
-            <br />
-            <label for="phone">Phone</label>
-            <input type="text" class="form-control" id="phone" aria-describedby="phone" placeholder="406-777-0123" [(ngModel)]="data.activity.phone" name="phone">
-            <br />
-            <!--
-            <label for="email">Unique Name</label>
-            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Unique Name" [(ngModel)]="data.activity.email" name="email">
-            -->
-            <!--
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-            -->
             <br />
             <button type="submit" class="btn btn-success" (click)="updateActivity(data.activity)" mat-dialog-close>Submit</button>
-          <!--
-            <button type="submit" class="btn btn-success" (click)="updateActivity(data.activity.id)" mat-dialog-close>Submit</button>
-          -->
           </div>
         </form>
   </div>
@@ -88,23 +55,6 @@
               </div>
             </div>
             <br />
-            
-            <!--
-            <div class="row">
-              <div class="col-4">
-                <label for="city">City</label>
-                <input type="text" class="form-control" id="city" aria-describedby="city" placeholder="Belgrade" [(ngModel)]="activity.city" name="city">
-              </div>
-              <div class="col-4">
-                <label for="state">State</label>
-                <input type="text" class="form-control" id="state" aria-describedby="state" placeholder="MT" [(ngModel)]="activity.state" name="state">
-              </div>
-              <div class="col-4">
-                <label for="zip">Zip Code</label>
-                <input type="text" class="form-control" id="zip" aria-describedby="zip" placeholder="59714"  [(ngModel)]="activity.zip" name="zip">
-              </div>
-            </div>
-          -->
 
           <div class="row">
               <div class="col-4">
@@ -112,18 +62,6 @@
                 <input type="text" class="form-control" id="location" aria-describedby="location" placeholder="Location" [(ngModel)]="activity.location" name="location">
               </div>
             </div>
-
-            <br />
-            <label for="phone">Phone</label>
-            <input type="text" class="form-control" id="phone" aria-describedby="phone" placeholder="406-777-0123" [(ngModel)]="activity.phone" name="phone">
-            <br />
-            <!--
-            <label for="email">Unique Activity Name</label>
-            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Unique Activity Name" [(ngModel)]="activity.email" name="email">
-          -->
-            <!--
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-            -->
             <br />
             <button type="submit" class="btn btn-success" (click)="saveActivity()" mat-dialog-close>Submit</button>
           </div>

@@ -72,12 +72,13 @@ export class ServicesComponent implements OnInit {
     // Get all activities and find one activity by email
     // --------------------------------------------------------------------- //
     this.loadActivities();
-    var tmp;
+    var tmpActivity;
+    var tmpInvolvement;
 
     // Loop via activities and find specific activity by email
     this.activities.forEach((activity) => {
       if (activity.id === activityID) {
-        tmp = activity;
+        tmpActivity = activity;
       }
     });
     // --------------------------------------------------------------------- //
@@ -85,7 +86,8 @@ export class ServicesComponent implements OnInit {
     // Open update dialog and sent data into update dialog
     const dialogRef = this.dialog.open(ActivityFormComponent, {
       data: {
-        activity: tmp
+        activity: tmpActivity,
+        involvement: tmpInvolvement
       }
     });
 
@@ -101,14 +103,32 @@ export class ServicesComponent implements OnInit {
   addActivity(): void {
     // Possible it is good idea to create new empty involvement right after new activity is created
     // and after you clicked on Members in you be able just to add new member to current activity/involvement
-
+    //this.addInvolvement()
     const dialogRef = this.dialog.open(ActivityFormComponent);
+    var test;
 
     dialogRef.afterClosed().subscribe(result => {
       this.loadActivities();
 
       console.log('The dialog was closed');
     });
+
+    // Loop via involvements and find specific involvements by activityID
+    for(var i = 0; i < this.activities.length; i++){
+      if (i === this.involvements.length) 
+      {
+          test = this.activities[i].id
+          console.log(this.activities[i].id);
+
+      }
+    };
+    
+
+    console.log(test);
+    //this.addInvolvement(test);
+
+    
+
   }
 
 
@@ -130,6 +150,7 @@ export class ServicesComponent implements OnInit {
   manageMember(activityID: string): void 
   {
 
+    console.log(activityID + "test test test")
     // Create new involvement for this activity
     // --------------------------------------------------------------------- //
     // But before we have to check if we have an involvement for this activity
@@ -138,20 +159,22 @@ export class ServicesComponent implements OnInit {
 
     this.loadInvolvements();
     var hasInv: boolean;
+    hasInv = false;
 
     // Loop via involvements and find specific involvements by activityID
-    this.involvements.forEach((involvement) => {
-      if (involvement.activityID === activityID) 
+    for(var i = 0; i < this.involvements.length; i++){
+      if (this.involvements[i].activityID === activityID) 
       {
-        hasInv = true;
         //stop loop and load existing involvement
+        hasInv = true;            
+        break;
       }
+    };
 
-      //else create new involvement
-      //addInvolvement(activityID);
-      
-    });
-    // --------------------------------------------------------------------- //
+    //else create new involvement
+    if (hasInv === false) {
+      this.addInvolvement(activityID);
+    }
 
 
     // Get all activities and find one activity by ID
@@ -199,12 +222,12 @@ export class ServicesComponent implements OnInit {
 
   private addInvolvement(activityID: string)
   {
-    var tmpMemberIDs: string[];
-    tmpMemberIDs[0] = "NULL";
+    //var tmpMemberIDs: string[];
+    //tmpMemberIDs[0] = "Null";
 
     var tmpinvolvement = new Involvement();
     tmpinvolvement.activityID = activityID;
-    tmpinvolvement.memberIDs = tmpMemberIDs;
+    tmpinvolvement.memberIDs = ["Instructor"];
 
     this.activityInvService.saveInvolvement(tmpinvolvement).toPromise().then(() => {
       window.location.reload();

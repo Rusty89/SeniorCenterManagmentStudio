@@ -9,7 +9,7 @@ import { MemberFetchService } from '../_services/member-fetch.service';
 
 @Component({
   selector: 'app-members',
-  templateUrl: './members.component.html',
+  templateUrl: './members.component.html', 
   styleUrls: ['./members.component.css']
 })
 export class MembersComponent implements OnInit {

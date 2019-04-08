@@ -1,94 +1,78 @@
 <div class="container">
+    <mat-dialog-content>
 
-    <div *ngIf="involvement; else show">
-      <!-- print  -->
-    </div>
+        <!-- if an involvement doesn't exist -->
+        <ng-template #show>
+            <h3>Members are not found</h3>
+        </ng-template>
+        <h2>Add Members to {{data.activity.className}}</h2>
 
-    <ng-template #show>
-        <h3>Members are not found</h3>
-        <!-- here should be form to add new involvement -->
-    </ng-template>
+        <!-- display participating members -->
+        <h1>Activity Involvement Form</h1>
+        <h3>
+            Activity Name: {{data.activity.className}}
+            <br />
+            ID: {{ data.activity.id }}
+        </h3>
+        <div *ngIf="involvement; else show">
 
-  <!--
-  <h1>Activity Involvement Form</h1>
+            <div class="col-12">
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col" class="text-center">Activity-Involvement-ID</th>
+                                <th scope="col" class="text-center">Activity-ID</th>
+                                <th scope="col" class="text-center">Member-IDs</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <td>
+                                {{ involvement.id }}
+                            </td>
+                            <td>
+                                {{ involvement.activityID }}
+                            </td>
+                            <td>
+                                <tr *ngFor="let x of forPrinting">
+                                    
+                                        
+                                    {{ x }}
+                                    
+ 
+                                </tr>
+                            </td>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
 
-  <h3>Activity Name: {{data.activity.className}}</h3>
-  <div class="col-12">
-      <div class="table-responsive">
-          <table class="table table-striped table-bordered table-hover">
-              <thead class="thead-dark">
-                  <tr>
-                      <th scope="col" class="text-center">Activity Uniq Name</th>
-                      <th scope="col" class="text-center">Members</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr *ngFor="let involvement of involvements">
-                      <td>{{ involvement.uniqueName }}</td>
-                      <td>
-                        <tr *ngFor="let email of involvement.memberEmails">
-                            {{ email }} 
+        <!-- display members to add to activity -->
+        <div class="col-12">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col" class="text-center">Members</th>
+                            <th scope="col" class="text-center">Register</th>
                         </tr>
-                      </td>
-                  </tr>
-              </tbody>
-          </table>
-      </div>
-  </div>
--->
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let member of members">
+                            <td>{{member.firstName}} {{member.lastName}}</td>
+                            <td>
 
+                                <button type="button" class="btn btn-success"
+                                    (click)="updateInvolvement(involvement, member.id)">Add Member</button>&nbsp;
+                                <button type="button" class="btn btn-danger"
+                                    (click)="updateInvolvement(involvement, member.id)">Remove Member</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
-  <h1>Activity Involvement Form</h1>
-  <h3>
-    Activity Name: {{data.activity.className}}
-    <br />
-    ID: {{ data.activity.id }}
-  </h3>
-  <div *ngIf="involvement; else show">
-
-      <div class="col-12">
-          <div class="table-responsive">
-              <table class="table table-striped table-bordered table-hover">
-                  <thead class="thead-dark">
-                      <tr>
-                          <th scope="col" class="text-center">Activity-Involvement-ID</th>
-                          <th scope="col" class="text-center">Activity-ID</th>
-                          <th scope="col" class="text-center">Member-IDs</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                    <td>
-                      {{ involvement.id }}
-                    </td>
-                    <td>
-                      {{ involvement.activityID }}
-                    </td>
-                    <td>
-                      <tr *ngFor="let IDs of involvement.memberIDs">
-                        {{ IDs }} 
-                      </tr>
-                    </td>
-                  </tbody>
-              </table>
-          </div>
-      </div>
-
-
-  </div>
-  <ng-template #show>
-      <h3>Members are not found</h3>
-  </ng-template>
-
-
-
-
-<!--
-  <form>
-      <div class="form-group">
-        <label for="className">Activity Name</label>
-        <input type="text" class="form-control" id="className" aria-describedby="className" placeholder="Hot Yoga" [(ngModel)]="data.activity.className" name="className">
-      </div>
-  </form>
--->
-
+    </mat-dialog-content>
 </div>
