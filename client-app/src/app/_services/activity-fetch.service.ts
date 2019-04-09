@@ -30,7 +30,6 @@ export class ActivityFetchService {
           time: activity["ad_time"],
           days: activity["ad_days"],
           location: activity["ad_location"],
-          phone: activity["ad_phone"],
           id: activity['id'],
         });
       });

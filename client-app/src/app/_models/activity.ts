@@ -3,7 +3,6 @@ export class Activity {
     time: string;
     days: string;
     location: string;
-    phone: string;
     id?: string;
 }
 

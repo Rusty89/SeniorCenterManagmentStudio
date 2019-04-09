@@ -4,7 +4,11 @@ var AWS = require('aws-sdk'),
 exports.handler = (event, context, callback) => {
 
     var tableName = "activity_data";
-    var update_attr = "set ad_class_name = :class_name, ad_time = :time, ad_days = :days, ad_location = :location, ad_phone = :phone";
+    var update_attr = `
+        set ad_class_name = :className, 
+        ad_time = :time, 
+        ad_days = :days, 
+        ad_location = :location`;
 
     var params = {
         TableName: tableName,
@@ -14,11 +18,10 @@ exports.handler = (event, context, callback) => {
         UpdateExpression: update_attr,
         ExpressionAttributeValues:
         {
-            ":class_name": event.className,
+            ":className": event.className,
             ":time": event.time,
             ":days": event.days,
-            ":location": event.location,
-            ":phone": event.phone
+            ":location": event.location
         }
     };
 
@@ -33,12 +36,12 @@ exports.handler = (event, context, callback) => {
 // Test
 /*
 {
-    "className": "UPDATE-1",
-    "time": "UPDATE",
-    "days": "UPDATE",
-    "location": "UPDATE",
-    "phone": "UPDATE",
-    "id": "bed4a370-57e3-11e9-af96-b982fe5d40e4"
+    "className": "UPDATE-4",
+    "time": "UPDATE-4",
+    "days": "UPDATE-4",
+    "location": "UPDATE-4",
+    "phone": "UPDATE-4",
+    "id": "9fb51780-5afa-11e9-ae47-b96f02066930"
 }
 */
 
