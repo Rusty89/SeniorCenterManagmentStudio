@@ -37,7 +37,7 @@ export class ReportsComponent implements OnInit {
 	  
   }
   
-  private exportToCSV(data:any, fileName: string){
+  public exportToCSV(data:any, fileName: string){
 	    const replacer = (key, value) => value === null ? '' : value; // specify how you want to handle null values here
 		const header = Object.keys(data[0]);
 		let csv = data.map(row => header.map(fieldName => JSON.stringify(row[fieldName], replacer)).join(','));
