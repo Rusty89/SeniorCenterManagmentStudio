@@ -15,9 +15,10 @@
                     <th scope="col" class="text-center">City</th>
                     <th scope="col" class="text-center">State</th>
                     <th scope="col" class="text-center">Zip</th>
-                    <th scope="col" class="text-center">Month</th>
+                    <th scope="col" class="text-center">DOB</th>
                     <th scope="col" class="text-center">Phone</th>
                     <th scope="col" class="text-center">Email</th>
+                    <!--  <th scope="col" class="text-center">ID</th> -->
                     <th scope="col" class="text-center">Action</th>
                 </tr>
             </thead>
@@ -30,16 +31,16 @@
                     <td>{{member.city}}</td>
                     <td>{{member.state}}</td>
                     <td>{{member.zip}}</td>
-                    <td>{{member.month}}</td>
+                    <td>{{member.dob}}</td>
                     <td>{{member.phone}}</td>
                     <td>{{member.email}}</td>
+                    <!--  <td>{{member.id}}</td>-->
                     <td>
 
                         <button type="button" class="btn btn-warning"
-                            (click)="openUpdateDialog(member.email)">Update</button>
+                            (click)="openUpdateDialog(member.id)">Update</button>
                         &nbsp;
-                        <button type="button" class="btn btn-danger"
-                            (click)="deleteMember(member.email)">Delete</button>
+                        <button type="button" class="btn btn-danger" (click)="deleteMember(member.id)">Delete</button>
                     </td>
                 </tr>
             </tbody>

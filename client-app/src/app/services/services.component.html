@@ -1,7 +1,7 @@
 <h1 id="menuTitle">Activities</h1>
 <div class="text-center">
     <div class="btn-group btn-group-lg" role="group" aria-label="...">
-        <button type="button" class="btn btn-success btn-lg mr-1 ml-1" (click)="openDialog()">Add Activity</button>
+        <button type="button" class="btn btn-success btn-lg mr-1 ml-1" (click)="addActivity()">Add Activity</button>
     </div>
 
 </div>
@@ -15,7 +15,7 @@
                     <th scope="col" class="text-center">Time</th>
                     <th scope="col" class="text-center">Days</th>
                     <th scope="col" class="text-center">Location</th>
-
+                    <!-- <th scope="col" class="text-center">ID</th> -->
                     <th scope="col" class="text-center">Actions</th>
                 </tr>
             </thead>
@@ -24,13 +24,18 @@
                     <td>{{activity.className}}</td>
                     <td>{{activity.time}}</td>
                     <td>{{activity.days}}</td>
-                    <td>{{activity.city}}</td>
+                    <td>{{activity.location}}</td>
+                    <!-- <td>{{activity.id}}</td> -->
                     <td>
-                        <button type="button" class="btn btn-warning"
-                            (click)="openUpdateDialog(activity.email)">Update</button>
+                        <button type="button" class="btn btn-success" (click)="manageMember(activity.id)">Manage
+                            Members</button>
                         &nbsp;
+                        <button type="button" class="btn btn-warning"
+                            (click)="openUpdateDialog(activity.id)">Update</button>
+                        &nbsp;
+
                         <button type="button" class="btn btn-danger"
-                            (click)="deleteActivity(activity.email)">Delete</button>
+                            (click)="deleteActivity(activity.id)">Delete</button>
 
                     </td>
                 </tr>
