@@ -174,8 +174,9 @@ export class ServicesComponent implements OnInit {
     //else create new involvement
     if (hasInv === false) {
       this.addInvolvement(activityID);
+	  
     }
-
+	
 
     // Get all activities and find one activity by ID
     // --------------------------------------------------------------------- //
@@ -186,6 +187,7 @@ export class ServicesComponent implements OnInit {
     this.activities.forEach((activity) => {
       if (activity.id === activityID) {
         tmpActivity = activity;
+		
       }
     });
     // --------------------------------------------------------------------- //
@@ -200,6 +202,7 @@ export class ServicesComponent implements OnInit {
     this.involvements.forEach((involvement) => {
       if (involvement.activityID === activityID) {
         tmpInvolvement = involvement;
+		
       }
     });
     // --------------------------------------------------------------------- //
@@ -214,8 +217,13 @@ export class ServicesComponent implements OnInit {
 
   
     dialogRef.afterClosed().subscribe(result => {
-      this.loadActivities();
-
+      //this.loadActivities();
+	  var tmpinvolvement = new Involvement();
+      tmpinvolvement.activityID = activityID;
+      tmpinvolvement.memberIDs = dialogRef.componentInstance.involvement.memberIDs;
+	  this.activityInvService.updateInvolvement(tmpinvolvement).toPromise().then(() => {
+		window.location.reload();
+	  });
       console.log('Update dialog was closed');
     });
   }

@@ -38,9 +38,14 @@ export class ActivityInvFormComponent implements OnInit{
         //this.involvements = this.data.involvements;
 		
         this.involvement = this.data.involvement;
-        this.loadMembers();
+        this.members=this.loadMembers();
 		
-		console.log("init");
+		this.viewMembers(this.involvement);
+		console.log(this.members);
+		
+		
+        
+		
         //this.involvementsByName = [];
 
     }
@@ -50,9 +55,7 @@ export class ActivityInvFormComponent implements OnInit{
     updateInvolvement(involvement: Involvement, memberID: string) {
         this.involvementsByName = [];
         console.log("Involvement ID: " + involvement.id + " Member ID: " + memberID);
-        this.activityInvService.updateInvolvement(involvement).toPromise().then(() => {
-            //window.location.reload();
-        });
+        
 
         var dontAdd: boolean;
         dontAdd = false;
@@ -79,19 +82,17 @@ export class ActivityInvFormComponent implements OnInit{
             console.log("Name: " + element);
         })
 
-        //this.forPrinting = this.involvementsByName;
-
-
+        
 
     }
 	
 	
 	private viewMembers(involvement: Involvement){
 		this.involvementsByName = [];
-		if((involvement.memberIDs!=null) && (this.members !=null)){
-			for (var i = 0; i < involvement.memberIDs.length; i++) {
+		if((this.involvement.memberIDs!=null) && (this.members !=null)){
+			for (var i = 0; i < this.involvement.memberIDs.length; i++) {
                 for (var j = 0; j < this.members.length; j++) {
-                    if (involvement.memberIDs[i] === this.members[j].id) {
+                    if (this.involvement.memberIDs[i] === this.members[j].id) {
                         this.involvementsByName.push(this.members[j].firstName.concat(" ".concat(this.members[j].lastName)))                      
                     }
                 }
@@ -117,9 +118,10 @@ export class ActivityInvFormComponent implements OnInit{
 
     private loadMembers() {
         this.memberService.getMembers().subscribe(
-            data => { this.members = data; this.updateInvolvement(this.involvement, data[0].id) },
+            data => { this.members = data },
             err => console.error(err),
             () => console.log("members loaded.")
         );
+		
     }
 }

@@ -17,6 +17,7 @@
         -->
 
         <div class="row">
+			
             <div *ngIf="involvement; else show">
 
                 <div class="col-12">
@@ -24,7 +25,7 @@
                         <table class="table table-bordered table-hover">
                             <thead class="thead-dark">
                                 <tr>
-                                    <th scope="col" class="text-center">Enrolled Members</th>
+                                    <th scope="col" class="text-center" (click)="removeMember(involvement, a)">Enrolled Members (click to display)</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -61,6 +62,7 @@
                                     (click)="updateInvolvement(involvement, member.id)">Add Member</button>&nbsp;
                                 <button type="button" class="btn btn-danger"
                                     (click)="removeMember(involvement, member.id)">Remove Member</button>
+									
                             </td>
                         </tr>
                     </tbody>
