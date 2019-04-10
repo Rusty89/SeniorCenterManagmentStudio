@@ -38,7 +38,37 @@ export class ActivityFormComponent {
       window.location.reload();
     });
   }
-
+  
+	validateForm(){
+		  var fail=true;
+		  if(this.activity.className==null || this.activity.className	==""){
+			  window.alert("Required field name");
+			  fail=false;
+		  }
+		  else if(this.activity.time==null || this.activity.time==""){
+			   window.alert("Required field time");
+			  fail=false;
+		  }
+		  else if(this.activity.days==null || this.activity.days==""){
+			  window.alert("Required field day");
+			  fail=false;
+		  }
+		  else if(this.activity.location==null || this.activity.location==""){
+			   window.alert("Required field location");
+			  fail=false;
+		  }		  
+		  
+			  
+		 
+		  if(fail){
+			  this.saveActivity();
+		  
+			return true;
+		  }else{
+			  return false;
+		  }
+	  
+    }
   // OLD PART OF CODE, I WOULD KEEP IT FOR NOW
   // ------------------------------------------------------------------------------------------ //
   /*

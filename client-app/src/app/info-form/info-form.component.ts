@@ -26,36 +26,18 @@ export class InfoFormComponent implements OnInit  {
 
     // Init check-boxes
     
-    this.initValues();
+    this.initOptionalValues();
 	this.initCheckBoxes();
   }
 
-   private initValues()
+   private initOptionalValues()
   {
-    // NAME: String
-    this.member.firstName="n/a";
-    this.member.lastName="n/a";
-
-    // PHONE #: Int or String
-    this.member.phone="n/a";
-
-    // EMAIL: String
-    this.member.email="example@AOL.com";
-
-    // ADDRESS: String
-    this.member.address="n/a";
+    
 
     // APARTMENT: String
     this.member.apt="n/a";
 
-    // CITY: String
-    this.member.city="n/a";
-
-    // STATE: String
-    this.member.state="n/a";
-
-    // ZIP: Int or String
-    this.member.zip="n/a";
+    
 
     // EMERGENCY CONTACT
     // -------------------------------------------------------------- //
@@ -72,8 +54,7 @@ export class InfoFormComponent implements OnInit  {
     this.member.emrgEmail="example@AOL.com";
     // -------------------------------------------------------------- //
 
-    // DOB: String
-    this.member.dob="0000-00-00";
+  
 
    
 
@@ -82,8 +63,7 @@ export class InfoFormComponent implements OnInit  {
 
    
 
-    // GENDER: Checkbox
-    this.member.gender="n/a";
+    
 
     // NUMBER IN HOUSEHOLD: Int or String
     this.member.numInHousehold="n/a";
@@ -101,7 +81,7 @@ export class InfoFormComponent implements OnInit  {
     // START DATE: String
     this.member.startDate="0000-00-00";
 
-	// DELIVERY LENGTH: Checkbox
+	// DELIVERY LENGTH: 
     this.member.deliveryLength="n/a";
 
     // PLEASE SPECIFY: String
@@ -177,41 +157,41 @@ export class InfoFormComponent implements OnInit  {
   
   validateForm(){
 	  var fail=true;
-	  if(this.member.firstName=="n/a"){
+	  if(this.member.firstName==null || this.member.firstName	==""){
 		  window.alert("Required field first name");
 		  fail=false;
 	  }
-	  if(this.member.lastName=="n/a"){
+	  else if(this.member.lastName==null || this.member.lastName==""){
 		   window.alert("Required field last name");
 		  fail=false;
 	  }
-	  if(this.member.phone=="n/a"){
+	  else if(this.member.phone==null || this.member.phone==""){
 		  window.alert("Required field phone");
 		  fail=false;
 	  }
-	  if(this.member.email=="example@AOL.com"){
+	  else if(this.member.email==null || this.member.email==""){
 		   window.alert("Required field email");
 		  fail=false;
 	  }
-	  if(this.member.address=="n/a"){
+	  else if(this.member.address==null || this.member.address==""){
 		  window.alert("Required field address");
 		  fail=false;
 	  }
-	  if(this.member.city=="n/a"){
+	  else if(this.member.city==null ||this.member.city==""){
 		  window.alert("Required field city");
 		  fail=false;
 	  }
-	  if(this.member.state=="n/a"){
+	  else if(this.member.state==null || this.member.state==""){
 		  window.alert("Required field state");
 		  fail=false;
 	  }
-	  if(this.member.zip=="n/a"){
+	  else if(this.member.zip==null || this.member.zip==""){
 		  window.alert("Required field zip code");
 		  fail=false;
 	  }
 	  
 	  
-	  if(this.member.dob=="0000-00-00"){
+	  else if(this.member.dob==null || this.member.dob==""){
 		  window.alert("Required field date of birth");
 		  fail=false;
 	  }
