@@ -24,7 +24,7 @@ export class ActivityInvFormComponent implements OnInit{
         private activityInvService: ActivityInvFetchService,
         private memberService: MemberFetchService,
         private router: Router,
-        @Inject(MAT_DIALOG_DATA) private data: any) { }
+        @Inject(MAT_DIALOG_DATA) public data: any) { }
 
     public involvements;
     public involvement;
