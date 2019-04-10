@@ -27,7 +27,7 @@
 
             <div class="col-4">
               <label for="date">Date of Birth</label>
-              <input type="date" class="form-control" id="month" aria-describedby="month" placeholder="January"
+              <input type="date"  class="form-control" id="month" aria-describedby="month" placeholder="January"
                      [(ngModel)]="data.member.dob" name="dob">
             </div>
 
@@ -1382,7 +1382,7 @@
             </div>
   
           </div>
-          <button type="submit" class="btn btn-success" (click)="saveMember()" mat-dialog-close>Submit</button>
+          <button type="submit" class="btn btn-success" (click)="validateForm()"  >Submit</button>
         </form>
       </mat-dialog-content>
   </ng-template>
