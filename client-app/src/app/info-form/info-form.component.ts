@@ -117,27 +117,27 @@ export class InfoFormComponent implements OnInit  {
   {
     // We have to specify default values for check boxes
     // --------------------------------------------------- //
-    this.member.isSpouse = "No";
-    this.member.isDisabled = "No";
-    this.member.AYDALWS = "No";
-    this.member.isVeteran = "No";
-    this.member.isOnePersonCaregiver = "No";
-    this.member.AYRSUNFCSP = "No";
-    this.member.DYRASA = "No";
-    this.member.servicesRequired = "No";
-    this.member.WTMBUMOW = "No";
-    this.member.HTUMB = "No";
-    this.member.microwave = "No";
-    this.member.isAllergies = "No";
+    this.member.isSpouse = "n/a";
+    this.member.isDisabled = "n/a";
+    this.member.AYDALWS = "n/a";
+    this.member.isVeteran = "n/a";
+    this.member.isOnePersonCaregiver = "n/a";
+    this.member.AYRSUNFCSP = "n/a";
+    this.member.DYRASA = "n/a";
+    this.member.servicesRequired = "n/a";
+    this.member.WTMBUMOW = "n/a";
+    this.member.HTUMB = "n/a";
+    this.member.microwave = "n/a";
+    this.member.isAllergies = "n/a";
 
-    this.member.race = "Other";
-    this.member.ethnicity = "Other";
-    this.member.gender = "Other";
-    this.member.caregiver = "Other";
-    this.member.deliveryType = "Delivery";
-    this.member.deliveryDays = "Friday";
-    this.member.mealType = "Low Sodium";
-    this.member.milkType = "No Milk"; 
+    this.member.race = "n/a";
+    this.member.ethnicity = "n/a";
+    this.member.gender = "n/a";
+    this.member.caregiver = "n/a";
+    this.member.deliveryType = "n/a";
+    this.member.deliveryDays = "n/a";
+    this.member.mealType = "n/a";
+    this.member.milkType = "n/a"; 
     // --------------------------------------------------- //
   }
 
