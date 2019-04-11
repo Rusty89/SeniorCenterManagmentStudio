@@ -75,7 +75,7 @@ The angular build files are hosted in a AWS S3 bucket. This will load the angula
 * ~~Adding a member opens a new page instead of a pop-up modal (3/1/2019)~~
 * DB key is on a month (3/1/2019)
 * ~~ngModel breaks app when wrapped with login functionality (3/13/2019)~~
-* ~~If a bad username or password are supplied at login, no error message is given (3/14/2019)
+* ~~If a bad username or password are supplied at login, no error message is given (3/14/2019)~~
 * ~~Modals don't die on a page switch or reload (3/14/2019)~~
 * ~~Modals keep generating by repeat button presses instead of toggline on/off (3/14/2019)~~
 * ~~Member/Services modals don't render under the scope of login functionality (3/14/2019)~~
