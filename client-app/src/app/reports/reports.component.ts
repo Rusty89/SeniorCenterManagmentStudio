@@ -50,6 +50,7 @@ export class ReportsComponent implements OnInit {
 
 		a.href = url;
 		a.download = fileName;
+		document.body.appendChild(a);
 		a.click();
 		window.URL.revokeObjectURL(url);
 		a.remove();
