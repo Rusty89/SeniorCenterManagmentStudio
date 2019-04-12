@@ -4,9 +4,9 @@ var AWS = require('aws-sdk'),
 exports.handler = (event, context, callback) => {
     console.log("Received event: " + JSON.stringify(event));
     var params = {
-        TableName: 'activity_involvement',
+        TableName: 'activity_involvement_data',
         Key: {
-            "ain_uname": event['queryStringParameters']['uniqueName']
+            "aid_activity_id": event['queryStringParameters']['activityID']
         }
     };
 
@@ -21,7 +21,7 @@ exports.handler = (event, context, callback) => {
                     "content-type": "application/json",
                     "Access-Control-Allow-Origin": "*"
                 },
-                "body": JSON.stringify({ 'msg': 'Activity involvement record deleted successfully.' }),
+                "body": JSON.stringify({ 'msg': 'Activity involvement data record deleted successfully.' }),
                 "isBase64Encoded": false
             };
 
@@ -34,6 +34,6 @@ exports.handler = (event, context, callback) => {
 // TEST
 /*
 {
-    "uniqueName": "TEST"
+    "activityID": "2c846df0-5d3f-11e9-ac0c-b351ce3ab82d"
 }
 */

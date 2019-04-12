@@ -19,7 +19,7 @@ exports.handler = (event, context, callback) => {
  
     // Configure authentication
     const authUser = '*****';
-    const authPass = '**********';
+    const authPass = '*********';
  
     // Construct the Basic Auth string
     const authString = 'Basic ' + new Buffer(authUser + ':' + authPass).toString('base64');

@@ -1,0 +1,15 @@
+API:
+    https://70jjjl5m82.execute-api.us-east-1.amazonaws.com/Dev2/authenticationapi
+    GET: Get all users
+         Lambda function --> listAllUsersInfo
+    
+    POST: Authentication of a user, should return status code 200 if Login and Password are correct
+          Lambda function --> authentication
+
+    https://70jjjl5m82.execute-api.us-east-1.amazonaws.com/Dev2/user
+    POST: Add a user: Lambda function --> addUser
+
+DynamoDB: "member_authentication"
+    Primary partition key: ma_username (String)
+
+    Region: US East (N. Virginia)

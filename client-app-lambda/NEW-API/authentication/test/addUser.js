@@ -20,23 +20,4 @@ exports.handler = (event, context, callback) => {
      "message":"[member authentication] information saved successfully."
     });
   });
-
 };
-
-
-// Test
-/*
-{
-    "firstName" : "John",
-    "lastName": "Smith",
-    "address": "123 Main St.",
-    "apt": "Suite #05",
-    "city": "Belgrade",
-    "state": "MT",
-    "zip": "59714",
-    "month": "02/22/2019",
-    "phone": "406-777-0123",
-    "email": "example@AOL.com"
-}
-*/
-

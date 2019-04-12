@@ -4,9 +4,9 @@ var AWS = require('aws-sdk'),
 exports.handler = (event, context, callback) => {
     console.log("Received event: " + JSON.stringify(event));
     var params = {
-        TableName: 'member_information',
+        TableName: 'member_data',
         Key: {
-            "mi_email": event['queryStringParameters']['email']
+            "md_email": event['queryStringParameters']['email']
         }
     };
 
@@ -21,7 +21,7 @@ exports.handler = (event, context, callback) => {
                     "content-type": "application/json",
                     "Access-Control-Allow-Origin": "*"
                 },
-                "body": JSON.stringify({ 'msg': 'Member deleted successfully.' }),
+                "body": JSON.stringify({ 'msg': 'Member data deleted successfully.' }),
                 "isBase64Encoded": false
             };
 
@@ -34,6 +34,6 @@ exports.handler = (event, context, callback) => {
 // TEST
 /*
 {
-    "email": "example@AOL.com"
+    "email": "TEST"
 }
 */

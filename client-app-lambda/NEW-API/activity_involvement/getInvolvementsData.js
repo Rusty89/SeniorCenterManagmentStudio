@@ -3,7 +3,7 @@ var AWS = require('aws-sdk'),
 
 exports.handler = (event, context, callback) => {
   var params = {
-    TableName : 'activity_involvement'
+    TableName : 'activity_involvement_data'
   };
   documentClient.scan(params, function(err, data){
     if(err){

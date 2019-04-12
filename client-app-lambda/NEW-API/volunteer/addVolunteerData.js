@@ -4,24 +4,24 @@ var AWS = require('aws-sdk'), uuid = require('uuid'),
 exports.handler = (event, context, callback) => {
     var params = {
         Item : {
-        "Id" : uuid.v1(),
-        "mi_f_name" : event.firstName,
-        "mi_l_name": event.lastName,
-        "mi_address": event.address,
-        "mi_apt": event.apt,
-        "mi_city": event.city,
-        "mi_state": event.state,
-        "mi_zip_code": event.zip,
-        "mi_dob": event.month,
-        "mi_phone": event.phone,
-        "mi_email": event.email
+        "id" : uuid.v1(),
+        "vd_f_name" : event.firstName,
+        "vd_l_name": event.lastName,
+        "vd_address": event.address,
+        "vd_apt": event.apt,
+        "vd_city": event.city,
+        "vd_state": event.state,
+        "vd_zip_code": event.zip,
+        "vd_dob": event.dob,
+        "vd_phone": event.phone,
+        "vd_email": event.email
         },
-    TableName : 'member_information' 
+    TableName : 'volunteer_data' 
 
   };
     documentClient.put(params, function(err, data){
     callback(err, {
-     "message":"member information saved successfully."
+     "message":"volunteer data saved successfully."
     });
   });
 };

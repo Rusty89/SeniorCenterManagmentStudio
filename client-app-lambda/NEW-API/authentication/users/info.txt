@@ -1,0 +1,21 @@
+API:
+    API: https://70jjjl5m82.execute-api.us-east-1.amazonaws.com/Dev2
+    
+    /single-user: POST --> get user by user name
+                  Lambda function: getUser
+
+    /user:       POST --> add user
+                 Lambda function: addUser
+
+    /users      POST --> get all users
+                Lambda function: getUsers
+
+    // Just for testing
+    /authenticationapi  
+                GET --> get all users
+                Lambda function: authentication
+
+DynamoDB: "member_authentication"
+    Primary partition key: ma_username (String)
+
+    Region: US East (N. Virginia)

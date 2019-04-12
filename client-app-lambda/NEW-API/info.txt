@@ -1,0 +1,151 @@
+// MEMBER
+// ------------------------------------------------------------------------------------------------------------------ //
+API - Invoke URL: https://5z47iau9oe.execute-api.us-east-1.amazonaws.com/SCMS/member
+    POST: add member
+    REQUEST FORMAT: 
+    {
+        "field_name": "value",
+        ...
+        "field_name": "value"
+    }
+
+    GET: get members
+    REQUEST FORMAT: N/A
+
+    DELETE: delete member by id
+    REQUEST FORMAT: 
+    {
+        "id": "value",
+    }
+
+DynamoDB: "member_data"
+    Primary partition key
+    id (String)
+
+    Region: US East (N. Virginia)
+
+API-UPDATE - Invoke URL: https://5z47iau9oe.execute-api.us-east-1.amazonaws.com/SCMS/member-update
+    POST: update member
+    REQUEST FORMAT: 
+    {
+        "id": "ID_VALUE",
+        "field_name": "value",
+        ...
+        "field_name": "value"
+    }
+// ------------------------------------------------------------------------------------------------------------------ //
+
+// VOLUNTEER
+// ------------------------------------------------------------------------------------------------------------------ //
+API - Invoke URL: https://5z47iau9oe.execute-api.us-east-1.amazonaws.com/SCMS/volunteer
+    POST: add volunteer
+    REQUEST FORMAT: 
+    {
+        "field_name": "value",
+        ...
+        "field_name": "value"
+    }
+
+    GET: get volunteers
+    REQUEST FORMAT: N/A
+
+    DELETE: delete volunteer by id
+    REQUEST FORMAT: 
+    {
+        "id": "value",
+    }
+
+
+DynamoDB: "volunteer_data"
+    Primary partition key
+    id (String)
+
+    Region: US East (N. Virginia)
+
+API-UPDATE - Invoke URL: https://5z47iau9oe.execute-api.us-east-1.amazonaws.com/SCMS/volunteer-update
+    POST: update volunteer
+    REQUEST FORMAT: 
+    {
+        "id": "ID_VALUE",
+        "field_name": "value",
+        ...
+        "field_name": "value"
+    }
+// ------------------------------------------------------------------------------------------------------------------ //
+
+// ACTIVITY
+// ------------------------------------------------------------------------------------------------------------------ //
+API - Invoke URL: https://5z47iau9oe.execute-api.us-east-1.amazonaws.com/SCMS/activity
+    POST: add activity
+    REQUEST FORMAT: 
+    {
+        "field_name": "value",
+        ...
+        "field_name": "value"
+    }
+
+    GET: get activities
+    REQUEST FORMAT: N/A
+
+    DELETE: delete activity by its id
+    REQUEST FORMAT: 
+    {
+        "id": "value",
+    }
+
+DynamoDB: "activity_data"
+    Primary partition key
+    id (String)
+
+    Region: US East (N. Virginia)
+
+API-UPDATE - Invoke URL: https://5z47iau9oe.execute-api.us-east-1.amazonaws.com/SCMS/activity-update
+    POST: update activity
+    REQUEST FORMAT: 
+    {
+        "id": "ID_VALUE",
+        "field_name": "value",
+        ...
+        "field_name": "value"
+    }
+// ------------------------------------------------------------------------------------------------------------------ //
+
+// ACTIVITY INVOLVEMENT
+// ------------------------------------------------------------------------------------------------------------------ //
+Invoke URL: https://5z47iau9oe.execute-api.us-east-1.amazonaws.com/SCMS/activity-involvement
+    POST: add involvement
+    REQUEST FORMAT: 
+    {
+        "field_name": "value",
+        ...
+        "field_name": "value"
+    }
+
+    GET: get involvements
+    REQUEST FORMAT: N/A
+
+    DELETE: delete involvements by aid_activity_id
+    REQUEST FORMAT: 
+    {
+        "activityID": "value",
+    }
+
+
+DynamoDB: "activity_involvement_data"
+    Primary partition key
+    aid_activity_id (String) // is ID of activity
+
+    Region: US East (N. Virginia)
+
+API-UPDATE - Invoke URL: https://5z47iau9oe.execute-api.us-east-1.amazonaws.com/SCMS/activity-involvement-update
+    POST: update activity involvement
+    REQUEST FORMAT: 
+    {
+        "id": "ID_VALUE",
+        "field_name": "value",
+        ...
+        "field_name": "value"
+    }
+// ------------------------------------------------------------------------------------------------------------------ //
+    
+	
