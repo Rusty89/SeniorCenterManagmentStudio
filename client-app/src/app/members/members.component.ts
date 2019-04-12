@@ -9,7 +9,7 @@ import { MemberFetchService } from '../_services/member-fetch.service';
 
 @Component({
   selector: 'app-members',
-  templateUrl: './members.component.html',
+  templateUrl: './members.component.html', 
   styleUrls: ['./members.component.css']
 })
 export class MembersComponent implements OnInit {
@@ -17,7 +17,6 @@ export class MembersComponent implements OnInit {
   constructor(private memberService: MemberFetchService, private router:Router, public dialog: MatDialog) { }
   
   public members;
-  public userMap;
 
   ngOnInit() {
     this.loadMembers();
@@ -31,8 +30,8 @@ export class MembersComponent implements OnInit {
     );
   }
 
-  deleteMember(memberEmail: string) {
-    this.memberService.deleteMember(memberEmail).subscribe(() => {
+  deleteMember(memberID: string) {
+    this.memberService.deleteMember(memberID).subscribe(() => {
       this.loadMembers();
     });
   }
@@ -40,7 +39,7 @@ export class MembersComponent implements OnInit {
 
   // Send data into update dialog
   // ================================================================================== //
-  openUpdateDialog(memberEmail: string): void {
+  openUpdateDialog(memberID: string): void {
     
     // Get all activities and find one activity by email
     // --------------------------------------------------------------------- //
@@ -49,7 +48,7 @@ export class MembersComponent implements OnInit {
 
     // Loop via activities and find specific activity by email
     this.members.forEach((member) => {
-      if (member.email === memberEmail)
+      if (member.id === memberID)
       {
         tmp = member;
       }

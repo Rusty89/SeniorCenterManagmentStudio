@@ -27,6 +27,7 @@
     "angular-modal-service": "^0.15.1",
     "bootstrap": "^3.3.7",
     "core-js": "^2.5.4",
+    "file-saver": "^2.0.1",
     "jquery": "^3.3.1",
     "popper.js": "^1.14.7",
     "rxjs": "^6.4.0",

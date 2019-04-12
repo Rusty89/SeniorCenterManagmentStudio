@@ -5,6 +5,7 @@
   <!-- This div will be displayed tmp is not null -->
   <div *ngIf="data; else show">
       <h1>Volunteer Information Form</h1>
+      <h3>Volunteer ID: {{ data.volunteer.id }}</h3>
       <form>
         <div class="form-group">
           <label for="firstName">First Name</label>
@@ -46,8 +47,8 @@
           </div>
     
           <label for="date">Date of Birth</label>
-          <input type="date" class="form-control" id="month" aria-describedby="month" placeholder="January" 
-          [(ngModel)]="data.volunteer.month" name="month">
+          <input type="date" class="form-control" id="dob" aria-describedby="dob" placeholder="January" 
+          [(ngModel)]="data.volunteer.dob" name="dob">
     
           <label for="phone">Phone</label>
           <input type="text" class="form-control" id="phone" aria-describedby="phone" placeholder="406-777-0123" 
@@ -58,7 +59,7 @@
           <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
     
         </div>
-        <button type="submit" class="btn btn-success" (click)="updateVolunteer(data.volunteer.email)" mat-dialog-close>Submit</button>
+        <button type="submit" class="btn btn-success" (click)="updateVolunteer(data.volunteer)" mat-dialog-close>Submit</button>
       </form>
   </div>
 
@@ -105,8 +106,8 @@
             </div>
       
             <label for="date">Date of Birth</label>
-            <input type="date" class="form-control" id="month" aria-describedby="month" placeholder="January" 
-            [(ngModel)]="volunteer.month" name="month">
+            <input type="date" class="form-control" id="dob" aria-describedby="dob" placeholder="January" 
+            [(ngModel)]="volunteer.dob" name="dob">
       
             <label for="phone">Phone</label>
             <input type="text" class="form-control" id="phone" aria-describedby="phone" placeholder="406-777-0123" 
@@ -117,7 +118,7 @@
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
       
           </div>
-          <button type="submit" class="btn btn-success" (click)="saveVolunteer()" mat-dialog-close>Submit</button>
+          <button type="submit" class="btn btn-success" (click)="validateForm()" >Submit</button>
         </form>
   </ng-template>
 

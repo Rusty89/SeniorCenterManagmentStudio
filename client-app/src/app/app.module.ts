@@ -24,6 +24,9 @@ import { VolunteerFormComponent } from './volunteer-form/volunteer-form.componen
 import { InfoFormComponent } from './info-form/info-form.component';
 import { ActivityFormComponent } from './activity-form/activity-form.component';
 
+import { ActivityInvFormComponent } from './activity-involvement/activity-inv-form.component';
+import { ActivityInvFetchService } from './_services/activity-involvement-fetch.service';
+
 import { MemberFetchService } from './_services/member-fetch.service';
 
 import { ActivityFetchService } from './_services/activity-fetch.service';
@@ -46,7 +49,8 @@ import { DeleteConfirmComponent } from './delete-confirm/delete-confirm.componen
         DocumentationComponent,
         InfoFormComponent,
         VolunteerFormComponent,
-        ActivityFormComponent,
+        ActivityFormComponent,
+        ActivityInvFormComponent,
         DeleteConfirmComponent
     ],
     imports: [
@@ -66,8 +70,8 @@ import { DeleteConfirmComponent } from './delete-confirm/delete-confirm.componen
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
 
         MemberFetchService,
-
         ActivityFetchService,
+        ActivityInvFetchService,
         UserAuthenticationDataService,
         VolunteerFetchService
 

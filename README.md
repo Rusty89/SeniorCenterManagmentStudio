@@ -75,15 +75,16 @@ The angular build files are hosted in a AWS S3 bucket. This will load the angula
 * ~~Adding a member opens a new page instead of a pop-up modal (3/1/2019)~~
 * DB key is on a month (3/1/2019)
 * ~~ngModel breaks app when wrapped with login functionality (3/13/2019)~~
-* If a bad username or password are supplied at login, no error message is given (3/14/2019)
+* ~~If a bad username or password are supplied at login, no error message is given (3/14/2019)~~
 * ~~Modals don't die on a page switch or reload (3/14/2019)~~
 * ~~Modals keep generating by repeat button presses instead of toggline on/off (3/14/2019)~~
 * ~~Member/Services modals don't render under the scope of login functionality (3/14/2019)~~
 * ~~All form text is centered where it shouldn't be (3/14/2019)~~
 * Some forms don't fit well in modals (3/29/2019)
-* Activities form has extra fields not used/relevant to activities
-* No Reports features are implemented, the reports buttons do nothing
-* 
+* ~~Activities form has extra fields not used/relevant to activities~~
+* ~~No Reports features are implemented, the reports buttons do nothing~~
+* Involvments report does not yield useful data
+
 
 Email Brandon.may1026@gmail.com for any additional support needed
 

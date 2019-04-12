@@ -4,125 +4,1387 @@
   <!-- Test if tmp: activity is null or not  -->
   <!-- This div will be displayed tmp is not null -->
   <div *ngIf="data; else show">
-		<h1>Member Information Form</h1>
-		<form>
-			<div class="form-group">
-				<label for="firstName">First Name</label>
-				<input type="text" class="form-control" id="firstName" aria-describedby="firstName" placeholder="John" 
-				[(ngModel)]="data.member.firstName" name="firstName">
-	
-				<label for="lastName">Last Name</label>
-				<input type="text" class="form-control" id="lastName" aria-describedby="lastName" placeholder="Smith"
-				[(ngModel)]="data.member.lastName" name="lastName">
-		
-				<div class="row">
-					<div class="col-6">
-						<label for="address">Address</label>
-						<input type="textt" class="form-control" id="address" aria-describedby="address" placeholder="123 Main St." [(ngModel)]="data.member.address" name="address">
-					</div>
-					<div class="col-6">
-						<label for="apt">Apt #</label>
-						<input type="text" class="form-control" id="apt" aria-describedby="apt" placeholder="Suite #05"
-						[(ngModel)]="data.member.apt" name="apt">
-					</div>
+    <h1>Member Information Form</h1>
+    <h3>Member ID: {{ data.member.id }}</h3>
+    <mat-dialog-content>
+      <form>
+        <div class="form-group">
 
-				</div>
-	
-				<div class="row">
-					<div class="col-4">
-						<label for="city">City</label>
-						<input type="text" class="form-control" id="city" aria-describedby="city" placeholder="Belgrade" 
-						[(ngModel)]="data.member.city" name="city">
-					</div>
-					<div class="col-4">
-						<label for="state">State</label>
-						<input type="text" class="form-control" id="state" aria-describedby="state" placeholder="MT" 
-						[(ngModel)]="data.member.state" name="state">
-					</div>
-					<div class="col-4">
-						<label for="zip">Zip Code</label>
-						<input type="text" class="form-control" id="zip" aria-describedby="zip" placeholder="59714" 
-						[(ngModel)]="data.member.zip" name="zip">
-					</div>
-				</div>
-	
-				<label for="date">Date of Birth</label>
-				<input type="date" class="form-control" id="month" aria-describedby="month" placeholder="January" 
-				[(ngModel)]="data.member.month" name="month">
-	
-				<label for="phone">Phone</label>
-				<input type="text" class="form-control" id="phone" aria-describedby="phone" placeholder="406-777-0123" 
-				[(ngModel)]="data.member.phone" name="phone">
-	
-				<label for="email">Email address</label>
-				<input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="example@AOL.com" [(ngModel)]="data.member.email" name="email">
-				<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-	
-			</div>
+          <!-- Personal section -->
+          <!-- ------------------------------------------------------------------------------------------------ -->
+          <div class="row">
+            <div class="col-4">
+              <label for="firstName">First Name</label>
+              <input type="text" class="form-control" id="firstName" aria-describedby="firstName" placeholder="John"
+                     [(ngModel)]="data.member.firstName" name="firstName">
+            </div>
 
-			<button type="submit" class="btn btn-success" (click)="updateMember(data.member.email)" mat-dialog-close>Submit</button>
-		</form>
+            <div class="col-4">
+              <label for="lastName">Last Name</label>
+              <input type="text" class="form-control" id="lastName" aria-describedby="lastName" placeholder="Smith"
+                     [(ngModel)]="data.member.lastName" name="lastName">
+            </div>
+
+            <div class="col-4">
+              <label for="date">Date of Birth</label>
+              <input type="date"  class="form-control" id="month" aria-describedby="month" placeholder="January"
+                     [(ngModel)]="data.member.dob" name="dob">
+            </div>
+
+            <div class="col-4">
+              <label for="phone">Phone</label>
+              <input type="text" class="form-control" id="phone" aria-describedby="phone" placeholder="406-777-0123"
+                     [(ngModel)]="data.member.phone" name="phone">
+            </div>
+
+            <div class="col-4">
+              <label for="email">Email address</label>
+              <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="example@AOL.com"
+                     [(ngModel)]="data.member.email" name="email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-4">
+              <label for="address">Address</label>
+              <input type="textt" class="form-control" id="address" aria-describedby="address" placeholder="123 Main St." [(ngModel)]="data.member.address" name="address">
+            </div>
+
+            <div class="col-4">
+              <label for="apt">Apt #</label>
+              <input type="text" class="form-control" id="apt" aria-describedby="apt" placeholder="Suite #05"
+                     [(ngModel)]="data.member.apt" name="apt">
+            </div>
+
+            <div class="col-4">
+              <label for="city">City</label>
+              <input type="text" class="form-control" id="city" aria-describedby="city" placeholder="Belgrade"
+                     [(ngModel)]="data.member.city" name="city">
+            </div>
+
+            <div class="col-4">
+              <label for="state">State</label>
+              <input type="text" class="form-control" id="state" aria-describedby="state" placeholder="MT"
+                     [(ngModel)]="data.member.state" name="state">
+            </div>
+
+            <div class="col-4">
+              <label for="zip">Zip Code</label>
+              <input type="text" class="form-control" id="zip" aria-describedby="zip" placeholder="59714"
+                     [(ngModel)]="data.member.zip" name="zip">
+            </div>
+          </div>
+          <!-- ------------------------------------------------------------------------------------------------ -->
+
+          <!-- Emergency section -->
+          <!-- ------------------------------------------------------------------------------------------------ -->
+          <br />
+          <div class="row">
+            <div class="col-4">
+              <label for="emergencyFirstName">Emergency Contact Full Name</label>
+              <input type="text" class="form-control" id="emergencyFirstName" aria-describedby="firstName" placeholder="John" [(ngModel)]="data.member.emrgName" name="emrgName">
+            </div>
+
+            <div class="col-4">
+              <label for="emergencyRelation">Emergency Contact Relationship</label>
+              <input type="text" class="form-control" id="emergencyRelation" aria-describedby="emergencyRelation" placeholder="Spouse" [(ngModel)]="data.member.emrgRelation" name="emrgRelation">
+            </div>
+            
+            <div class="col-4">
+              <label for="emergencyPhone">Emergency Contact Phone</label>
+              <input type="text" class="form-control" id="emergencyPhone" aria-describedby="emergencyPhone" placeholder="406-777-0123" [(ngModel)]="data.member.emrgPhone" name="emrgPhone">
+            </div>
+
+            <div class="col-4">
+              <label for="emrgEmail">Emergency Contact Email address</label>
+              <input type="email" class="form-control" id="emrgEmail" aria-describedby="emailHelp" placeholder="example@AOL.com" [(ngModel)]="data.member.emrgEmail" name="emrgEmail">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+          </div>
+          <!-- ------------------------------------------------------------------------------------------------ -->
+
+          <!-- Extra section: 1 -->
+          <!-- ------------------------------------------------------------------------------------------------ -->
+          <br />
+          <div class="row">
+            
+            <div class="col-4">
+                <label for="form-group">Is Spouse 60y+?</label>
+                <div class="form-group">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="isSpouse" value="Yes" [(ngModel)]="data.member.isSpouse">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="isSpouse" value="No" [(ngModel)]="data.member.isSpouse">
+                            No
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <label for="form-group">Is Disabled?</label>
+                <div class="form-group">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="isDisabled" value="Yes" [(ngModel)]="data.member.isDisabled">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="isDisabled" value="No" [(ngModel)]="data.member.isDisabled">
+                            No
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <label for="form-group">Are you Disabled and living with Someone 60y+?</label>
+                <div class="form-group">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="AYDALWS" value="Yes" [(ngModel)]="data.member.AYDALWS">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="AYDALWS" value="No" [(ngModel)]="data.member.AYDALWS">
+                            No
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <label for="form-group">Are you Veteran</label>
+                <div class="form-group">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="isVeteran" value="Yes" [(ngModel)]="data.member.isVeteran">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="isVeteran" value="No" [(ngModel)]="data.member.isVeteran">
+                            No
+                        </label>
+                    </div>
+                </div>
+            </div>
+              
+          </div>
+          <!-- ------------------------------------------------------------------------------------------------ -->
+
+          <!-- Extra section: 2 -->
+          <!-- ------------------------------------------------------------------------------------------------ -->
+          <br />
+          <div class="row">
+
+              <div class="col-4">
+                  <label for="form-group">Race</label>
+                  <div class="form-group">
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="race" value="White" [(ngModel)]="data.member.race">
+                              White
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="race" value="American Indian/Alaskan Native" [(ngModel)]="data.member.race">
+                              American Indian/Alaskan Native
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="race" value="Asian American" [(ngModel)]="data.member.race">
+                              Asian American
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="race" value="African American" [(ngModel)]="data.member.race">
+                              African American
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="race" value="Native Hawaiian/Pacific Islander" [(ngModel)]="data.member.race">
+                              Native Hawaiian/Pacific Islander
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="race" value="Other" [(ngModel)]="data.member.race">
+                              Other
+                          </label>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-4">
+                  <label for="form-group">Ethnicity</label>
+                  <div class="form-group">
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="ethnicity" value="Non-Hispanic/Latino" [(ngModel)]="data.member.ethnicity">
+                              Non-Hispanic/Latino
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="ethnicity" value="Hispanic/Latino" [(ngModel)]="data.member.ethnicity">
+                              Hispanic/Latino
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="ethnicity" value="Other" [(ngModel)]="data.member.ethnicity">
+                              Other
+                          </label>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-4">
+                  <label for="form-group">Gender</label>
+                  <div class="form-group">
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="gender" value="Male" [(ngModel)]="data.member.gender">
+                              Male
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="gender" value="Female" [(ngModel)]="data.member.gender">
+                              Female
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="gender" value="Other" [(ngModel)]="data.member.gender">
+                              Other
+                          </label>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+          <!-- ------------------------------------------------------------------------------------------------ -->
+
+
+          <!-- Extra section: 3 -->
+          <!-- ------------------------------------------------------------------------------------------------ -->
+          <br />
+          <div class="row">
+
+              <div class="col-4">
+                  <label for="numInHousehold">NUMBER IN HOUSEHOLD</label>
+                  <input type="text" class="form-control" id="numInHousehold" aria-describedby="numInHousehold" placeholder="0" [(ngModel)]="data.member.numInHousehold" name="numInHousehold">
+              </div>
+
+              <div class="col-4">
+                  <label for="form-group">IS ONE PERSON A CAREGIVER?</label>
+                  <div class="form-group">
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="isOnePersonCaregiver" value="Yes" [(ngModel)]="data.member.isOnePersonCaregiver">
+                              Yes
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="isOnePersonCaregiver" value="No" [(ngModel)]="data.member.isOnePersonCaregiver">
+                              No
+                          </label>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-4">
+                  <label for="monthlyHouseholdIncome">MONTHLY HOUSEHOLD INCOME: </label>
+                  <input type="text" class="form-control" id="monthlyHouseholdIncome" aria-describedby="monthlyHouseholdIncome" placeholder="12,000" [(ngModel)]="data.member.monthlyHouseholdIncome" name="monthlyHouseholdIncome">
+              </div>
+
+              <div class="col-4">
+                  <label for="form-group">ARE YOU RECEIVING SERVICES UNDER NAT'L FAMILY CAREGIVER SUPPORT PROGRAM?</label>
+                  <div class="form-group">
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="AYRSUNFCSP" value="Yes" [(ngModel)]="data.member.AYRSUNFCSP">
+                              Yes
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="AYRSUNFCSP" value="No" [(ngModel)]="data.member.AYRSUNFCSP">
+                              No
+                          </label>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-4">
+                  <label for="form-group">CAREGIVER</label>
+                  <div class="form-group">
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="caregiver" value="Spouse" [(ngModel)]="data.member.caregiver">
+                              Spouse
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="caregiver" value="Daughter/DIL" [(ngModel)]="data.member.caregiver">
+                              Daughter/DIL
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="caregiver" value="Son/SIL" [(ngModel)]="data.member.caregiver">
+                              Son/SIL
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="caregiver" value="Other Relative" [(ngModel)]="data.member.caregiver">
+                              Other Relative
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label>
+                            <input type="radio" name="caregiver" value="Other" [(ngModel)]="data.member.caregiver">
+                              Other
+                          </label>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-4">
+                  <label for="form-group">DO YOU REQUIRE ANY SPECIAL ASSISTANCE (Activies of Daily Living/Instrumental Activities of Daily Living)?</label>
+                  <div class="form-group">
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="DYRASA" value="Yes" [(ngModel)]="data.member.DYRASA">
+                              Yes
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="DYRASA" value="No" [(ngModel)]="data.member.DYRASA">
+                              No
+                          </label>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+
+          <!-- Extra section: 4 -->
+          <!-- ------------------------------------------------------------------------------------------------ -->
+          <br />
+          <div class="row">
+
+              <div class="col-4">
+                  <label for="form-group">SERVICES REQUIRED?</label>
+                  <div class="form-group">
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="servicesRequired" value="Yes" [(ngModel)]="data.member.servicesRequired">
+                              Yes
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="servicesRequired" value="No" [(ngModel)]="data.member.servicesRequired">
+                              No
+                          </label>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="form-group">
+                  <label for="notes">COMMENTS/NOTES</label>
+                  <textarea class="form-control" id="notes" aria-describedby="notes" placeholder="Notes" [(ngModel)]="data.member.notes" name="notes" rows="3"></textarea>
+              </div>
+
+              <div class="col-4">
+                  <label for="form-group">WILL THE MEMEBER BE USING MEALS-ON-WHEELS?</label>
+                  <div class="form-group">
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="WTMBUMOW" value="Yes" [(ngModel)]="data.member.WTMBUMOW">
+                              Yes
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="WTMBUMOW" value="No" [(ngModel)]="data.member.WTMBUMOW">
+                              No
+                          </label>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-4">
+                  <label for="form-group">HAVE THEY USED MOW BEFORE?</label>
+                  <div class="form-group">
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="HTUMB" value="Yes" [(ngModel)]="data.member.HTUMB">
+                              Yes
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="HTUMB" value="No" [(ngModel)]="data.member.HTUMB">
+                              No
+                          </label>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+          <!-- ------------------------------------------------------------------------------------------------ -->
+
+          <!-- Extra section: 5 -->
+          <!-- ------------------------------------------------------------------------------------------------ -->
+          <br />
+          <div class="row">
+
+              <div class="col-4">
+                  <label for="date">Start Date</label>
+                  <input type="date" class="form-control" id="startDate" aria-describedby="startDate" placeholder="January"
+                         [(ngModel)]="data.member.startDate" name="startDate">
+              </div>
+
+              <div class="col-4">
+                  <label for="deliveryLength">DELIVERY LENGTH: </label>
+                  <input type="text" class="form-control" id="deliveryLength" aria-describedby="deliveryLength" placeholder="5" [(ngModel)]="data.member.deliveryLength" name="deliveryLength">
+              </div>
+
+              <div class="col-4">
+                  <label for="form-group">DELIVERY TYPE</label>
+                  <div class="form-group">
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="deliveryType" value="Pick-up" [(ngModel)]="data.member.deliveryType">
+                              Pick-up
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="deliveryType" value="Delivery" [(ngModel)]="data.member.deliveryType">
+                              Delivery
+                          </label>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-4">
+                  <label for="form-group">(M)DELIVERY DAYS</label>
+                  <div class="form-group">
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="deliveryDays" value="Monday" [(ngModel)]="data.member.deliveryDays">
+                              Monday
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="deliveryDays" value="Tuesday" [(ngModel)]="data.member.deliveryDays">
+                              Tuesday
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="deliveryDays" value="Wednesday" [(ngModel)]="data.member.deliveryDays">
+                              Wednesday
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="deliveryDays" value="Thursday" [(ngModel)]="data.member.deliveryDays">
+                              Thursday
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="deliveryDays" value="Friday" [(ngModel)]="data.member.deliveryDays">
+                              Friday
+                          </label>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-4">
+                  <label for="form-group">MICROWAVE</label>
+                  <div class="form-group">
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="microwave" value="Yes" [(ngModel)]="data.member.microwave">
+                              Yes
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="microwave" value="No" [(ngModel)]="data.member.microwave">
+                              No
+                          </label>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+
+          <!-- Extra section: 6 -->
+          <!-- ------------------------------------------------------------------------------------------------ -->
+          <br />
+          <div class="row">
+
+              <div class="col-4">
+                  <label for="form-group">ALLERGIES</label>
+                  <div class="form-group">
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="isAllergies" value="Yes" [(ngModel)]="data.member.isAllergies">
+                              Yes
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="isAllergies" value="No" [(ngModel)]="data.member.isAllergies">
+                              No
+                          </label>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-4">
+                  <label for="pleaseSpecify">PLEASE SPECIFY: </label>
+                  <input type="text" class="form-control" id="pleaseSpecify" aria-describedby="pleaseSpecify" placeholder="5" [(ngModel)]="data.member.pleaseSpecify" name="pleaseSpecify">
+              </div>
+
+          </div>
+
+
+          <!-- Extra section: 6 -->
+          <!-- ------------------------------------------------------------------------------------------------ -->
+          <br />
+          <div class="row">
+
+              <div class="col-4">
+                  <label for="form-group">Milk TYPE</label>
+                  <div class="form-group">
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="mealType" value="Regular" [(ngModel)]="data.member.mealType">
+                              Regular
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="mealType" value="Diabetic" [(ngModel)]="data.member.mealType">
+                              Diabetic
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="mealType" value="Low Sodium" [(ngModel)]="data.member.mealType">
+                              Low Sodium
+                          </label>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-4">
+                  <label for="form-group">Milk TYPE</label>
+                  <div class="form-group">
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="milkType" value="1%" [(ngModel)]="data.member.milkType">
+                              1%
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="milkType" value="2%" [(ngModel)]="data.member.milkType">
+                              2%
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="milkType" value="Whole Milk" [(ngModel)]="data.member.milkType">
+                              Whole Milk
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="milkType" value="No Milk" [(ngModel)]="data.member.milkType">
+                              No Milk
+                          </label>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-4">
+                  <div class="form-group">
+                      <label for="AMI">ADDITIONAL MEAL INSTRUCTIONS</label>
+                      <textarea class="form-control" id="AMI" aria-describedby="AMI" placeholder="N/A" [(ngModel)]="data.member.AMI" name="AMI" rows="3"></textarea>
+                  </div>
+    
+                  <div class="form-group">
+                      <label for="driverInstr">DRIVER INSTRUCTIONS</label>
+                      <textarea class="form-control" id="driverInstr" aria-describedby="driverInstr" placeholder="N/A" [(ngModel)]="data.member.driverInstr" name="driverInstr" rows="3"></textarea>
+                  </div>
+    
+                  <div class="form-group">
+                      <label for="additComm">ADDITIONAL COMMENTS</label>
+                      <textarea class="form-control" id="additComm" aria-describedby="additComm" placeholder="N/A" [(ngModel)]="data.member.additComm" name="additComm" rows="3"></textarea>
+                  </div>
+              </div>
+
+          </div>
+
+
+          <!-- Extra section: 7 -->
+          <!-- ------------------------------------------------------------------------------------------------ -->
+          <br />
+          <div class="row">
+
+              <div class="col-4">
+                  <label for="PDON">PRIMARY DOCTOR OFFICE NAME</label>
+                  <input type="text" class="form-control" id="PDON" aria-describedby="PDON" placeholder="John"
+                         [(ngModel)]="data.member.PDON" name="PDON">
+              </div>
+
+              <div class="col-4">
+                  <label for="PDN">PRIMARY DOCTOR NAME</label>
+                  <input type="text" class="form-control" id="PDN" aria-describedby="PDN" placeholder="John"
+                         [(ngModel)]="data.member.PDN" name="PDN">
+              </div>
+
+              <div class="col-4">
+                  <label for="DPN">DOCTOR PHONE NUMBER</label>
+                  <input type="text" class="form-control" id="DPN" aria-describedby="DPN" placeholder="John"
+                         [(ngModel)]="data.member.DPN" name="DPN">
+              </div>
+
+              <div class="col-4">
+                  <label for="DE">DOCTOR EMAIL</label>
+                  <input type="text" class="form-control" id="DE" aria-describedby="DE" placeholder="John"
+                         [(ngModel)]="data.member.DE" name="DE">
+              </div>
+
+          </div>
+
+        </div>
+        <button type="submit" class="btn btn-success" (click)="updateMember(data.member)" mat-dialog-close>Submit</button>
+    <!--
+        <button type="submit" class="btn btn-success" (click)="updateMember(data.member.id)" mat-dialog-close>Submit</button>
+    -->
+      </form>
+    </mat-dialog-content>
   </div>
 
   <ng-template #show>
-		<h1>Member Information Form</h1>
-		<form>
-			<div class="form-group">
-				<label for="firstName">First Name</label>
-				<input type="text" class="form-control" id="firstName" aria-describedby="firstName" placeholder="John" 
-				[(ngModel)]="member.firstName" name="firstName">
-	
-				<label for="lastName">Last Name</label>
-				<input type="text" class="form-control" id="lastName" aria-describedby="lastName" placeholder="Smith"
-				[(ngModel)]="member.lastName" name="lastName">
-		
-				<div class="row">
-					<div class="col-6">
-						<label for="address">Address</label>
-						<input type="textt" class="form-control" id="address" aria-describedby="address" placeholder="123 Main St." [(ngModel)]="member.address" name="address">
-					</div>
-					<div class="col-6">
-						<label for="apt">Apt #</label>
-						<input type="text" class="form-control" id="apt" aria-describedby="apt" placeholder="Suite #05"
-						[(ngModel)]="member.apt" name="apt">
-					</div>
-
-				</div>
-	
-				<div class="row">
-					<div class="col-4">
-						<label for="city">City</label>
-						<input type="text" class="form-control" id="city" aria-describedby="city" placeholder="Belgrade" 
-						[(ngModel)]="member.city" name="city">
-					</div>
-					<div class="col-4">
-						<label for="state">State</label>
-						<input type="text" class="form-control" id="state" aria-describedby="state" placeholder="MT" 
-						[(ngModel)]="member.state" name="state">
-					</div>
-					<div class="col-4">
-						<label for="zip">Zip Code</label>
-						<input type="text" class="form-control" id="zip" aria-describedby="zip" placeholder="59714" 
-						[(ngModel)]="member.zip" name="zip">
-					</div>
-				</div>
-	
-				<label for="date">Date of Birth</label>
-				<input type="date" class="form-control" id="month" aria-describedby="month" placeholder="January" 
-				[(ngModel)]="member.month" name="month">
-	
-				<label for="phone">Phone</label>
-				<input type="text" class="form-control" id="phone" aria-describedby="phone" placeholder="406-777-0123" 
-				[(ngModel)]="member.phone" name="phone">
-	
-				<label for="email">Email address</label>
-				<input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="example@AOL.com" [(ngModel)]="member.email" name="email">
-				<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-	
-			</div>
-
-			<button type="submit" class="btn btn-success" (click)="saveMember()" mat-dialog-close>Submit</button>
-		</form>
+      <h1>Member Information Form</h1>
+      <mat-dialog-content>
+        <form>
+          <div class="form-group">
+  
+            <!-- Personal section -->
+            <!-- ------------------------------------------------------------------------------------------------ -->
+            <div class="row">
+              <div class="col-4">
+                <label for="firstName">First Name</label>
+                <input type="text" class="form-control" id="firstName" aria-describedby="firstName" placeholder="John"
+                       [(ngModel)]="member.firstName" name="firstName">
+              </div>
+  
+              <div class="col-4">
+                <label for="lastName">Last Name</label>
+                <input type="text" class="form-control" id="lastName" aria-describedby="lastName" placeholder="Smith"
+                       [(ngModel)]="member.lastName" name="lastName">
+              </div>
+  
+              <div class="col-4">
+                <label for="date">Date of Birth</label>
+                <input type="date" class="form-control" id="month" aria-describedby="month" placeholder="January"
+                       [(ngModel)]="member.dob" name="dob">
+              </div>
+  
+              <div class="col-4">
+                <label for="phone">Phone</label>
+                <input type="text" class="form-control" id="phone" aria-describedby="phone" placeholder="406-777-0123"
+                       [(ngModel)]="member.phone" name="phone">
+              </div>
+  
+              <div class="col-4">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="example@AOL.com"
+                       [(ngModel)]="member.email" name="email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              </div>
+            </div>
+  
+            <div class="row">
+              <div class="col-4">
+                <label for="address">Address</label>
+                <input type="textt" class="form-control" id="address" aria-describedby="address" placeholder="123 Main St." [(ngModel)]="member.address" name="address">
+              </div>
+  
+              <div class="col-4">
+                <label for="apt">Apt #</label>
+                <input type="text" class="form-control" id="apt" aria-describedby="apt" placeholder="Suite #05"
+                       [(ngModel)]="member.apt" name="apt">
+              </div>
+  
+              <div class="col-4">
+                <label for="city">City</label>
+                <input type="text" class="form-control" id="city" aria-describedby="city" placeholder="Belgrade"
+                       [(ngModel)]="member.city" name="city">
+              </div>
+  
+              <div class="col-4">
+                <label for="state">State</label>
+                <input type="text" class="form-control" id="state" aria-describedby="state" placeholder="MT"
+                       [(ngModel)]="member.state" name="state">
+              </div>
+  
+              <div class="col-4">
+                <label for="zip">Zip Code</label>
+                <input type="text" class="form-control" id="zip" aria-describedby="zip" placeholder="59714"
+                       [(ngModel)]="member.zip" name="zip">
+              </div>
+            </div>
+            <!-- ------------------------------------------------------------------------------------------------ -->
+  
+            <!-- Emergency section -->
+            <!-- ------------------------------------------------------------------------------------------------ -->
+            <br />
+            <div class="row">
+              <div class="col-4">
+                <label for="emergencyFirstName">Emergency Contact Full Name</label>
+                <input type="text" class="form-control" id="emergencyFirstName" aria-describedby="firstName" placeholder="John" [(ngModel)]="member.emrgName" name="emrgName">
+              </div>
+  
+              <div class="col-4">
+                <label for="emergencyRelation">Emergency Contact Relationship</label>
+                <input type="text" class="form-control" id="emergencyRelation" aria-describedby="emergencyRelation" placeholder="Spouse" [(ngModel)]="member.emrgRelation" name="emrgRelation">
+              </div>
+              
+              <div class="col-4">
+                <label for="emergencyPhone">Emergency Contact Phone</label>
+                <input type="text" class="form-control" id="emergencyPhone" aria-describedby="emergencyPhone" placeholder="406-777-0123" [(ngModel)]="member.emrgPhone" name="emrgPhone">
+              </div>
+  
+              <div class="col-4">
+                <label for="emrgEmail">Emergency Contact Email address</label>
+                <input type="email" class="form-control" id="emrgEmail" aria-describedby="emailHelp" placeholder="example@AOL.com" [(ngModel)]="member.emrgEmail" name="emrgEmail">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              </div>
+            </div>
+            <!-- ------------------------------------------------------------------------------------------------ -->
+  
+            <!-- Extra section: 1 -->
+            <!-- ------------------------------------------------------------------------------------------------ -->
+            <br />
+            <div class="row">
+              
+              <div class="col-4">
+                  <label for="form-group">Is Spouse 60y+?</label>
+                  <div class="form-group">
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="isSpouse" value="Yes" [(ngModel)]="member.isSpouse">
+                              Yes
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="isSpouse" value="No" [(ngModel)]="member.isSpouse">
+                              No
+                          </label>
+                      </div>
+                  </div>
+              </div>
+  
+              <div class="col-4">
+                  <label for="form-group">Is Disabled?</label>
+                  <div class="form-group">
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="isDisabled" value="Yes" [(ngModel)]="member.isDisabled">
+                              Yes
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="isDisabled" value="No" [(ngModel)]="member.isDisabled">
+                              No
+                          </label>
+                      </div>
+                  </div>
+              </div>
+  
+              <div class="col-4">
+                  <label for="form-group">Are you Disabled and living with Someone 60y+?</label>
+                  <div class="form-group">
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="AYDALWS" value="Yes" [(ngModel)]="member.AYDALWS">
+                              Yes
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="AYDALWS" value="No" [(ngModel)]="member.AYDALWS">
+                              No
+                          </label>
+                      </div>
+                  </div>
+              </div>
+  
+              <div class="col-4">
+                  <label for="form-group">Are you Veteran</label>
+                  <div class="form-group">
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="isVeteran" value="Yes" [(ngModel)]="member.isVeteran">
+                              Yes
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="isVeteran" value="No" [(ngModel)]="member.isVeteran">
+                              No
+                          </label>
+                      </div>
+                  </div>
+              </div>
+                
+            </div>
+            <!-- ------------------------------------------------------------------------------------------------ -->
+  
+            <!-- Extra section: 2 -->
+            <!-- ------------------------------------------------------------------------------------------------ -->
+            <br />
+            <div class="row">
+  
+                <div class="col-4">
+                    <label for="form-group">Race</label>
+                    <div class="form-group">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="race" value="White" [(ngModel)]="member.race">
+                                White
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="race" value="American Indian/Alaskan Native" [(ngModel)]="member.race">
+                                American Indian/Alaskan Native
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="race" value="Asian American" [(ngModel)]="member.race">
+                                Asian American
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="race" value="African American" [(ngModel)]="member.race">
+                                African American
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="race" value="Native Hawaiian/Pacific Islander" [(ngModel)]="member.race">
+                                Native Hawaiian/Pacific Islander
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="race" value="Other" [(ngModel)]="member.race">
+                                Other
+                            </label>
+                        </div>
+                    </div>
+                </div>
+  
+                <div class="col-4">
+                    <label for="form-group">Ethnicity</label>
+                    <div class="form-group">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="ethnicity" value="Non-Hispanic/Latino" [(ngModel)]="member.ethnicity">
+                                Non-Hispanic/Latino
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="ethnicity" value="Hispanic/Latino" [(ngModel)]="member.ethnicity">
+                                Hispanic/Latino
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="ethnicity" value="Other" [(ngModel)]="member.ethnicity">
+                                Other
+                            </label>
+                        </div>
+                    </div>
+                </div>
+  
+                <div class="col-4">
+                    <label for="form-group">Gender</label>
+                    <div class="form-group">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="gender" value="Male" [(ngModel)]="member.gender">
+                                Male
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="gender" value="Female" [(ngModel)]="member.gender">
+                                Female
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="gender" value="Other" [(ngModel)]="member.gender">
+                                Other
+                            </label>
+                        </div>
+                    </div>
+                </div>
+  
+            </div>
+            <!-- ------------------------------------------------------------------------------------------------ -->
+  
+  
+            <!-- Extra section: 3 -->
+            <!-- ------------------------------------------------------------------------------------------------ -->
+            <br />
+            <div class="row">
+  
+                <div class="col-4">
+                    <label for="numInHousehold">NUMBER IN HOUSEHOLD</label>
+                    <input type="text" class="form-control" id="numInHousehold" aria-describedby="numInHousehold" placeholder="0" [(ngModel)]="member.numInHousehold" name="numInHousehold">
+                </div>
+  
+                <div class="col-4">
+                    <label for="form-group">IS ONE PERSON A CAREGIVER?</label>
+                    <div class="form-group">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="isOnePersonCaregiver" value="Yes" [(ngModel)]="member.isOnePersonCaregiver">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="isOnePersonCaregiver" value="No" [(ngModel)]="member.isOnePersonCaregiver">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+  
+                <div class="col-4">
+                    <label for="monthlyHouseholdIncome">MONTHLY HOUSEHOLD INCOME: </label>
+                    <input type="text" class="form-control" id="monthlyHouseholdIncome" aria-describedby="monthlyHouseholdIncome" placeholder="12,000" [(ngModel)]="member.monthlyHouseholdIncome" name="monthlyHouseholdIncome">
+                </div>
+  
+                <div class="col-4">
+                    <label for="form-group">ARE YOU RECEIVING SERVICES UNDER NAT'L FAMILY CAREGIVER SUPPORT PROGRAM?</label>
+                    <div class="form-group">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="AYRSUNFCSP" value="Yes" [(ngModel)]="member.AYRSUNFCSP">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="AYRSUNFCSP" value="No" [(ngModel)]="member.AYRSUNFCSP">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+  
+                <div class="col-4">
+                    <label for="form-group">CAREGIVER</label>
+                    <div class="form-group">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="caregiver" value="Spouse" [(ngModel)]="member.caregiver">
+                                Spouse
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="caregiver" value="Daughter/DIL" [(ngModel)]="member.caregiver">
+                                Daughter/DIL
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="caregiver" value="Son/SIL" [(ngModel)]="member.caregiver">
+                                Son/SIL
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="caregiver" value="Other Relative" [(ngModel)]="member.caregiver">
+                                Other Relative
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="caregiver" value="Other" [(ngModel)]="member.caregiver">
+                                Other
+                            </label>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-4">
+                    <label for="form-group">DO YOU REQUIRE ANY SPECIAL ASSISTANCE (Activies of Daily Living/Instrumental Activities of Daily Living)?</label>
+                    <div class="form-group">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="DYRASA" value="Yes" [(ngModel)]="member.DYRASA">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="DYRASA" value="No" [(ngModel)]="member.DYRASA">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+  
+            </div>
+  
+            <!-- Extra section: 4 -->
+            <!-- ------------------------------------------------------------------------------------------------ -->
+            <br />
+            <div class="row">
+  
+                <div class="col-4">
+                    <label for="form-group">SERVICES REQUIRED?</label>
+                    <div class="form-group">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="servicesRequired" value="Yes" [(ngModel)]="member.servicesRequired">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="servicesRequired" value="No" [(ngModel)]="member.servicesRequired">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+  
+                <div class="form-group">
+                    <label for="notes">COMMENTS/NOTES</label>
+                    <textarea class="form-control" id="notes" aria-describedby="notes" placeholder="Notes" [(ngModel)]="member.notes" name="notes" rows="3"></textarea>
+                </div>
+  
+                <div class="col-4">
+                    <label for="form-group">WILL THE MEMEBER BE USING MEALS-ON-WHEELS?</label>
+                    <div class="form-group">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="WTMBUMOW" value="Yes" [(ngModel)]="member.WTMBUMOW">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="WTMBUMOW" value="No" [(ngModel)]="member.WTMBUMOW">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+  
+                <div class="col-4">
+                    <label for="form-group">HAVE THEY USED MOW BEFORE?</label>
+                    <div class="form-group">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="HTUMB" value="Yes" [(ngModel)]="member.HTUMB">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="HTUMB" value="No" [(ngModel)]="member.HTUMB">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+  
+            </div>
+            <!-- ------------------------------------------------------------------------------------------------ -->
+  
+            <!-- Extra section: 5 -->
+            <!-- ------------------------------------------------------------------------------------------------ -->
+            <br />
+            <div class="row">
+  
+                <div class="col-4">
+                    <label for="date">Start Date</label>
+                    <input type="date" class="form-control" id="startDate" aria-describedby="startDate" placeholder="January"
+                           [(ngModel)]="member.startDate" name="startDate">
+                </div>
+  
+                <div class="col-4">
+                    <label for="deliveryLength">DELIVERY LENGTH: </label>
+                    <input type="text" class="form-control" id="deliveryLength" aria-describedby="deliveryLength" placeholder="5" [(ngModel)]="member.deliveryLength" name="deliveryLength">
+                </div>
+  
+                <div class="col-4">
+                    <label for="form-group">DELIVERY TYPE</label>
+                    <div class="form-group">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="deliveryType" value="Pick-up" [(ngModel)]="member.deliveryType">
+                                Pick-up
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="deliveryType" value="Delivery" [(ngModel)]="member.deliveryType">
+                                Delivery
+                            </label>
+                        </div>
+                    </div>
+                </div>
+  
+                <div class="col-4">
+                    <label for="form-group">(M)DELIVERY DAYS</label>
+                    <div class="form-group">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="deliveryDays" value="Monday" [(ngModel)]="member.deliveryDays">
+                                Monday
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="deliveryDays" value="Tuesday" [(ngModel)]="member.deliveryDays">
+                                Tuesday
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="deliveryDays" value="Wednesday" [(ngModel)]="member.deliveryDays">
+                                Wednesday
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="deliveryDays" value="Thursday" [(ngModel)]="member.deliveryDays">
+                                Thursday
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="deliveryDays" value="Friday" [(ngModel)]="member.deliveryDays">
+                                Friday
+                            </label>
+                        </div>
+                    </div>
+                </div>
+  
+                <div class="col-4">
+                    <label for="form-group">MICROWAVE</label>
+                    <div class="form-group">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="microwave" value="Yes" [(ngModel)]="member.microwave">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="microwave" value="No" [(ngModel)]="member.microwave">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+  
+            </div>
+  
+            <!-- Extra section: 6 -->
+            <!-- ------------------------------------------------------------------------------------------------ -->
+            <br />
+            <div class="row">
+  
+                <div class="col-4">
+                    <label for="form-group">ALLERGIES</label>
+                    <div class="form-group">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="isAllergies" value="Yes" [(ngModel)]="member.isAllergies">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="isAllergies" value="No" [(ngModel)]="member.isAllergies">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+  
+                <div class="col-4">
+                    <label for="pleaseSpecify">PLEASE SPECIFY: </label>
+                    <input type="text" class="form-control" id="pleaseSpecify" aria-describedby="pleaseSpecify" placeholder="5" [(ngModel)]="member.pleaseSpecify" name="pleaseSpecify">
+                </div>
+  
+            </div>
+  
+  
+            <!-- Extra section: 6 -->
+            <!-- ------------------------------------------------------------------------------------------------ -->
+            <br />
+            <div class="row">
+  
+                <div class="col-4">
+                    <label for="form-group">MEAL TYPE</label>
+                    <div class="form-group">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="mealType" value="Regular" [(ngModel)]="member.mealType">
+                                Regular
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="mealType" value="Diabetic" [(ngModel)]="member.mealType">
+                                Diabetic
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="mealType" value="Low Sodium" [(ngModel)]="member.mealType">
+                                Low Sodium
+                            </label>
+                        </div>
+                    </div>
+                </div>
+  
+                <div class="col-4">
+                    <label for="form-group">Milk TYPE</label>
+                    <div class="form-group">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="milkType" value="1%" [(ngModel)]="member.milkType">
+                                1%
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="milkType" value="2%" [(ngModel)]="member.milkType">
+                                2%
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="milkType" value="Whole Milk" [(ngModel)]="member.milkType">
+                                Whole Milk
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="milkType" value="No Milk" [(ngModel)]="member.milkType">
+                                No Milk
+                            </label>
+                        </div>
+                    </div>
+                </div>
+  
+                <div class="col-4">
+                    <div class="form-group">
+                        <label for="AMI">ADDITIONAL MEAL INSTRUCTIONS</label>
+                        <textarea class="form-control" id="AMI" aria-describedby="AMI" placeholder="N/A" [(ngModel)]="member.AMI" name="AMI" rows="3"></textarea>
+                    </div>
+      
+                    <div class="form-group">
+                        <label for="driverInstr">DRIVER INSTRUCTIONS</label>
+                        <textarea class="form-control" id="driverInstr" aria-describedby="driverInstr" placeholder="N/A" [(ngModel)]="member.driverInstr" name="driverInstr" rows="3"></textarea>
+                    </div>
+      
+                    <div class="form-group">
+                        <label for="additComm">ADDITIONAL COMMENTS</label>
+                        <textarea class="form-control" id="additComm" aria-describedby="additComm" placeholder="N/A" [(ngModel)]="member.additComm" name="additComm" rows="3"></textarea>
+                    </div>
+                </div>
+  
+            </div>
+  
+  
+            <!-- Extra section: 7 -->
+            <!-- ------------------------------------------------------------------------------------------------ -->
+            <br />
+            <div class="row">
+  
+                <div class="col-4">
+                    <label for="PDON">PRIMARY DOCTOR OFFICE NAME</label>
+                    <input type="text" class="form-control" id="PDON" aria-describedby="PDON" placeholder="John"
+                           [(ngModel)]="member.PDON" name="PDON">
+                </div>
+  
+                <div class="col-4">
+                    <label for="PDN">PRIMARY DOCTOR NAME</label>
+                    <input type="text" class="form-control" id="PDN" aria-describedby="PDN" placeholder="John"
+                           [(ngModel)]="member.PDN" name="PDN">
+                </div>
+  
+                <div class="col-4">
+                    <label for="DPN">DOCTOR PHONE NUMBER</label>
+                    <input type="text" class="form-control" id="DPN" aria-describedby="DPN" placeholder="John"
+                           [(ngModel)]="member.DPN" name="DPN">
+                </div>
+  
+                <div class="col-4">
+                    <label for="DE">DOCTOR EMAIL</label>
+                    <input type="text" class="form-control" id="DE" aria-describedby="DE" placeholder="John"
+                           [(ngModel)]="member.DE" name="DE">
+                </div>
+  
+            </div>
+  
+          </div>
+          <button type="submit" class="btn btn-success" (click)="validateForm()"  >Submit</button>
+        </form>
+      </mat-dialog-content>
   </ng-template>
 
 

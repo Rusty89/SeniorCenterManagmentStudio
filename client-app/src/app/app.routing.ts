@@ -16,6 +16,9 @@ import { InfoFormComponent } from './info-form/info-form.component';
 import { VolunteerFormComponent } from './volunteer-form/volunteer-form.component';
 import { ActivityFormComponent } from './activity-form/activity-form.component';
 
+import { ActivityInvFormComponent } from './activity-involvement/activity-inv-form.component';
+
+
 const appRoutes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },
     { path: 'login', component: LoginComponent },
@@ -28,7 +31,10 @@ const appRoutes: Routes = [
     { path: 'info-form', component: InfoFormComponent, canActivate: [AuthGuard] },
     { path: 'volunteer-form', component: VolunteerFormComponent, canActivate: [AuthGuard] },
     { path: 'activity-form', component: ActivityFormComponent, canActivate: [AuthGuard] },
+    
+    { path: 'activity-inv-form', component: ActivityInvFormComponent, canActivate: [AuthGuard] },
 
+    
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
 ];

@@ -1,7 +1,11 @@
 <h1 id="menuTitle">Reports</h1>
 <div class="text-center">
 	<div class="btn-group btn-group-lg" role="group" aria-label="...">
-		<button type="button" class="btn btn-secondary btn-lg mr-1 ml-1">Print Reports</button>		
-		<button type="button" class="btn btn-secondary btn-lg mr-1 ml-1">Export Information</button>
+		<button type="button" class="btn btn-success btn-lg mr-1 ml-1" (click)="exportToCSV(this.members, 'Member_Data.csv')">Download Members as CSV file</button>		
+		<button type="button" class="btn btn-success btn-lg mr-1 ml-1" (click)="exportToCSV(this.volunteers, 'Volunteer_Data.csv')">Download Volunteers as CSV file</button>
+		<button type="button" class="btn btn-success btn-lg mr-1 ml-1" (click)="exportToCSV(this.activities, 'Activity_Data.csv')">Download Activities as CSV file</button>
+		<button type="button" class="btn btn-fail btn-lg mr-1 ml-1" (click)="exportToCSV(this.involvements, 'Involvement_Data.csv')">Download Involvements as CSV file</button>
+
+		
 	</div>
 </div>
