@@ -65,11 +65,16 @@ The angular build files are hosted in a AWS S3 bucket. This will load the angula
 ## Test the Software
 - Link to Travis CI : https://travis-ci.org/Rusty89/SeniorCenterManagmentStudio/
 - Currently using Travis CI to test builds of the project.
-- Use Selenium IDE to run side tests
-- Unit tests are handed by Angular
+- Use Selenium IDE to run side tests. These are found in the /tests/ folder in the root of the project.
+- Unit tests are handed by Angular. You can ind our coverage in the /coverage/ folder in the root of the project.
 * Automated Testing 
 - Travis CI
 
+## Diagrams and Charts
+- You can see the structure of our angular project by checking out /component-diagrams/ in the root of the project.
+
+## User Evaluations
+- You can find user evaluations in the /user-evals/ folder in the root of our project.
 
 ## Known Bugs
 * ~~Refreshing while it is hosted on S3 currently does not work (2/24/19)~~
@@ -88,6 +93,9 @@ The angular build files are hosted in a AWS S3 bucket. This will load the angula
 * ~~Involvments report does not yield useful data(4/10/2019)~~
 * Cannot export the activity involvement table to CSV (4/11/2019)
 * Removing Members/Volunteers/Activities from the db is one-click, no warning (4/11/2019)
+* Exporting to .csv doesn't support Edge (and possibly other browsers) (4/11/2019)
+* Dark-mode in browser isn't supported (4/11/2019)
+
 
 
 
