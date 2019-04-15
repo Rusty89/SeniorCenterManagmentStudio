@@ -61,6 +61,10 @@ export class ServicesComponent implements OnInit {
 
   deleteActivity(activity: any) {
 	if(confirm("Are you sure you want to delete "+activity.className)) {
+		
+		this.activityInvService.deleteInvolvement(activity.id).subscribe(() => {
+		  
+		});
 		this.activityService.deleteActivity(activity.id).subscribe(() => {
 		  this.loadActivities();
 		});
