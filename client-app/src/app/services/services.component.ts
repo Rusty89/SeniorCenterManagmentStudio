@@ -59,10 +59,13 @@ export class ServicesComponent implements OnInit {
     // --------------------------------------------------- //
   }
 
-  deleteActivity(activityID: string) {
-    this.activityService.deleteActivity(activityID).subscribe(() => {
-      this.loadActivities();
-    });
+  deleteActivity(activity: any) {
+	if(confirm("Are you sure to delete "+activity.className)) {
+		this.activityService.deleteActivity(activity.id).subscribe(() => {
+		  this.loadActivities();
+		});
+    }
+    
   }
 
   // Send data into update dialog
