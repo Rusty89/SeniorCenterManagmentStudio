@@ -103,17 +103,42 @@ export class ActivityInvFormComponent implements OnInit{
 	}
 	
 	private removeMember(involvement: Involvement, memberID: string){
-		
-		for (var i = 0; i < involvement.memberIDs.length; i++) {
+		if(memberID===null){
+			
+			for (var i = 0; i < involvement.memberIDs.length; i++) {
                 
 				if (involvement.memberIDs[i] === memberID) {
 					this.involvement.memberIDs.splice(i,1);                 
 				}
                 
             }	
+			
+			this.viewMembers(this.involvement);
+			this.forPrinting = this.involvementsByName;
+		}		
+		else {
+			
+			for (var i = 0; i < involvement.memberIDs.length; i++) {
+                
+				if (involvement.memberIDs[i] === memberID) {
+					if(confirm("Are you sure you want to remove this member from this activity? ")) {
+						this.involvement.memberIDs.splice(i,1); 
+				
+					}
+					                
+				}
+                
+            }	
+			
+			this.viewMembers(this.involvement);
+			this.forPrinting = this.involvementsByName;
 		
-		this.viewMembers(this.involvement);
-		this.forPrinting = this.involvementsByName;
+       }
+		
+	}
+	
+	private dummyFunction(){
+		
 	}
 
     private loadMembers() {

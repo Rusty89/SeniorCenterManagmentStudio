@@ -33,10 +33,13 @@ export class VolunteersComponent implements OnInit {
     );
   }
 
-  deleteVolunteer(volunteerID: string) {
-    this.volunteerService.deleteVolunteer(volunteerID).subscribe(() => {
-      this.loadVolunteers();
-    });
+  deleteVolunteer(volunteer: any) {
+	  if(confirm("Are you sure you want to delete "+volunteer.firstName+" "+volunteer.lastName+"?")) {
+		this.volunteerService.deleteVolunteer(volunteer.id).subscribe(() => {
+		  this.loadVolunteers();
+		});
+	}
+    
   }
 
   // Send data into update dialog

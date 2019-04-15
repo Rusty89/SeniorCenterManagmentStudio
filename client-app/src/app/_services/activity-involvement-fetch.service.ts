@@ -69,7 +69,7 @@ export class ActivityInvFetchService {
     return this.http.delete(API_URL,
       {
         params: {
-          "aid_activity_id": activityID
+          "activityID": activityID
         }
       });
   }

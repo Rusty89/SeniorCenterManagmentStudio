@@ -30,10 +30,13 @@ export class MembersComponent implements OnInit {
     );
   }
 
-  deleteMember(memberID: string) {
-    this.memberService.deleteMember(memberID).subscribe(() => {
-      this.loadMembers();
-    });
+  deleteMember(member: any) {
+	if(confirm("Are you sure you want to delete "+member.firstName+" "+member.lastName+"?")) {
+       this.memberService.deleteMember(member.id).subscribe(() => {
+       this.loadMembers();
+      });
+	}
+    
   }
 
 
