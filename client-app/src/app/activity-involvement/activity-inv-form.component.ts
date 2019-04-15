@@ -117,20 +117,21 @@ export class ActivityInvFormComponent implements OnInit{
 			this.forPrinting = this.involvementsByName;
 		}		
 		else {
-			if(confirm("Are you sure you want to remove this member from the activity?")) {
-				for (var i = 0; i < involvement.memberIDs.length; i++) {
-					
-					if (involvement.memberIDs[i] === memberID) {
-						this.involvement.memberIDs.splice(i,1);                 
-					}
-					
-				}	
-				
-				this.viewMembers(this.involvement);
-				this.forPrinting = this.involvementsByName;
-				
-			}
 			
+			for (var i = 0; i < involvement.memberIDs.length; i++) {
+                
+				if (involvement.memberIDs[i] === memberID) {
+					if(confirm("Are you sure you want to remove this member from this activity? ")) {
+						this.involvement.memberIDs.splice(i,1); 
+				
+					}
+					                
+				}
+                
+            }	
+			
+			this.viewMembers(this.involvement);
+			this.forPrinting = this.involvementsByName;
 		
        }
 		
