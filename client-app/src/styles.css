@@ -39,6 +39,10 @@ html, body {
 	
 }
 
+.navRight {
+	float: right
+}
+
 .buttonBig {
 	position: relative;
 	box-shadow: 0px 0px 0px 2px #9fb4f2;

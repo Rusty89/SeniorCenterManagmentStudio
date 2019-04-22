@@ -16,23 +16,11 @@ From the members page, simply click the update button in the row of the member y
 ### Deleting Members
 Once logged in, click on the delete button in the member table to remove from the database. Be careful, this is one-click and cannot be undone.
 
-### Adding Volunteers
-Works just like adding members.
+### Adding/Updating/Deleting Volunteers
+Works just like adding/updating/deleting members.
 
-### Updating Volunteers
-Works just like updating members.
-
-### Deleting Volunteers
-Works just like deleting members.
-
-### Adding Activities
-Works just like adding members.
-
-### Updating Activities
-Works just like updating members.
-
-### Deleting Activities
-Works just like deleting members.
+### Adding/Updating/Deleting Activities
+Works just like adding/updating/deleting members.
 
 ### Adding/Removing Member to Activity
 Navigate to the Activities (Services) tab. Here you can click "Manage Members" next to any activity. This will generate a list of members at the Senior Center. To add that member to an activity, simply click the add button next to their name. You will see a list of members added to that activity. You can not add a member that has already been added. You can remove a member from an activity the same way. Deleting a member will remove them from an activity.
@@ -78,7 +66,7 @@ The angular build files are hosted in a AWS S3 bucket. This will load the angula
 
 ## Known Bugs
 * ~~Refreshing while it is hosted on S3 currently does not work (2/24/19)~~
-* Mobile needs optimized (2/24/19)
+* ~~Mobile needs optimized (2/24/19)~~
 * ~~Adding a member opens a new page instead of a pop-up modal (3/1/2019)~~
 * ~~DB key is on a month (3/1/2019)~~
 * ~~ngModel breaks app when wrapped with login functionality (3/13/2019)~~
@@ -92,9 +80,9 @@ The angular build files are hosted in a AWS S3 bucket. This will load the angula
 * ~~No Reports features are implemented, the reports buttons do nothing(3/29/2019~~
 * ~~Involvments report does not yield useful data(4/10/2019)~~
 * Cannot export the activity involvement table to CSV (4/11/2019)
-* Removing Members/Volunteers/Activities from the db is one-click, no warning (4/11/2019)
-* Exporting to .csv doesn't support Edge (and possibly other browsers) (4/11/2019)
-* Dark-mode in browser isn't supported (4/11/2019)
+* ~~Removing Members/Volunteers/Activities from the db is one-click, no warning (4/11/2019)~~
+
+
 
 
 
