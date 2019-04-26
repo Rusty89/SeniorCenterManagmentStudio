@@ -1,12 +1,9 @@
 
 import { Component, OnInit, Inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MAT_DIALOG_DATA } from '@angular/material';
 import { Volunteer } from '../_models/volunteer';
 import { VolunteerFetchService } from '../_services/volunteer-fetch.service';
-
-
-
 
 @Component({
   selector: 'app-volunteer-form',
@@ -97,21 +94,4 @@ export class VolunteerFormComponent implements OnInit {
 		  return false;
 	  }
   }
-   // OLD PART OF CODE, I WOULD KEEP IT FOR NOW
-  // ------------------------------------------------------------------------------------------ //
-  /*
-  updateVolunteer(volunteerEmail: string)
-  {
-    // Delete activity by email
-    this.volunteerService.deleteVolunteer(this.data.volunteer.email);
-
-
-    // Add new activity
-    this.volunteerService.saveVolunteer(this.data.volunteer).toPromise().then(() => {
-      window.location.reload();
-    });
-  }
-  */
- // ------------------------------------------------------------------------------------------ //
-
 }

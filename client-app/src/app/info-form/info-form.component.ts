@@ -1,11 +1,9 @@
 
 import { Component, OnInit, Inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MAT_DIALOG_DATA } from '@angular/material';
 import { Member } from '../_models/member';
 import { MemberFetchService } from '../_services/member-fetch.service';
-
-
 
 @Component({
   selector: 'app-info-form',
@@ -24,10 +22,9 @@ export class InfoFormComponent implements OnInit  {
   ngOnInit() {
     this.member = new Member();
 
-    // Init check-boxes
-    
+    // initialize check-boxes
     this.initOptionalValues();
-	this.initCheckBoxes();
+	  this.initCheckBoxes();
   }
 
    private initOptionalValues()
@@ -36,8 +33,6 @@ export class InfoFormComponent implements OnInit  {
 
     // APARTMENT: String
     this.member.apt="n/a";
-
-    
 
     // EMERGENCY CONTACT
     // -------------------------------------------------------------- //
@@ -54,34 +49,22 @@ export class InfoFormComponent implements OnInit  {
     this.member.emrgEmail="example@AOL.com";
     // -------------------------------------------------------------- //
 
-  
-
-   
-
     // ARE YOU DISABLED AND LIVING WITH SOMEONE 60+?
     this.member.AYDALWS="n/a";
-
-   
-
-    
 
     // NUMBER IN HOUSEHOLD: Int or String
     this.member.numInHousehold="n/a";
 
-  
-
     // DO YOU REQUIRE ANY SPECIAL ASSISTANCE (Activies of Daily Living/Instrumental Activities of Daily Living)
     this.member.DYRASA="n/a";
-
 
     // COMMENTS/NOTES:
     this.member.notes="n/a";
 
-
     // START DATE: String
     this.member.startDate="0000-00-00";
 
-	// DELIVERY LENGTH: 
+	  // DELIVERY LENGTH: 
     this.member.deliveryLength="n/a";
 
     // PLEASE SPECIFY: String
@@ -109,7 +92,7 @@ export class InfoFormComponent implements OnInit  {
     // DOCTOR EMAIL: String
     this.member.DE="n/a";
 	
-	 // MONTHLY HOUSEHOLD INCOME
+	  // MONTHLY HOUSEHOLD INCOME
     this.member.monthlyHouseholdIncome="n/a";
   }
   
@@ -129,7 +112,6 @@ export class InfoFormComponent implements OnInit  {
     this.member.HTUMB = "n/a";
     this.member.microwave = "n/a";
     this.member.isAllergies = "n/a";
-
     this.member.race = "n/a";
     this.member.ethnicity = "n/a";
     this.member.gender = "n/a";
@@ -141,14 +123,12 @@ export class InfoFormComponent implements OnInit  {
     // --------------------------------------------------- //
   }
 
-  // Saving member
   saveMember() {
     this.memberService.saveMember(this.member).toPromise().then(() => {
       window.location.reload();
     });
   }
 
-  // Updating member
   updateMember(member: Member) {
     this.memberService.updateMember(member).toPromise().then(() => {
       window.location.reload();
@@ -196,8 +176,6 @@ export class InfoFormComponent implements OnInit  {
 		  fail=false;
 	  }
 	  
-	  	  
-	 
 	  if(fail){
 		  this.saveMember();
 	  
@@ -207,26 +185,4 @@ export class InfoFormComponent implements OnInit  {
 	  }
 	  
   }
-
-  // OLD PART OF CODE, I WOULD KEEP IT FOR NOW
-  // ------------------------------------------------------------------------------------------ //
-  /*
-  updateMember(memberID: string)
-  {
-    // Delete activity by email
-    this.deleteMember(memberID);
-
-    // Add new activity
-    this.memberService.saveMember(this.data.member).toPromise().then(() => {
-      window.location.reload();
-    });
-  }
-
-  deleteMember(memberID: string) {
-    this.memberService.deleteMember(memberID).subscribe(() => {
-
-    });
-  }
-  */
-
 }

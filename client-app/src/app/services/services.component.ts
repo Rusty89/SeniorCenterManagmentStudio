@@ -1,7 +1,7 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialog} from '@angular/material';
 
 import { ActivityFormComponent } from '.././activity-form/activity-form.component';
 import { ActivityFetchService } from '../_services/activity-fetch.service';
@@ -53,10 +53,6 @@ export class ServicesComponent implements OnInit {
       () => console.log("involvements loaded.")
     );
 
-    // --------------------------------------------------- //
-    // IS NOT WORKING
-    //this.loadInvolvement(this.involvements);
-    // --------------------------------------------------- //
   }
 
   deleteActivity(activity: any) {
@@ -108,9 +104,7 @@ export class ServicesComponent implements OnInit {
 
   // opens modal to sate new activity
   addActivity(): void {
-    // Possible it is good idea to create new empty involvement right after new activity is created
-    // and after you clicked on Members in you be able just to add new member to current activity/involvement
-    //this.addInvolvement()
+
     const dialogRef = this.dialog.open(ActivityFormComponent);
     var test;
 
@@ -129,29 +123,7 @@ export class ServicesComponent implements OnInit {
 
       }
     };
-    
-
-    console.log(test);
-    //this.addInvolvement(test);
-
-    
-
   }
-
-
-  /*
-  saveInvolvement() {
-    this.activityInvService.saveInvolvement(this.involvement).toPromise().then(() => {
-      window.location.reload();
-    });
-  }
-
-  deleteInvolvement(uniqueName: string) {
-    this.activityInvService.deleteInvolvement(uniqueName).subscribe(() => {
-      this.loaInvolvements();
-    });
-  }
-  */
 
   // opens modal to add involvement
   manageMember(activityID: string): void 
@@ -183,7 +155,6 @@ export class ServicesComponent implements OnInit {
       this.addInvolvement(activityID);
 	  
     }
-	
 
     // Get all activities and find one activity by ID
     // --------------------------------------------------------------------- //
@@ -224,7 +195,6 @@ export class ServicesComponent implements OnInit {
 
   
     dialogRef.afterClosed().subscribe(result => {
-      //this.loadActivities();
 	  var tmpinvolvement = new Involvement();
       tmpinvolvement.activityID = activityID;
       tmpinvolvement.memberIDs = dialogRef.componentInstance.involvement.memberIDs;
@@ -237,8 +207,6 @@ export class ServicesComponent implements OnInit {
 
   private addInvolvement(activityID: string)
   {
-    //var tmpMemberIDs: string[];
-    //tmpMemberIDs[0] = "Null";
 
     var tmpinvolvement = new Involvement();
     tmpinvolvement.activityID = activityID;

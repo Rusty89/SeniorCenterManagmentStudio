@@ -4,9 +4,6 @@ import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import { Volunteer } from '../_models/volunteer';
 
-// OLD: api url for volunteer
-//const API_URL:string = 'https://jln3dnryx2.execute-api.us-east-1.amazonaws.com/Dev/volunteer';
-
 // NEW: api for volunteer
 const API_URL: string = 'https://5z47iau9oe.execute-api.us-east-1.amazonaws.com/SCMS/volunteer';
 
@@ -17,7 +14,6 @@ const API_URL_UPDATE: string = 'https://5z47iau9oe.execute-api.us-east-1.amazona
 export class VolunteerFetchService {
 
   constructor(private http: HttpClient) { }
-
 
   // return all volunteers from the database
   getVolunteers() {

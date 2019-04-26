@@ -1,15 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
-//services to export
 import { MemberFetchService } from '../_services/member-fetch.service';
 import { VolunteerFetchService } from '../_services/volunteer-fetch.service';
 import { ActivityFetchService } from '../_services/activity-fetch.service';
 import { ActivityInvFetchService } from '../_services/activity-involvement-fetch.service';
-
-
-//to save out as csv file
-import { saveAs } from '../../../node_modules/file-saver/src/FileSaver';
 
 
 @Component({
