@@ -5,7 +5,6 @@ import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
 import { AuthGuard } from './_guards';
 
-import { NgModule } from '@angular/core';
 import { MembersComponent } from './members/members.component';
 import { VolunteersComponent } from './volunteers/volunteers.component';
 import { ServicesComponent } from './services/services.component';
@@ -35,7 +34,7 @@ const appRoutes: Routes = [
     { path: 'activity-inv-form', component: ActivityInvFormComponent, canActivate: [AuthGuard] },
 
     
-    // otherwise redirect to home
+    // redirect to home instead of showing a 404 page
     { path: '**', redirectTo: '' }
 ];
 

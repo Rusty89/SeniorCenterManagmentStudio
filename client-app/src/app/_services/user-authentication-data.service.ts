@@ -3,7 +3,6 @@ import { HttpClient} from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import { User } from '../_models/user';
 
-
 const API_URL_AUTHENTICATION:string = 'https://70jjjl5m82.execute-api.us-east-1.amazonaws.com/Dev2/authenticationapi';
 
 @Injectable({ providedIn: 'root' })

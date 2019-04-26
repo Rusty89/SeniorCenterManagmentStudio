@@ -25,7 +25,6 @@
                     <td>{{activity.time}}</td>
                     <td>{{activity.days}}</td>
                     <td>{{activity.location}}</td>
-                    <!-- <td>{{activity.id}}</td> -->
                     <td>
                         <button type="button" class="btn btn-success" (click)="manageMember(activity.id)">Manage
                             Members</button>
@@ -33,10 +32,8 @@
                         <button type="button" class="btn btn-warning"
                             (click)="openUpdateDialog(activity.id)">Update</button>
                         &nbsp;
-
                         <button type="button" class="btn btn-danger"
                             (click)="deleteActivity(activity)">Delete</button>
-
                     </td>
                 </tr>
             </tbody>

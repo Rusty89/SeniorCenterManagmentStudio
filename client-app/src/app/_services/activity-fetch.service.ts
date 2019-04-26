@@ -1,11 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import {Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import { Activity } from '../_models/activity';
-
-// OLD: api url for activities
-//const API_URL:string = 'https://jln3dnryx2.execute-api.us-east-1.amazonaws.com/Dev/activity';
 
 // NEW: API for activities
 const API_URL:string = 'https://5z47iau9oe.execute-api.us-east-1.amazonaws.com/SCMS/activity';

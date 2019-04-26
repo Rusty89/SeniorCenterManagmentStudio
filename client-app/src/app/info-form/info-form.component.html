@@ -5,7 +5,6 @@
   <!-- This div will be displayed tmp is not null -->
   <div *ngIf="data; else show">
     <h1>Member Information Form</h1>
-    <h3>Member ID: {{ data.member.id }}</h3>
     <mat-dialog-content>
       <form>
         <div class="form-group">
@@ -690,9 +689,6 @@
 
         </div>
         <button type="submit" class="btn btn-success" (click)="updateMember(data.member)" mat-dialog-close>Submit</button>
-    <!--
-        <button type="submit" class="btn btn-success" (click)="updateMember(data.member.id)" mat-dialog-close>Submit</button>
-    -->
       </form>
     </mat-dialog-content>
   </div>
@@ -974,8 +970,6 @@
   
             </div>
             <!-- ------------------------------------------------------------------------------------------------ -->
-  
-  
             <!-- Extra section: 3 -->
             <!-- ------------------------------------------------------------------------------------------------ -->
             <br />
@@ -1386,6 +1380,5 @@
         </form>
       </mat-dialog-content>
   </ng-template>
-
 
 </div>
