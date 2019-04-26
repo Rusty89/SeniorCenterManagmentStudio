@@ -1,1 +1,19 @@
+/* This css allows for automatic numbered rows in the tables */
+
+#numberedTable table
+{
+    counter-reset: rowNumber;
+}
+
+#numberedTable table tr > td:first-child
+{
+    counter-increment: rowNumber;
+}
+
+#numberedTable table tr td:first-child::before
+{
+    content: counter(rowNumber);
+    min-width: 1em;
+    margin-right: 0.5em;
+}
 

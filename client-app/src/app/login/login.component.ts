@@ -48,7 +48,6 @@ export class LoginComponent implements OnInit {
 
         // stop here if form is invalid
         if (this.loginForm.invalid) {
-           // this.refresh();
             return;
         }
 
@@ -58,17 +57,13 @@ export class LoginComponent implements OnInit {
             .subscribe(
                 data => {
                     this.router.navigate([this.returnUrl]);
-					this.startTimer();
-					
+					this.startTimer();			
                 },
                 error => {
                     this.alertService.error(error);
                     this.loading = false;
-                    
-
                 });
     }
-	
 	
 	timeLeft: number = 5;
 	interval;

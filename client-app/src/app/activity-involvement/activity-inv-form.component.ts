@@ -1,15 +1,12 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MAT_DIALOG_DATA } from '@angular/material';
 
 import { ActivityFetchService } from '../_services/activity-fetch.service';
 import { ActivityInvFetchService } from '../_services/activity-involvement-fetch.service';
-import { ServicesComponent } from '.././services/services.component';
 
-import { Activity } from '../_models/activity';
 import { Involvement } from '../_models/involvement';
 import { MemberFetchService } from '../_services/member-fetch.service';
-import { MembersComponent } from '@app/members/members.component';
 
 
 @Component({
@@ -17,7 +14,7 @@ import { MembersComponent } from '@app/members/members.component';
     templateUrl: './activity-inv-form.component.html',
     styleUrls: ['./activity-inv-form.component.css']
 })
-export class ActivityInvFormComponent implements OnInit{
+export class ActivityInvFormComponent implements OnInit {
 
     constructor(
         private activityService: ActivityFetchService,
@@ -34,28 +31,18 @@ export class ActivityInvFormComponent implements OnInit{
 
     ngOnInit() {
 
-        // Getting all involvements from attached data
-        //this.involvements = this.data.involvements;
-		
+        // getting all involvements from attached data		
         this.involvement = this.data.involvement;
-        this.members=this.loadMembers();
-		
-		this.viewMembers(this.involvement);
-		console.log(this.members);
-		
-		
-        
-		
-        //this.involvementsByName = [];
+        this.members = this.loadMembers();
 
+        this.viewMembers(this.involvement);
     }
-	
-	
+
+
 
     updateInvolvement(involvement: Involvement, memberID: string) {
         this.involvementsByName = [];
         console.log("Involvement ID: " + involvement.id + " Member ID: " + memberID);
-        
 
         var dontAdd: boolean;
         dontAdd = false;
@@ -71,50 +58,70 @@ export class ActivityInvFormComponent implements OnInit{
         // adds member if it's new to the activity
         if (dontAdd === false) {
             involvement.memberIDs.push(memberID);
-           
-        }
-		this.viewMembers(this.involvement);
-        this.forPrinting = this.involvementsByName;
 
+        }
+        this.viewMembers(this.involvement);
+        this.forPrinting = this.involvementsByName;
 
         // prints out the list of members in an involvement
         this.involvementsByName.forEach(element => {
             console.log("Name: " + element);
         })
-
-        
-
     }
-	
-	
-	private viewMembers(involvement: Involvement){
-		this.involvementsByName = [];
-		if((this.involvement.memberIDs!=null) && (this.members !=null)){
-			for (var i = 0; i < this.involvement.memberIDs.length; i++) {
+
+    private viewMembers(involvement: Involvement) {
+        this.involvementsByName = [];
+        if ((this.involvement.memberIDs != null) && (this.members != null)) {
+            for (var i = 0; i < this.involvement.memberIDs.length; i++) {
                 for (var j = 0; j < this.members.length; j++) {
                     if (this.involvement.memberIDs[i] === this.members[j].id) {
-                        this.involvementsByName.push(this.members[j].firstName.concat(" ".concat(this.members[j].lastName)))                      
+                        this.involvementsByName.push(this.members[j].firstName.concat(" ".concat(this.members[j].lastName)))
                     }
                 }
             }
-		
-		}
-		
-	}
-	
-	private removeMember(involvement: Involvement, memberID: string){
-		
-		for (var i = 0; i < involvement.memberIDs.length; i++) {
-                
-				if (involvement.memberIDs[i] === memberID) {
-					this.involvement.memberIDs.splice(i,1);                 
-				}
-                
-            }	
-		
-		this.viewMembers(this.involvement);
-		this.forPrinting = this.involvementsByName;
-	}
+
+        }
+
+    }
+
+    private removeMember(involvement: Involvement, memberID: string) {
+        if (memberID === null) {
+
+            for (var i = 0; i < involvement.memberIDs.length; i++) {
+
+                if (involvement.memberIDs[i] === memberID) {
+                    this.involvement.memberIDs.splice(i, 1);
+                }
+
+            }
+
+            this.viewMembers(this.involvement);
+            this.forPrinting = this.involvementsByName;
+        }
+        else {
+
+            for (var i = 0; i < involvement.memberIDs.length; i++) {
+
+                if (involvement.memberIDs[i] === memberID) {
+                    if (confirm("Are you sure you want to remove this member from this activity? ")) {
+                        this.involvement.memberIDs.splice(i, 1);
+
+                    }
+
+                }
+
+            }
+
+            this.viewMembers(this.involvement);
+            this.forPrinting = this.involvementsByName;
+
+        }
+
+    }
+
+    private dummyFunction() {
+
+    }
 
     private loadMembers() {
         this.memberService.getMembers().subscribe(
@@ -122,6 +129,6 @@ export class ActivityInvFormComponent implements OnInit{
             err => console.error(err),
             () => console.log("members loaded.")
         );
-		
+
     }
 }

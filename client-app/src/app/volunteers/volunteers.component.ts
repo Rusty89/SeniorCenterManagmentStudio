@@ -1,13 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialog } from '@angular/material';
 
 import { VolunteerFormComponent } from '.././volunteer-form/volunteer-form.component';
 
-
 import { VolunteerFetchService } from '../_services/volunteer-fetch.service';
-
-
 
 @Component({
   selector: 'app-services',
@@ -15,7 +12,6 @@ import { VolunteerFetchService } from '../_services/volunteer-fetch.service';
   styleUrls: ['./volunteers.component.css']
 })
 export class VolunteersComponent implements OnInit {
-
 
   constructor(private volunteerService: VolunteerFetchService, private router:Router, public dialog: MatDialog) { }
 
@@ -33,10 +29,13 @@ export class VolunteersComponent implements OnInit {
     );
   }
 
-  deleteVolunteer(volunteerID: string) {
-    this.volunteerService.deleteVolunteer(volunteerID).subscribe(() => {
-      this.loadVolunteers();
-    });
+  deleteVolunteer(volunteer: any) {
+	  if(confirm("Are you sure you want to delete "+volunteer.firstName+" "+volunteer.lastName+"?")) {
+		this.volunteerService.deleteVolunteer(volunteer.id).subscribe(() => {
+		  this.loadVolunteers();
+		});
+	}
+    
   }
 
   // Send data into update dialog
@@ -66,8 +65,7 @@ export class VolunteersComponent implements OnInit {
     
     dialogRef.afterClosed().subscribe(result => {
       this.loadVolunteers();
-      
-      console.log('Update dialog was closed');
+
     });
   }
   // ================================================================================== //
@@ -76,7 +74,6 @@ export class VolunteersComponent implements OnInit {
     const dialogRef = this.dialog.open(VolunteerFormComponent);
 
     dialogRef.afterClosed().subscribe(result => {
-      //this.router.navigate([MembersComponent]);
       this.loadVolunteers();
       console.log('The dialog was closed');
     });

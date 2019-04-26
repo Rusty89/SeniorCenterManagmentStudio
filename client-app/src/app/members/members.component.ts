@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialog} from '@angular/material';
 
 import { InfoFormComponent } from '.././info-form/info-form.component';
-import { DeleteConfirmComponent } from '.././delete-confirm/delete-confirm.component';
 
 import { MemberFetchService } from '../_services/member-fetch.service';
 
@@ -30,10 +29,13 @@ export class MembersComponent implements OnInit {
     );
   }
 
-  deleteMember(memberID: string) {
-    this.memberService.deleteMember(memberID).subscribe(() => {
-      this.loadMembers();
-    });
+  deleteMember(member: any) {
+	if(confirm("Are you sure you want to delete "+member.firstName+" "+member.lastName+"?")) {
+       this.memberService.deleteMember(member.id).subscribe(() => {
+       this.loadMembers();
+      });
+	}
+    
   }
 
 
@@ -80,17 +82,6 @@ export class MembersComponent implements OnInit {
       this.loadMembers();
 
       console.log('The dialog was closed');
-    });
-  }
-
-  openDeleteDialog(memberEmail: string): void {
-    const dialogRef = this.dialog.open(DeleteConfirmComponent);
-
-    dialogRef.afterClosed().subscribe(result => {
-
-      this.deleteMember(memberEmail);
-
-      console.log('The delete dialog was closed');
     });
   }
 

@@ -1,6 +1,7 @@
 ﻿<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
-    <div class="navbar-nav">
-        <a class="nav-item nav-link" routerLink="/">Home</a>
+    <div class="navbar-nav"> <a class="nav-item nav-link" routerLink="/">Home</a></div>
+    <div class="navbar-nav ml-auto">
+
         <a class="nav-item nav-link" routerLink="/register">Register Admin</a>
         <a class="nav-item nav-link" (click)="logout()">Logout</a>
     </div>
@@ -11,16 +12,13 @@
     <div class="text-center">
         <div class="btn-group btn-group-lg" role="group" aria-label="...">
             <button type="button" class="btn btn-primary btn-lg mr-1 ml-1" routerLink="/members">Members</button>
-            <button type="button" class="btn btn-primary btn-lg mr-1 ml-1"
-                routerLink="/volunteers">Volunteers</button>
-            <button type="button" class="btn btn-primary btn-lg mr-1 ml-1"
-                routerLink="/services">Services</button>
+            <button type="button" class="btn btn-primary btn-lg mr-1 ml-1" routerLink="/volunteers">Volunteers</button>
+            <button type="button" class="btn btn-primary btn-lg mr-1 ml-1" routerLink="/services">Activities</button>
             <button type="button" class="btn btn-primary btn-lg mr-1 ml-1" routerLink="/reports">Reports</button>
             <button type="button" class="btn btn-primary btn-lg mr-1 ml-1"
                 routerLink="/documentation">Documentation</button>
         </div>
     </div>
-
 
     <!-- renders rest of app (dynamically changing)-->
     <router-outlet></router-outlet>

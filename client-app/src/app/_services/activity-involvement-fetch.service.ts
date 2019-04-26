@@ -1,13 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import {Observable } from 'rxjs/Rx';
+
 import 'rxjs/add/operator/map';
 
-import { Activity } from '../_models/activity';
 import { Involvement } from '../_models/involvement';
 
-// OLD: api url for activity-involvement
-//const API_URL:string = 'https://jln3dnryx2.execute-api.us-east-1.amazonaws.com/Dev/involvement';
 
 // NEW: API for activity-involvement
 const API_URL:string = 'https://5z47iau9oe.execute-api.us-east-1.amazonaws.com/SCMS/activity-involvement';
@@ -28,20 +25,8 @@ export class ActivityInvFetchService {
       involvements && involvements.forEach((involvement)=>{
         involvementMap.push({
 
-          // It should be id of an activity
           activityID: involvement["aid_activity_id"],
-
-          // Example of adding involvement
-          /*
-          {
-            "activityID": "AUTO-GENERATED-BY-AWS-FOR-ACTIVITY",
-            "memberEmails": ["email-0@AOL.com", "email-1@AOL.com", "email-2@AOL.com"]
-          }
-          */
-
-          // Not sure how to work with string arrays here
           memberIDs: involvement["aid_m_ids"],
-
 
           id: involvement['id'],
         });
@@ -69,7 +54,7 @@ export class ActivityInvFetchService {
     return this.http.delete(API_URL,
       {
         params: {
-          "aid_activity_id": activityID
+          "activityID": activityID
         }
       });
   }
